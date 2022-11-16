@@ -6,6 +6,7 @@
 #include <Adafruit_ICM20649.h>
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
+#include <math.h>
 
 Adafruit_ICM20649 icm;
 Adafruit_Sensor *icm_temp, *icm_accel, *icm_gyro;
@@ -55,12 +56,12 @@ void loop() {
   icm_accel->getEvent(&accel);
   icm_gyro->getEvent(&gyro);
 
-  Serial.print("\t\tTemperature ");
+  /*Serial.print("\t\tTemperature ");
   Serial.print(temp.temperature);
   Serial.println(" deg C");
 
   /* Display the results (acceleration is measured in m/s^2) */
-  Serial.print("\t\tAccel X: ");
+  /*Serial.print("\t\tAccel X: ");
   Serial.print(accel.acceleration.x);
   Serial.print(" \tY: ");
   Serial.print(accel.acceleration.y);
@@ -69,7 +70,7 @@ void loop() {
   Serial.println(" m/s^2 ");
 
   /* Display the results (rotation is measured in rad/s) */
-  Serial.print("\t\tGyro X: ");
+  /*Serial.print("\t\tGyro X: ");
   Serial.print(gyro.gyro.x);
   Serial.print(" \tY: ");
   Serial.print(gyro.gyro.y);
@@ -78,23 +79,28 @@ void loop() {
   Serial.println(" radians/s ");
   Serial.println();
 
-  delay(100);
+  delay(100);*/
 
   //  serial plotter friendly format
   //Serial.print(temp.temperature);
   //Serial.print(",");
-
-  Serial.print(accel.acceleration.x);
-  Serial.print(","); Serial.print(accel.acceleration.y);
-  Serial.print(","); Serial.print(accel.acceleration.z);
+  
+  Serial.print("Acceleration_x:"); Serial.print(accel.acceleration.x);
+  Serial.print(","); 
+  Serial.print("Acceleration_y:"); Serial.print(accel.acceleration.y);
+  Serial.print(","); 
+  Serial.print("Acceleration_z:"); Serial.print(accel.acceleration.z);
   Serial.print(",");
+  Serial.print("Magnitude:"); Serial.print(sqrt((accel.acceleration.x * accel.acceleration.x) + 
+  (accel.acceleration.y * accel.acceleration.y) + (accel.acceleration.z * accel.acceleration.z)));
 
-  Serial.print(gyro.gyro.x);
-  Serial.print(","); Serial.print(gyro.gyro.y);
-  Serial.print(","); Serial.print(gyro.gyro.z);
+  /*Serial.print("Gyro_x:"); Serial.print(gyro.gyro.x);
+  Serial.print(","); 
+  Serial.print("Gyro_y:"); Serial.print(gyro.gyro.y);
+  Serial.print(","); 
+  Serial.print("Gyro_z:"); Serial.print(gyro.gyro.z);*/
   Serial.println();
   delay(100);
-  
 }
 
 

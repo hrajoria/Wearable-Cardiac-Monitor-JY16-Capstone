@@ -76,5 +76,6 @@ void setup()
 
 void loop()
 {
-  Serial.println(particleSensor.getIR()); //Send raw data to plotter
+  //Serial.println(particleSensor.getIR()); //Send raw data to plotter
+  
 }

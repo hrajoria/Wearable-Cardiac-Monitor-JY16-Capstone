@@ -30,7 +30,7 @@
 
 MAX30105 particleSensor;
 
-const byte RATE_SIZE = 4; //Increase this for more averaging. 4 is good.
+const byte RATE_SIZE = 8; //Increase this for more averaging. 4 is good.
 byte rates[RATE_SIZE]; //Array of heart rates
 byte rateSpot = 0;
 long lastBeat = 0; //Time at which the last beat occurred
@@ -91,6 +91,8 @@ void loop()
   if (irValue < 50000)
     Serial.print(" No finger?");
 
+  Serial.println();
+  Serial.print("BPM:"); Serial.print(beatsPerMinute);
   Serial.println();
 }
 

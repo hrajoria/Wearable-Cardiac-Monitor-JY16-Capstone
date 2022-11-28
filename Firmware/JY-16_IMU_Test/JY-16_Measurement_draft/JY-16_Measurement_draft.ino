@@ -99,6 +99,8 @@ void loop() {
   Serial.print("Gyro_y:"); Serial.print(gyro.gyro.y);
   Serial.print(","); 
   Serial.print("Gyro_z:"); Serial.print(gyro.gyro.z);
+  Serial.print(",");
+  Serial.print("Gyro_mag:"); Serial.print(sqrt((gyro.gyro.x*gyro.gyro.x)+(gyro.gyro.y*gyro.gyro.y)+(gyro.gyro.z*gyro.gyro.z)));
   Serial.println();
   delay(100);
 }

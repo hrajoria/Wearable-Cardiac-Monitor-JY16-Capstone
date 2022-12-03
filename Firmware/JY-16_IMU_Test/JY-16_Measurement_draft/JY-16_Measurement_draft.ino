@@ -93,12 +93,14 @@ void loop() {
   Serial.print(",");
   Serial.print("Magnitude:"); Serial.print(sqrt((accel.acceleration.x * accel.acceleration.x) + 
   (accel.acceleration.y * accel.acceleration.y) + (accel.acceleration.z * accel.acceleration.z)));
-
-  /*Serial.print("Gyro_x:"); Serial.print(gyro.gyro.x);
+  Serial.print(",");
+  Serial.print("Gyro_x:"); Serial.print(gyro.gyro.x);
   Serial.print(","); 
   Serial.print("Gyro_y:"); Serial.print(gyro.gyro.y);
   Serial.print(","); 
-  Serial.print("Gyro_z:"); Serial.print(gyro.gyro.z);*/
+  Serial.print("Gyro_z:"); Serial.print(gyro.gyro.z);
+  Serial.print(",");
+  Serial.print("Gyro_mag:"); Serial.print(sqrt((gyro.gyro.x*gyro.gyro.x)+(gyro.gyro.y*gyro.gyro.y)+(gyro.gyro.z*gyro.gyro.z)));
   Serial.println();
   delay(100);
 }

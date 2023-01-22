@@ -1,0 +1,10 @@
+Board Information Report
+Filename     : C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\IMU_Board\IMU_Board.PcbDoc
+Date         : 2023-01-18
+Time         : 6:47:02 AM
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 615milsx615mils
+    Components on board, 11
+count : 2

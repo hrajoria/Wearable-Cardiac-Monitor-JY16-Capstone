@@ -16,8 +16,8 @@ def addToList(ser, dictPoints):
 
 dictPoints = defaultdict(list)
 prompt = (
-    "Move in x-direction", "Move in y-direction", "Move in z-direction", 
-    "Rotate in x-axis", "Rotate in y-axis", "Rotate in z-axis", "Leave alone"
+    "Leave Alone", "Move in x-direction", "Move in y-direction", "Move in z-direction", 
+    "Rotate in x-axis", "Rotate in y-axis", "Rotate in z-axis"
 )
 
 for p in prompt:
@@ -34,16 +34,32 @@ for p in prompt:
 fig, axs = plt.subplots(2)
 axs[0].set_title("Acceleration measurements")
 axs[0].set(ylabel="m/s^2")
-axs[0].plot(dictPoints['acc_x'])
-axs[0].plot(dictPoints['acc_y'])
-axs[0].plot(dictPoints['acc_z'])
-axs[0].plot(dictPoints['mag'])
+line, = axs[0].plot(dictPoints['acc_x'])
+line.set_label("Acc X")
+line, = axs[0].plot(dictPoints['acc_y'])
+line.set_label("Acc Y")
+line, = axs[0].plot(dictPoints['acc_z'])
+line.set_label("Acc Z")
+line, = axs[0].plot(dictPoints['mag'])
+line.set_label("Acc Mag")
+axs[0].axvline(x=100)
+axs[0].axvline(x=200)
+axs[0].axvline(x=300)
+axs[0].legend()
 
 axs[1].set_title("Rotational measurements")
-axs[1].set(ylabel="rad/s^2")
-axs[1].plot(dictPoints['gyro_x'])
-axs[1].plot(dictPoints['gyro_y'])
-axs[1].plot(dictPoints['gyro_z'])
+axs[1].set(ylabel="deg/s")
+line, = axs[1].plot(dictPoints['gyro_x'])
+line.set_label("Rot X")
+line, = axs[1].plot(dictPoints['gyro_y'])
+line.set_label("Rot Y")
+line, = axs[1].plot(dictPoints['gyro_z'])
+line.set_label("Rot Z")
+axs[1].axvline(x=400)
+axs[1].axvline(x=500)
+axs[1].axvline(x=600)
+axs[1].legend()
+
 
 fig.show()
 print()

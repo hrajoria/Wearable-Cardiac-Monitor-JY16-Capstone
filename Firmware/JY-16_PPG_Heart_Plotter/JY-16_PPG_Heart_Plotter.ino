@@ -33,6 +33,8 @@
 #include <Wire.h>
 #include "MAX30105.h"
 
+#include "heartRate.h"
+
 MAX30105 particleSensor;
 
 void setup()
@@ -55,13 +57,17 @@ void setup()
   int pulseWidth = 411; //Options: 69, 118, 215, 411
   int adcRange = 4096; //Options: 2048, 4096, 8192, 16384
 
-  particleSensor.setup(ledBrightness, sampleAverage, ledMode, sampleRate, pulseWidth, adcRange); //Configure sensor with these settings
+  //particleSensor.setup(ledBrightness, sampleAverage, ledMode, sampleRate, pulseWidth, adcRange); //Configure sensor with these settings
+  particleSensor.setup(); //Configure sensor with default settings
+  particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
+  particleSensor.setPulseAmplitudeGreen(0); //Turn off Green LED
+
 
   //Arduino plotter auto-scales annoyingly. To get around this, pre-populate
   //the plotter with 500 of an average reading from the sensor
 
   //Take an average of IR readings at power up
-  const byte avgAmount = 64;
+  /*const byte avgAmount = 64;
   long baseValue = 0;
   for (byte x = 0 ; x < avgAmount ; x++)
   {
@@ -71,11 +77,20 @@ void setup()
 
   //Pre-populate the plotter so that the Y scale is close to IR values
   for (int x = 0 ; x < 500 ; x++)
-    Serial.println(baseValue);
+    Serial.println(baseValue);*/
 }
 
 void loop()
 {
-  //Serial.println(particleSensor.getIR()); //Send raw data to plotter
+  //Serial.println(particleSensor.getIR()); //Send raw data to plotter  
+  Serial.print("IR:"); Serial.print(particleSensor.getIR());
+  Serial.print(",");
+  Serial.print("Red:"); Serial.print(particleSensor.getRed());
+  Serial.print(",");
+  Serial.print("BeatCheck:"); Serial.print(checkForBeat(particleSensor.getIR()));
+  Serial.println();
+
+  //Serial.print("Green:"); Serial.print(particleSensor.getGreen());
   
+  delay(100);
 }

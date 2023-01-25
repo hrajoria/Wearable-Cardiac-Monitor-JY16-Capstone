@@ -59,9 +59,13 @@ void setup()
 void loop()
 {
   long irValue = particleSensor.getIR();
+  long redValue = particleSensor.getRed();
+  int foundBeat = 0;
 
   if (checkForBeat(irValue) == true)
   {
+    foundBeat = 1;
+    //Serial.print("Sensed beat");
     //We sensed a beat!
     long delta = millis() - lastBeat;
     lastBeat = millis();
@@ -83,17 +87,22 @@ void loop()
 
   Serial.print("IR=");
   Serial.print(irValue);
+  Serial.print(", Red=");
+  Serial.print(redValue);
+  Serial.print(", Found=");
+  Serial.print(foundBeat);
   Serial.print(", BPM=");
   Serial.print(beatsPerMinute);
   Serial.print(", Avg BPM=");
   Serial.print(beatAvg);
-
-  if (irValue < 50000)
-    Serial.print(" No finger?");
-
   Serial.println();
-  Serial.print("BPM:"); Serial.print(beatsPerMinute);
-  Serial.println();
+
+  //if (irValue < 50000)
+   // Serial.print(" No finger?");
+
+  //Serial.println();
+  //Serial.print("BPM:"); Serial.print(beatsPerMinute);
+  //Serial.println();
 }
 
 

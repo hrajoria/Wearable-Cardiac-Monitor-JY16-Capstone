@@ -1,0 +1,7 @@
+PPG:
+- 10s of data collection (sitting/active)
+- Responses to finger being removed
+
+IMU:
+- Put it on each axis and measure 9.81 m/s^2
+- Rotate slowly on each axis and then quickly to get proof of movement. Maybe try to confine rotation to 1 rotation/s and see if it reflects

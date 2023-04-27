@@ -1,0 +1,7 @@
+C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Firmware\Blinky_Test_Miniprog\Blinky_Test_Miniprog01.cydsn\Blinky_Test_Miniprog01.cyprj|e0e02f06-832f-4460-9910-571fbc10a1f4
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|69586d6c-47ac-4c41-b61f-9d539da47084
+C:\Users\harsh\OneDrive\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|abf389d5-a70a-411c-b48f-7312e676b563
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|8787a2b6-0cdd-45c4-a458-d756865f863b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|4e950526-2800-4b1c-9f4d-cd814224b962
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|7829bca3-41bc-4b1f-90a0-9ee853521321
+C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Firmware\Blinky_Test_Miniprog\blinky_scratch_test.cydsn\blinky_scratch_test.cyprj|17d29b14-1b59-418d-a463-fe0effa1363c

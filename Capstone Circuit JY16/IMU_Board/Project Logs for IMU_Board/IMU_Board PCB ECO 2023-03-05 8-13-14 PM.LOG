@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=LED? NewDesignator=PWR
+Added Pin To Net: NetName=NetPWR_2 Pin=PWR-2
+Added Pin To Net: NetName=NetPWR_2 Pin=R3-1
+Added Net: Name=NetPWR_2

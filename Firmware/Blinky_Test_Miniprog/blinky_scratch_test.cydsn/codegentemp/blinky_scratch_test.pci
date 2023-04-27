@@ -1,0 +1,8 @@
+# blinky_scratch_test
+# 2023-04-04 06:46:37Z
+
+set_location "ClockGenBlock" CLK_GEN -1 -1 0
+set_io "CY_CPUSS_SWJ_SWDIO_TMS(0)" iocell 6 6
+set_io "CY_CPUSS_SWJ_SWCLK_TCLK(0)" iocell 6 7
+set_io "SD_LED(0)" iocell 11 7
+set_io "BLE_LED(0)" iocell 11 6

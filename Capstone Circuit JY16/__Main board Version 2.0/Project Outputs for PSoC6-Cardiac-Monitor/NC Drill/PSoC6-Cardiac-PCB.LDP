@@ -1,0 +1,4 @@
+Layer Pairs Export File for PCB: C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6-Cardiac-PCB.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=psoc6-cardiac-pcb.txt|DrillLayers=gtl,g1,g2,gbl
+LayersSetName=Top_1_Blind_Vias|DrillFile=psoc6-cardiac-pcb.tx1|DrillLayers=gtl,g1
+LayersSetName=Top_2_Blind_Vias|DrillFile=psoc6-cardiac-pcb.tx2|DrillLayers=gtl,g1,g2

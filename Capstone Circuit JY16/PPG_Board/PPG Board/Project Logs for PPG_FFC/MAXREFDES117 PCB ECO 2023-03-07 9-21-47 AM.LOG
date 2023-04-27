@@ -1,0 +1,37 @@
+Added Component: Designator=J1(ZF5S-10-01-X-WT)
+Add component (AddParameter): Name = "CREATED"; Value = "January 30, 2015 - Wendy Xin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MANUFACTURER"; Value = "SAMTEC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MODIFIED"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PCB DECAL"; Value = "ZF5S-10-01-X-WT"; VariantName = "[No Variations]"
+Added Component: Designator=U1(MODULE_MAXREFDES117#)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DigiKey-Purchase-URL"; Value = "https://snapeda.com/shop?store=DigiKey&id=585423"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Maxim Integrated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser-Purchase-URL"; Value = "https://snapeda.com/shop?store=Mouser&id=585423"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "MAXREFDES117#"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/MAXREFDES117%23/Maxim%20Integrated/view-part/585423/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J1-3
+Added Pin To Net: NetName=GND Pin=J1-4
+Added Pin To Net: NetName=GND Pin=J1-5
+Added Pin To Net: NetName=GND Pin=J1-6
+Added Pin To Net: NetName=GND Pin=J1-7
+Added Pin To Net: NetName=GND Pin=J1-9
+Added Pin To Net: NetName=GND Pin=J1-10
+Added Pin To Net: NetName=GND Pin=J1-G1
+Added Pin To Net: NetName=GND Pin=J1-G2
+Added Pin To Net: NetName=GND Pin=U1-GND
+Added Net: Name=GND
+Added Pin To Net: NetName=SCL Pin=J1-2
+Added Pin To Net: NetName=SCL Pin=U1-SCL
+Added Net: Name=SCL
+Added Pin To Net: NetName=SDA Pin=J1-8
+Added Pin To Net: NetName=SDA Pin=U1-SDA
+Added Net: Name=SDA
+Added Pin To Net: NetName=VIN Pin=J1-1
+Added Pin To Net: NetName=VIN Pin=U1-VIN
+Added Net: Name=VIN
+Added Class: Name=MAXREFDES117
+Added Room: Name=MAXREFDES117

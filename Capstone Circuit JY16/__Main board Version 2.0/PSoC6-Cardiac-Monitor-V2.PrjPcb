@@ -1,0 +1,2110 @@
+﻿[Design]
+Version=1.0
+HierarchyMode=0
+ChannelRoomNamingStyle=0
+ReleasesFolder=
+ChannelDesignatorFormatString=$Component_$RoomName
+ChannelRoomLevelSeperator=_
+OpenOutputs=1
+ArchiveProject=0
+TimestampOutput=0
+SeparateFolders=0
+TemplateLocationPath=
+PinSwapBy_Netlabel=1
+PinSwapBy_Pin=1
+AllowPortNetNames=0
+AllowSheetEntryNetNames=1
+AppendSheetNumberToLocalNets=0
+NetlistSinglePinNets=0
+DefaultConfiguration=Sources
+UserID=0xFFFFFFFF
+DefaultPcbProtel=1
+DefaultPcbPcad=0
+ReorderDocumentsOnCompile=1
+NameNetsHierarchically=0
+PowerPortNamesTakePriority=0
+AutoSheetNumbering=1
+AutoCrossReferences=0
+PushECOToAnnotationFile=1
+DItemRevisionGUID=
+ReportSuppressedErrorsInMessages=0
+FSMCodingStyle=eFMSDropDownList_OneProcess
+FSMEncodingStyle=eFMSDropDownList_OneHot
+IsProjectConflictPreventionWarningsEnabled=0
+OutputPath=
+LogFolderPath=
+ManagedProjectGUID=
+IncludeDesignInRelease=0
+
+[Preferences]
+PrefsVaultGUID=
+PrefsRevisionGUID=
+
+[Document1]
+DocumentPath=PSoC6-Cardiac-PCB.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=JINBEDTP
+
+[Document2]
+DocumentPath=PCBWay.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document3]
+DocumentPath=PSoC6-Cardiac-Schematic-V2.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=KDYTOLSX
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\BOM\Bill of Materials-PSoC6-Cardiac-Monitor.xlsx
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\comp_+_bot\components
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\comp_+_top\components
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\eda\data
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\bottom_layer\features
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\bottom_overlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\bottom_paste\features
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\bottom_solder\features
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\comp_+_bot\features
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\comp_+_top\features
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\dielectric_1\features
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\dielectric_2\features
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\dielectric_3\features
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_blind_vias_top-mid1\features
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_blind_vias_top-mid2\features
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_drawing_top-bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_drawing_top-mid1\features
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_drawing_top-mid2\features
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_guide_top-bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_guide_top-mid1\features
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_guide_top-mid2\features
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_non-plated_bottom-top\features
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_plated_bottom-top\features
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\keep-out_layer\features
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\layer_1\features
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\layer_2\features
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\rout\features
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\top_layer\features
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\top_overlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\top_paste\features
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\top_solder\features
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\matrix\matrix
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Pick Place\Pick Place for PSoC6-Cardiac-PCB.txt
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\NC Drill\PSoC6-Cardiac-PCB.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument37]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument38]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.G1
+DItemRevisionGUID=
+
+[GeneratedDocument39]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.G2
+DItemRevisionGUID=
+
+[GeneratedDocument40]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument41]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument42]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument43]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument44]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument45]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument46]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM3
+DItemRevisionGUID=
+
+[GeneratedDocument47]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM4
+DItemRevisionGUID=
+
+[GeneratedDocument48]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM5
+DItemRevisionGUID=
+
+[GeneratedDocument49]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM6
+DItemRevisionGUID=
+
+[GeneratedDocument50]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM7
+DItemRevisionGUID=
+
+[GeneratedDocument51]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM8
+DItemRevisionGUID=
+
+[GeneratedDocument52]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM9
+DItemRevisionGUID=
+
+[GeneratedDocument53]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument54]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument55]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument56]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument57]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument58]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument59]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument60]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument61]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\NC Drill\PSoC6-Cardiac-PCB.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument62]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument63]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\PSoC6-Cardiac-PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument64]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\Gerber\PSoC6-Cardiac-PCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument65]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ExportSTEP\PSoC6-Cardiac-PCB.step
+DItemRevisionGUID=
+
+[GeneratedDocument66]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\NC Drill\PSoC6-Cardiac-PCB.TX1
+DItemRevisionGUID=
+
+[GeneratedDocument67]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\NC Drill\PSoC6-Cardiac-PCB.TX2
+DItemRevisionGUID=
+
+[GeneratedDocument68]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\NC Drill\PSoC6-Cardiac-PCB.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument69]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ExportSTEP\PSoC6-Cardiac-PCB.x_t
+DItemRevisionGUID=
+
+[GeneratedDocument70]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument71]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_blind_vias_top-mid1\tools
+DItemRevisionGUID=
+
+[GeneratedDocument72]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_blind_vias_top-mid2\tools
+DItemRevisionGUID=
+
+[GeneratedDocument73]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_non-plated_bottom-top\tools
+DItemRevisionGUID=
+
+[GeneratedDocument74]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\drill_plated_bottom-top\tools
+DItemRevisionGUID=
+
+[GeneratedDocument75]
+DocumentPath=Project Outputs for PSoC6-Cardiac-Monitor\ODB\odb\steps\pcb\layers\rout\tools
+DItemRevisionGUID=
+
+[Configuration1]
+Name=Sources
+ParameterCount=0
+ConstraintFileCount=0
+ReleaseItemId=
+Variant=[No Variations]
+OutputJobsCount=0
+ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
+ConfigurationType=Source
+
+[Generic_SmartPDF]
+AutoOpenFile=-1
+AutoOpenOutJob=-1
+
+[Generic_SmartPDFSettings]
+ProjectMode=0
+ZoomPrecision=66
+AddNetsInformation=-1
+AddNetPins=-1
+AddNetNetLabels=-1
+AddNetPorts=-1
+ShowComponentParameters=-1
+GlobalBookmarks=0
+ExportBOM=-1
+TemplateFilename=Board Stack Report.XLT
+TemplateStoreRelative=-1
+PCB_PrintColor=1
+SCH_PrintColor=0
+PrintQuality=-3
+SCH_ShowNoErc=-1
+SCH_ShowParameter=-1
+SCH_ShowProbes=-1
+SCH_ShowBlankets=-1
+SCH_NoERCSymbolsToShow="Thin Cross","Thick Cross","Small Cross",Checkbox,Triangle
+SCH_ShowNote=-1
+SCH_ShowNoteCollapsed=-1
+SCH_ExpandLogicalToPhysical=-1
+SCH_VariantName=
+SCH_ExpandComponentDesignators=-1
+SCH_ExpandNetlabels=0
+SCH_ExpandPorts=0
+SCH_ExpandSheetNumber=0
+SCH_ExpandDocumentNumber=0
+SCH_HasExpandLogicalToPhysicalSheets=0
+SaveSettingsToOutJob=-1
+
+[Generic_EDE]
+OutputDir=
+
+[OutputGroup1]
+Name=Netlist Outputs
+Description=
+TargetPrinter=OneNote (Desktop)
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=CadnetixNetlist
+OutputName1=Cadnetix Netlist
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+OutputType2=CalayNetlist
+OutputName2=Calay Netlist
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+OutputType3=EDIF
+OutputName3=EDIF for PCB
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
+OutputType4=EESofNetlist
+OutputName4=EESof Netlist
+OutputDocumentPath4=
+OutputVariantName4=
+OutputDefault4=0
+OutputType5=IntergraphNetlist
+OutputName5=Intergraph Netlist
+OutputDocumentPath5=
+OutputVariantName5=
+OutputDefault5=0
+OutputType6=MentorBoardStationNetlist
+OutputName6=Mentor BoardStation Netlist
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+OutputType7=MultiWire
+OutputName7=MultiWire
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+OutputType8=OrCadPCB2Netlist
+OutputName8=Orcad/PCB2 Netlist
+OutputDocumentPath8=
+OutputVariantName8=
+OutputDefault8=0
+OutputType9=PADSNetlist
+OutputName9=PADS ASCII Netlist
+OutputDocumentPath9=
+OutputVariantName9=
+OutputDefault9=0
+OutputType10=Pcad
+OutputName10=Pcad for PCB
+OutputDocumentPath10=
+OutputVariantName10=
+OutputDefault10=0
+OutputType11=PCADNetlist
+OutputName11=PCAD Netlist
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+OutputType12=PCADnltNetlist
+OutputName12=PCADnlt Netlist
+OutputDocumentPath12=
+OutputVariantName12=
+OutputDefault12=0
+OutputType13=Protel2Netlist
+OutputName13=Protel2 Netlist
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+OutputType14=ProtelNetlist
+OutputName14=Protel
+OutputDocumentPath14=
+OutputVariantName14=
+OutputDefault14=0
+OutputType15=RacalNetlist
+OutputName15=Racal Netlist
+OutputDocumentPath15=
+OutputVariantName15=
+OutputDefault15=0
+OutputType16=RINFNetlist
+OutputName16=RINF Netlist
+OutputDocumentPath16=
+OutputVariantName16=
+OutputDefault16=0
+OutputType17=SciCardsNetlist
+OutputName17=SciCards Netlist
+OutputDocumentPath17=
+OutputVariantName17=
+OutputDefault17=0
+OutputType18=TangoNetlist
+OutputName18=Tango Netlist
+OutputDocumentPath18=
+OutputVariantName18=
+OutputDefault18=0
+OutputType19=TelesisNetlist
+OutputName19=Telesis Netlist
+OutputDocumentPath19=
+OutputVariantName19=
+OutputDefault19=0
+OutputType20=WireListNetlist
+OutputName20=WireList Netlist
+OutputDocumentPath20=
+OutputVariantName20=
+OutputDefault20=0
+OutputType21=XSpiceNetlist
+OutputName21=Mixed Sim Netlist
+OutputDocumentPath21=
+OutputVariantName21=
+OutputDefault21=0
+
+[OutputGroup2]
+Name=Simulator Outputs
+Description=
+TargetPrinter=OneNote (Desktop)
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=AdvSimNetlist
+OutputName1=Mixed Sim
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+
+[OutputGroup3]
+Name=Documentation Outputs
+Description=
+TargetPrinter=Virtual Printer
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Composite
+OutputName1=Composite Drawing
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType2=PCB 3D Print
+OutputName2=PCB 3D Print
+OutputDocumentPath2=
+OutputVariantName2=[No Variations]
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType3=PCB 3D Video
+OutputName3=PCB 3D Video
+OutputDocumentPath3=
+OutputVariantName3=[No Variations]
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType4=PCB Print
+OutputName4=PCB Prints
+OutputDocumentPath4=
+OutputVariantName4=
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType5=PCBDrawing
+OutputName5=Draftsman
+OutputDocumentPath5=
+OutputVariantName5=[No Variations]
+OutputDefault5=0
+PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType6=PCBLIB Print
+OutputName6=PCBLIB Prints
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+PageOptions6=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType7=PDF3D
+OutputName7=PDF3D
+OutputDocumentPath7=
+OutputVariantName7=[No Variations]
+OutputDefault7=0
+PageOptions7=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType8=PDF3D MBA
+OutputName8=PDF3D MBA
+OutputDocumentPath8=
+OutputVariantName8=
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType9=Report Print
+OutputName9=Report Prints
+OutputDocumentPath9=
+OutputVariantName9=
+OutputDefault9=0
+PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType10=Schematic Print
+OutputName10=Schematic Prints
+OutputDocumentPath10=
+OutputVariantName10=
+OutputDefault10=0
+PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+Configuration10_Name1=OutputConfigurationParameter1
+Configuration10_Item1=Record=SchPrintView|ShowNoERC=True|ShowParamSet=True|ShowProbe=True|ShowBlanket=True|NoERCSymbolsToShow="Thin Cross","Thick Cross","Small Cross",Checkbox,Triangle|ShowNote=True|ShowNoteCollapsed=True|ShowOpenEnds=True|ExpandDesignator=True|ExpandNetLabel=False|ExpandPort=False|ExpandSheetNum=False|ExpandDocNum=False|PrintArea=0|PrintAreaRect.X1=0|PrintAreaRect.Y1=0|PrintAreaRect.X2=0|PrintAreaRect.Y2=0|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest Schematic.SchDoc
+OutputType11=SimView Print
+OutputName11=SimView Prints
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+
+[OutputGroup4]
+Name=Assembly Outputs
+Description=
+TargetPrinter=OneNote (Desktop)
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Assembly
+OutputName1=Assembly Drawings
+OutputDocumentPath1=
+OutputVariantName1=[No Variations]
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType2=Pick Place
+OutputName2=Generates pick and place files
+OutputDocumentPath2=
+OutputVariantName2=[No Variations]
+OutputDefault2=0
+OutputType3=Test Points For Assembly
+OutputName3=Test Point Report
+OutputDocumentPath3=
+OutputVariantName3=[No Variations]
+OutputDefault3=0
+
+[OutputGroup5]
+Name=Fabrication Outputs
+Description=
+TargetPrinter=OneNote (Desktop)
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Board Stack Report
+OutputName1=Report Board Stack
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType2=CompositeDrill
+OutputName2=Composite Drill Drawing
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType3=Drill
+OutputName3=Drill Drawing/Guides
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType4=Final
+OutputName4=Final Artwork Prints
+OutputDocumentPath4=
+OutputVariantName4=[No Variations]
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType5=Gerber
+OutputName5=Gerber Files
+OutputDocumentPath5=
+OutputVariantName5=[No Variations]
+OutputDefault5=0
+OutputType6=Gerber X2
+OutputName6=Gerber X2 Files
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+OutputType7=IPC2581
+OutputName7=IPC-2581 Files
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+OutputType8=Mask
+OutputName8=Solder/Paste Mask Prints
+OutputDocumentPath8=
+OutputVariantName8=
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType9=NC Drill
+OutputName9=NC Drill Files
+OutputDocumentPath9=
+OutputVariantName9=
+OutputDefault9=0
+OutputType10=ODB
+OutputName10=ODB++ Files
+OutputDocumentPath10=
+OutputVariantName10=[No Variations]
+OutputDefault10=0
+OutputType11=Plane
+OutputName11=Power-Plane Prints
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType12=Test Points
+OutputName12=Test Point Report
+OutputDocumentPath12=
+OutputVariantName12=
+OutputDefault12=0
+
+[OutputGroup6]
+Name=Report Outputs
+Description=
+TargetPrinter=OneNote (Desktop)
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=BOM_PartType
+OutputName1=Bill of Materials
+OutputDocumentPath1=
+OutputVariantName1=[No Variations]
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType2=BOM_ReportCompare
+OutputName2=BOM Compare
+OutputDocumentPath2=
+OutputVariantName2=[No Variations]
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType3=ComponentCrossReference
+OutputName3=Component Cross Reference Report
+OutputDocumentPath3=
+OutputVariantName3=[No Variations]
+OutputDefault3=0
+OutputType4=Export Comments
+OutputName4=Export Comments
+OutputDocumentPath4=
+OutputVariantName4=[No Variations]
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType5=ReportHierarchy
+OutputName5=Report Project Hierarchy
+OutputDocumentPath5=
+OutputVariantName5=[No Variations]
+OutputDefault5=0
+OutputType6=Script
+OutputName6=Script Output
+OutputDocumentPath6=
+OutputVariantName6=[No Variations]
+OutputDefault6=0
+OutputType7=SimpleBOM
+OutputName7=Simple BOM
+OutputDocumentPath7=
+OutputVariantName7=[No Variations]
+OutputDefault7=0
+OutputType8=SinglePinNetReporter
+OutputName8=Report Single Pin Nets
+OutputDocumentPath8=
+OutputVariantName8=[No Variations]
+OutputDefault8=0
+
+[OutputGroup7]
+Name=Other Outputs
+Description=
+TargetPrinter=OneNote (Desktop)
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Text Print
+OutputName1=Text Print
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType2=Text Print
+OutputName2=Text Print
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType3=Text Print
+OutputName3=Text Print
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType4=Text Print
+OutputName4=Text Print
+OutputDocumentPath4=
+OutputVariantName4=
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType5=Text Print
+OutputName5=Text Print
+OutputDocumentPath5=
+OutputVariantName5=
+OutputDefault5=0
+PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType6=Text Print
+OutputName6=Text Print
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+PageOptions6=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType7=Text Print
+OutputName7=Text Print
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+PageOptions7=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType8=Text Print
+OutputName8=Text Print
+OutputDocumentPath8=
+OutputVariantName8=
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType9=Text Print
+OutputName9=Text Print
+OutputDocumentPath9=
+OutputVariantName9=
+OutputDefault9=0
+PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType10=Text Print
+OutputName10=Text Print
+OutputDocumentPath10=
+OutputVariantName10=
+OutputDefault10=0
+PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType11=Text Print
+OutputName11=Text Print
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType12=Text Print
+OutputName12=Text Print
+OutputDocumentPath12=
+OutputVariantName12=
+OutputDefault12=0
+PageOptions12=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType13=Text Print
+OutputName13=Text Print
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+PageOptions13=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType14=Text Print
+OutputName14=Text Print
+OutputDocumentPath14=
+OutputVariantName14=
+OutputDefault14=0
+PageOptions14=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType15=Text Print
+OutputName15=Text Print
+OutputDocumentPath15=
+OutputVariantName15=
+OutputDefault15=0
+PageOptions15=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType16=Text Print
+OutputName16=Text Print
+OutputDocumentPath16=
+OutputVariantName16=
+OutputDefault16=0
+PageOptions16=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType17=Text Print
+OutputName17=Text Print
+OutputDocumentPath17=
+OutputVariantName17=
+OutputDefault17=0
+PageOptions17=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+
+[OutputGroup8]
+Name=Validation Outputs
+Description=
+TargetPrinter=OneNote (Desktop)
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=BOM_Violations
+OutputName1=BOM Checks Report
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+OutputType2=Component states check
+OutputName2=Server's components states check
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+OutputType3=Configuration compliance
+OutputName3=Environment configuration compliance check
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
+OutputType4=Design Rules Check
+OutputName4=Design Rules Check
+OutputDocumentPath4=
+OutputVariantName4=
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType5=Differences Report
+OutputName5=Differences Report
+OutputDocumentPath5=
+OutputVariantName5=
+OutputDefault5=0
+PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType6=Electrical Rules Check
+OutputName6=Electrical Rules Check
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+PageOptions6=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType7=Footprint Comparison Report
+OutputName7=Footprint Comparison Report
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+
+[OutputGroup9]
+Name=Export Outputs
+Description=
+TargetPrinter=OneNote (Desktop)
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=AutoCAD dwg/dxf PCB
+OutputName1=AutoCAD dwg/dxf File PCB
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+OutputType2=AutoCAD dwg/dxf Schematic
+OutputName2=AutoCAD dwg/dxf File Schematic
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+OutputType3=ExportIDF
+OutputName3=Export IDF
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
+OutputType4=ExportPARASOLID
+OutputName4=Export PARASOLID
+OutputDocumentPath4=
+OutputVariantName4=[No Variations]
+OutputDefault4=0
+OutputType5=ExportSTEP
+OutputName5=Export STEP
+OutputDocumentPath5=
+OutputVariantName5=[No Variations]
+OutputDefault5=0
+OutputType6=ExportVRML
+OutputName6=Export VRML
+OutputDocumentPath6=
+OutputVariantName6=[No Variations]
+OutputDefault6=0
+OutputType7=MBAExportPARASOLID
+OutputName7=Export PARASOLID
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+OutputType8=MBAExportSTEP
+OutputName8=Export STEP
+OutputDocumentPath8=
+OutputVariantName8=
+OutputDefault8=0
+OutputType9=Save As/Export PCB
+OutputName9=Save As/Export PCB
+OutputDocumentPath9=
+OutputVariantName9=
+OutputDefault9=0
+OutputType10=Save As/Export Schematic
+OutputName10=Save As/Export Schematic
+OutputDocumentPath10=
+OutputVariantName10=
+OutputDefault10=0
+OutputType11=Specctra Design PCB
+OutputName11=Specctra Design PCB
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+
+[OutputGroup10]
+Name=PostProcess Outputs
+Description=
+TargetPrinter=OneNote (Desktop)
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Copy Files
+OutputName1=Copy Files
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+
+[Modification Levels]
+Type1=1
+Type2=1
+Type3=1
+Type4=1
+Type5=1
+Type6=1
+Type7=1
+Type8=1
+Type9=1
+Type10=1
+Type11=1
+Type12=1
+Type13=1
+Type14=1
+Type15=1
+Type16=1
+Type17=1
+Type18=1
+Type19=1
+Type20=1
+Type21=1
+Type22=1
+Type23=1
+Type24=1
+Type25=1
+Type26=1
+Type27=1
+Type28=1
+Type29=1
+Type30=1
+Type31=1
+Type32=1
+Type33=1
+Type34=0
+Type35=1
+Type36=1
+Type37=1
+Type38=1
+Type39=1
+Type40=1
+Type41=1
+Type42=1
+Type43=1
+Type44=1
+Type45=1
+Type46=1
+Type47=1
+Type48=1
+Type49=1
+Type50=1
+Type51=1
+Type52=1
+Type53=1
+Type54=1
+Type55=1
+Type56=1
+Type57=1
+Type58=1
+Type59=1
+Type60=1
+Type61=1
+Type62=1
+Type63=1
+Type64=1
+Type65=1
+Type66=1
+Type67=1
+Type68=1
+Type69=1
+Type70=1
+Type71=1
+Type72=1
+Type73=1
+Type74=1
+Type75=1
+Type76=1
+Type77=1
+Type78=1
+Type79=1
+Type80=1
+Type81=1
+Type82=1
+Type83=1
+Type84=1
+Type85=1
+Type86=1
+Type87=1
+Type88=1
+Type89=1
+Type90=1
+Type91=1
+Type92=1
+Type93=1
+Type94=1
+Type95=1
+Type96=1
+Type97=1
+Type98=1
+Type99=1
+Type100=1
+Type101=1
+Type102=1
+Type103=1
+Type104=1
+Type105=1
+Type106=1
+Type107=1
+Type108=1
+Type109=1
+Type110=1
+Type111=1
+Type112=1
+Type113=1
+Type114=1
+Type115=1
+Type116=1
+Type117=1
+Type118=1
+Type119=1
+
+[Difference Levels]
+Type1=1
+Type2=1
+Type3=1
+Type4=1
+Type5=1
+Type6=1
+Type7=1
+Type8=1
+Type9=1
+Type10=1
+Type11=1
+Type12=1
+Type13=1
+Type14=1
+Type15=1
+Type16=1
+Type17=1
+Type18=1
+Type19=1
+Type20=1
+Type21=1
+Type22=1
+Type23=1
+Type24=1
+Type25=1
+Type26=1
+Type27=1
+Type28=1
+Type29=1
+Type30=1
+Type31=1
+Type32=1
+Type33=1
+Type34=1
+Type35=1
+Type36=1
+Type37=1
+Type38=1
+Type39=1
+Type40=1
+Type41=1
+Type42=1
+Type43=1
+Type44=1
+Type45=1
+Type46=1
+Type47=1
+Type48=1
+Type49=1
+Type50=1
+Type51=1
+Type52=1
+Type53=1
+Type54=1
+Type55=1
+Type56=1
+Type57=1
+Type58=1
+Type59=1
+Type60=1
+Type61=1
+Type62=1
+Type63=1
+Type64=1
+Type65=1
+Type66=1
+Type67=1
+Type68=1
+
+[Electrical Rules Check]
+Type1=1
+Type2=1
+Type3=2
+Type4=1
+Type5=2
+Type6=2
+Type7=0
+Type8=1
+Type9=1
+Type10=1
+Type11=2
+Type12=2
+Type13=2
+Type14=1
+Type15=1
+Type16=1
+Type17=1
+Type18=1
+Type19=1
+Type20=0
+Type21=0
+Type22=0
+Type23=0
+Type24=1
+Type25=2
+Type26=0
+Type27=2
+Type28=1
+Type29=1
+Type30=1
+Type31=1
+Type32=2
+Type33=0
+Type34=2
+Type35=1
+Type36=2
+Type37=1
+Type38=2
+Type39=2
+Type40=2
+Type41=0
+Type42=2
+Type43=1
+Type44=0
+Type45=0
+Type46=0
+Type47=0
+Type48=0
+Type49=0
+Type50=2
+Type51=0
+Type52=0
+Type53=1
+Type54=1
+Type55=1
+Type56=2
+Type57=1
+Type58=1
+Type59=2
+Type60=0
+Type61=0
+Type62=0
+Type63=0
+Type64=0
+Type65=2
+Type66=3
+Type67=2
+Type68=2
+Type69=0
+Type70=2
+Type71=2
+Type72=2
+Type73=2
+Type74=1
+Type75=2
+Type76=1
+Type77=1
+Type78=1
+Type79=1
+Type80=2
+Type81=3
+Type82=3
+Type83=3
+Type84=3
+Type85=3
+Type86=2
+Type87=2
+Type88=2
+Type89=1
+Type90=1
+Type91=3
+Type92=3
+Type93=2
+Type94=2
+Type95=2
+Type96=2
+Type97=2
+Type98=0
+Type99=1
+Type100=2
+Type101=0
+Type102=2
+Type103=2
+Type104=1
+Type105=2
+Type106=2
+Type107=2
+Type108=2
+Type109=1
+Type110=1
+Type111=1
+Type112=1
+Type113=1
+Type114=2
+Type115=2
+Type116=2
+Type117=3
+Type118=3
+Type119=3
+MultiChannelAlternate=2
+AlternateItemFail=3
+Type122=2
+Type123=1
+Type124=1
+Type125=1
+
+[ERC Connection Matrix]
+L1=NNNNNNNNNNNWNNNWW
+L2=NNWNNNNWWWNWNWNWN
+L3=NWEENEEEENEWNEEWN
+L4=NNENNNWEENNWNENWN
+L5=NNNNNNNNNNNNNNNNN
+L6=NNENNNNEENNWNENWN
+L7=NNEWNNWEENNWNENWN
+L8=NWEENEENEEENNEENN
+L9=NWEENEEEENEWNEEWW
+L10=NWNNNNNENNEWNNEWN
+L11=NNENNNNEEENWNENWN
+L12=WWWWNWWNWWWNWWWNN
+L13=NNNNNNNNNNNWNNNWW
+L14=NWEENEEEENEWNEEWW
+L15=NNENNNNEEENWNENWW
+L16=WWWWNWWNWWWNWWWNW
+L17=WNNNNNNNWNNNWWWWN
+
+[Annotate]
+SortOrder=3
+SortLocation=0
+ReplaceSubparts=0
+MatchParameter1=Comment
+MatchStrictly1=1
+MatchParameter2=Library Reference
+MatchStrictly2=1
+PhysicalNamingFormat=$Component_$RoomName
+GlobalIndexSortOrder=3
+GlobalIndexSortLocation=0
+
+[PrjClassGen]
+CompClassManualEnabled=0
+CompClassManualRoomEnabled=0
+NetClassAutoBusEnabled=1
+NetClassAutoCompEnabled=0
+NetClassAutoNamedHarnessEnabled=0
+NetClassManualEnabled=1
+NetClassSeparateForBusSections=0
+
+[LibraryUpdateOptions]
+SelectedOnly=0
+UpdateVariants=1
+UpdateToLatestRevision=1
+PartTypes=0
+ComponentLibIdentifierKind0=Library Name And Type
+ComponentLibraryIdentifier0=BLE antenna chip.IntLib
+ComponentDesignItemID0=2450AT18B100E
+ComponentSymbolReference0=2450AT18B100E
+ComponentUpdate0=0
+ComponentIsDeviceSheet0=0
+ComponentLibIdentifierKind1=Library Name And Type
+ComponentLibraryIdentifier1=SamacSys.SchLib
+ComponentDesignItemID1=CY8C6347BZI-BLD54
+ComponentSymbolReference1=CY8C6347BZI-BLD54
+ComponentUpdate1=0
+ComponentIsDeviceSheet1=0
+ComponentLibIdentifierKind2=Library Name And Type
+ComponentLibraryIdentifier2=Samtech 10 pin FFC connector.IntLib
+ComponentDesignItemID2=ZF5S-10-01-X-WT
+ComponentSymbolReference2=ZF5S-10-01-X-WT
+ComponentUpdate2=1
+ComponentIsDeviceSheet2=0
+ComponentLibIdentifierKind3=Library Name Only
+ComponentLibraryIdentifier3=Altium Content Vault
+ComponentDesignItemID3=CMP-0244-00328-2
+ComponentSymbolReference3=aba04f4e281572ab958dbcc456c8333
+ComponentUpdate3=0
+ComponentIsDeviceSheet3=0
+ComponentLibIdentifierKind4=Library Name Only
+ComponentLibraryIdentifier4=Altium Content Vault
+ComponentDesignItemID4=CMP-06042-013213-1
+ComponentSymbolReference4=4cc4b267dca4c8e51f7102f422741d8
+ComponentUpdate4=0
+ComponentIsDeviceSheet4=0
+ComponentLibIdentifierKind5=Library Name Only
+ComponentLibraryIdentifier5=Altium Content Vault
+ComponentDesignItemID5=CMP-06042-014154-1
+ComponentSymbolReference5=4cc4b267dca4c8e51f7102f422741d8
+ComponentUpdate5=0
+ComponentIsDeviceSheet5=0
+ComponentLibIdentifierKind6=Library Name Only
+ComponentLibraryIdentifier6=Altium Content Vault
+ComponentDesignItemID6=CMP-06042-016317-1
+ComponentSymbolReference6=725321dda6339637d4d059423bc1c3c
+ComponentUpdate6=0
+ComponentIsDeviceSheet6=0
+ComponentLibIdentifierKind7=Library Name Only
+ComponentLibraryIdentifier7=Altium Content Vault
+ComponentDesignItemID7=CMP-0686-00363-3
+ComponentSymbolReference7=5f30dd21d616792df468990f7003faa
+ComponentUpdate7=0
+ComponentIsDeviceSheet7=0
+ComponentLibIdentifierKind8=Library Name Only
+ComponentLibraryIdentifier8=Altium Content Vault
+ComponentDesignItemID8=CMP-2000-05352-1
+ComponentSymbolReference8=CN-2P-M-R10
+ComponentUpdate8=0
+ComponentIsDeviceSheet8=0
+ComponentLibIdentifierKind9=Library Name Only
+ComponentLibraryIdentifier9=Altium Content Vault
+ComponentDesignItemID9=CMP-2000-05825-1
+ComponentSymbolReference9=CN-SD-8-2SW-2S
+ComponentUpdate9=0
+ComponentIsDeviceSheet9=0
+ComponentLibIdentifierKind10=Library Name Only
+ComponentLibraryIdentifier10=Altium Content Vault
+ComponentDesignItemID10=CMP-2000-05829-1
+ComponentSymbolReference10=USB-5-3SHLD
+ComponentUpdate10=0
+ComponentIsDeviceSheet10=0
+ComponentLibIdentifierKind11=Library Name Only
+ComponentLibraryIdentifier11=Altium Content Vault
+ComponentDesignItemID11=CMP-2001-03755-2
+ComponentSymbolReference11=1029c3af85768c4190bb7ad29bc67b5
+ComponentUpdate11=0
+ComponentIsDeviceSheet11=0
+ComponentLibIdentifierKind12=Library Name Only
+ComponentLibraryIdentifier12=Altium Content Vault
+ComponentDesignItemID12=CMP-2002-01154-4
+ComponentSymbolReference12=RES-2
+ComponentUpdate12=0
+ComponentIsDeviceSheet12=0
+ComponentLibIdentifierKind13=Library Name Only
+ComponentLibraryIdentifier13=Altium Content Vault
+ComponentDesignItemID13=CMP-2002-07353-1
+ComponentSymbolReference13=RES
+ComponentUpdate13=0
+ComponentIsDeviceSheet13=0
+ComponentLibIdentifierKind14=Library Name Only
+ComponentLibraryIdentifier14=Altium Content Vault
+ComponentDesignItemID14=CMP-2006-02459-1
+ComponentSymbolReference14=CAP
+ComponentUpdate14=0
+ComponentIsDeviceSheet14=0
+ComponentLibIdentifierKind15=Library Name Only
+ComponentLibraryIdentifier15=Altium Content Vault
+ComponentDesignItemID15=CMP-2006-02792-2
+ComponentSymbolReference15=02cd4be3c70576c341d710602a673aa
+ComponentUpdate15=0
+ComponentIsDeviceSheet15=0
+ComponentLibIdentifierKind16=Library Name Only
+ComponentLibraryIdentifier16=Altium Content Vault
+ComponentDesignItemID16=CMP-2006-02908-5
+ComponentSymbolReference16=CAP-NP-2
+ComponentUpdate16=0
+ComponentIsDeviceSheet16=0
+ComponentLibIdentifierKind17=Library Name Only
+ComponentLibraryIdentifier17=Altium Content Vault
+ComponentDesignItemID17=CMP-2006-03046-3
+ComponentSymbolReference17=b4654b650e69147ec39a6b967a45e02
+ComponentUpdate17=0
+ComponentIsDeviceSheet17=0
+ComponentLibIdentifierKind18=Library Name Only
+ComponentLibraryIdentifier18=Altium Content Vault
+ComponentDesignItemID18=CMP-2008-03813-2
+ComponentSymbolReference18=02cd4be3c70576c341d710602a673aa
+ComponentUpdate18=0
+ComponentIsDeviceSheet18=0
+ComponentLibIdentifierKind19=Library Name Only
+ComponentLibraryIdentifier19=Altium Content Vault
+ComponentDesignItemID19=CMP-2008-04549-2
+ComponentSymbolReference19=11868f565c42a9108669ba33697ecf6
+ComponentUpdate19=0
+ComponentIsDeviceSheet19=0
+ComponentLibIdentifierKind20=Library Name Only
+ComponentLibraryIdentifier20=Altium Content Vault
+ComponentDesignItemID20=CMP-2100-03641-2
+ComponentSymbolReference20=236180d848d6139a670b325ea6854c9
+ComponentUpdate20=0
+ComponentIsDeviceSheet20=0
+ComponentLibIdentifierKind21=Library Name Only
+ComponentLibraryIdentifier21=Altium Content Vault
+ComponentDesignItemID21=CMP-22017-000005-2
+ComponentSymbolReference21=8706943c75ba83719d021d2fdc84c58
+ComponentUpdate21=0
+ComponentIsDeviceSheet21=0
+FullReplace=1
+UpdateDesignatorLock=1
+UpdatePartIDLock=1
+PreserveParameterLocations=1
+PreserveParameterVisibility=1
+DoGraphics=1
+DoParameters=1
+DoModels=1
+AddParameters=0
+RemoveParameters=0
+AddModels=1
+RemoveModels=1
+UpdateCurrentModels=1
+ParameterName0=Accuracy
+ParameterUpdate0=1
+ParameterName1=Arrow Part Number
+ParameterUpdate1=1
+ParameterName2=Arrow Price/Stock
+ParameterUpdate2=1
+ParameterName3=Automotive
+ParameterUpdate3=1
+ParameterName4=Automotive Grade
+ParameterUpdate4=1
+ParameterName5=Availability
+ParameterUpdate5=1
+ParameterName6=Brand
+ParameterUpdate6=1
+ParameterName7=Capacitance
+ParameterUpdate7=1
+ParameterName8=Card Type
+ParameterUpdate8=1
+ParameterName9=Case Code (Imperial)
+ParameterUpdate9=1
+ParameterName10=Case Code (Metric)
+ParameterUpdate10=1
+ParameterName11=Case/Package
+ParameterUpdate11=1
+ParameterName12=Case\/Package
+ParameterUpdate12=1
+ParameterName13=Category
+ParameterUpdate13=1
+ParameterName14=Check_prices
+ParameterUpdate14=1
+ParameterName15=Color
+ParameterUpdate15=1
+ParameterName16=Comment
+ParameterUpdate16=1
+ParameterName17=Component Kind
+ParameterUpdate17=1
+ParameterName18=ComponentLink1Description
+ParameterUpdate18=1
+ParameterName19=ComponentLink1URL
+ParameterUpdate19=1
+ParameterName20=ComponentLink2Description
+ParameterUpdate20=1
+ParameterName21=ComponentLink2URL
+ParameterUpdate21=1
+ParameterName22=Composition
+ParameterUpdate22=1
+ParameterName23=Connector Type
+ParameterUpdate23=1
+ParameterName24=Contact Finish
+ParameterUpdate24=1
+ParameterName25=Contact Finish Thickness
+ParameterUpdate25=1
+ParameterName26=Contact Material
+ParameterUpdate26=1
+ParameterName27=Contact Mating Length
+ParameterUpdate27=1
+ParameterName28=Contact Plating
+ParameterUpdate28=1
+ParameterName29=Contact Type
+ParameterUpdate29=1
+ParameterName30=Core Material
+ParameterUpdate30=1
+ParameterName31=CREATED
+ParameterUpdate31=1
+ParameterName32=Current
+ParameterUpdate32=1
+ParameterName33=Current Rating
+ParameterUpdate33=1
+ParameterName34=Datasheet Link
+ParameterUpdate34=1
+ParameterName35=Datasheet URL
+ParameterUpdate35=1
+ParameterName36=Datasheet Version
+ParameterUpdate36=1
+ParameterName37=DatasheetVersion
+ParameterUpdate37=1
+ParameterName38=DC Current
+ParameterUpdate38=1
+ParameterName39=DC Resistance (DCR)
+ParameterUpdate39=1
+ParameterName40=Depth
+ParameterUpdate40=1
+ParameterName41=Description
+ParameterUpdate41=1
+ParameterName42=Device Class L1
+ParameterUpdate42=1
+ParameterName43=Device Class L2
+ParameterUpdate43=1
+ParameterName44=Device Class L3
+ParameterUpdate44=1
+ParameterName45=Dielectric
+ParameterUpdate45=1
+ParameterName46=Digikey Description
+ParameterUpdate46=1
+ParameterName47=Dominant Wavelength
+ParameterUpdate47=1
+ParameterName48=Dropout Voltage
+ParameterUpdate48=1
+ParameterName49=Factory Pack Quantity
+ParameterUpdate49=1
+ParameterName50=Family
+ParameterUpdate50=1
+ParameterName51=Fastening Type
+ParameterUpdate51=1
+ParameterName52=Features
+ParameterUpdate52=1
+ParameterName53=Flammability Rating
+ParameterUpdate53=1
+ParameterName54=Forward Current
+ParameterUpdate54=1
+ParameterName55=Forward Voltage
+ParameterUpdate55=1
+ParameterName56=Gender
+ParameterUpdate56=1
+ParameterName57=Height
+ParameterUpdate57=1
+ParameterName58=Height - Seated (Max)
+ParameterUpdate58=1
+ParameterName59=Housing Material
+ParameterUpdate59=1
+ParameterName60=Illumination Color
+ParameterUpdate60=1
+ParameterName61=Impedance
+ParameterUpdate61=1
+ParameterName62=Inductance
+ParameterUpdate62=1
+ParameterName63=Inductance Tolerance
+ParameterUpdate63=1
+ParameterName64=Input Bias Current
+ParameterUpdate64=1
+ParameterName65=Insertion - Extraction Style
+ParameterUpdate65=1
+ParameterName66=Ipc Land Pattern Name
+ParameterUpdate66=1
+ParameterName67=Lead Free
+ParameterUpdate67=1
+ParameterName68=Lead Pitch
+ParameterUpdate68=1
+ParameterName69=Length
+ParameterUpdate69=1
+ParameterName70=Lens Color
+ParameterUpdate70=1
+ParameterName71=Lens Style
+ParameterUpdate71=1
+ParameterName72=Lens Transparency
+ParameterUpdate72=1
+ParameterName73=Library Reference
+ParameterUpdate73=1
+ParameterName74=Luminous Intensity
+ParameterUpdate74=1
+ParameterName75=Manufacturer
+ParameterUpdate75=1
+ParameterName76=Manufacturer Part Number
+ParameterUpdate76=1
+ParameterName77=Manufacturer URL
+ParameterUpdate77=1
+ParameterName78=Manufacturer_Name
+ParameterUpdate78=1
+ParameterName79=Manufacturer_Part_Number
+ParameterUpdate79=1
+ParameterName80=Material
+ParameterUpdate80=1
+ParameterName81=Mating Cycles
+ParameterUpdate81=1
+ParameterName82=Max Current Rating
+ParameterUpdate82=1
+ParameterName83=Max DC Current
+ParameterUpdate83=1
+ParameterName84=Max Input Voltage
+ParameterUpdate84=1
+ParameterName85=Max Operating Temperature
+ParameterUpdate85=1
+ParameterName86=Max Output Current
+ParameterUpdate86=1
+ParameterName87=Max Power Dissipation
+ParameterUpdate87=1
+ParameterName88=MF
+ParameterUpdate88=1
+ParameterName89=Military Standard
+ParameterUpdate89=1
+ParameterName90=Min Current Limit
+ParameterUpdate90=1
+ParameterName91=Min Input Voltage
+ParameterUpdate91=1
+ParameterName92=Min Operating Temperature
+ParameterUpdate92=1
+ParameterName93=Min Output Voltage
+ParameterUpdate93=1
+ParameterName94=MODIFIED
+ParameterUpdate94=1
+ParameterName95=Mount
+ParameterUpdate95=1
+ParameterName96=Mounting Angle
+ParameterUpdate96=1
+ParameterName97=Mounting Style
+ParameterUpdate97=1
+ParameterName98=Mounting Technology
+ParameterUpdate98=1
+ParameterName99=Mounting Type
+ParameterUpdate99=1
+ParameterName100=Mouser Description
+ParameterUpdate100=1
+ParameterName101=Mouser Part Number
+ParameterUpdate101=1
+ParameterName102=Mouser Price/Stock
+ParameterUpdate102=1
+ParameterName103=MP
+ParameterUpdate103=1
+ParameterName104=Number of Circuits
+ParameterUpdate104=1
+ParameterName105=Number of Contacts
+ParameterUpdate105=1
+ParameterName106=Number of Elements
+ParameterUpdate106=1
+ParameterName107=Number of LEDs
+ParameterUpdate107=1
+ParameterName108=Number of Lines
+ParameterUpdate108=1
+ParameterName109=Number of Outputs
+ParameterUpdate109=1
+ParameterName110=Number of Pins
+ParameterUpdate110=1
+ParameterName111=Number of Ports
+ParameterUpdate111=1
+ParameterName112=Number of Positions
+ParameterUpdate112=1
+ParameterName113=Number of Positions Loaded
+ParameterUpdate113=1
+ParameterName114=Number of Regulators
+ParameterUpdate114=1
+ParameterName115=Number of Rows
+ParameterUpdate115=1
+ParameterName116=Number of Terminals
+ParameterUpdate116=1
+ParameterName117=Number of Terminations
+ParameterUpdate117=1
+ParameterName118=Octopart
+ParameterUpdate118=1
+ParameterName119=Orientation
+ParameterUpdate119=1
+ParameterName120=Output Current
+ParameterUpdate120=1
+ParameterName121=Output Type
+ParameterUpdate121=1
+ParameterName122=Output Voltage
+ParameterUpdate122=1
+ParameterName123=Output Voltage Accuracy
+ParameterUpdate123=1
+ParameterName124=Package
+ParameterUpdate124=1
+ParameterName125=Package Description
+ParameterUpdate125=1
+ParameterName126=Package Quantity
+ParameterUpdate126=1
+ParameterName127=Package Reference
+ParameterUpdate127=1
+ParameterName128=Package URL
+ParameterUpdate128=1
+ParameterName129=Package Version
+ParameterUpdate129=1
+ParameterName130=PackageDescription
+ParameterUpdate130=1
+ParameterName131=PackageReference
+ParameterUpdate131=1
+ParameterName132=Packaging
+ParameterUpdate132=1
+ParameterName133=Part Number
+ParameterUpdate133=1
+ParameterName134=PartNumber
+ParameterUpdate134=1
+ParameterName135=PCB DECAL
+ParameterUpdate135=1
+ParameterName136=Pins
+ParameterUpdate136=1
+ParameterName137=Pitch
+ParameterUpdate137=1
+ParameterName138=Polarity
+ParameterUpdate138=1
+ParameterName139=Power Dissipation
+ParameterUpdate139=1
+ParameterName140=Power Rating
+ParameterUpdate140=1
+ParameterName141=Price
+ParameterUpdate141=1
+ParameterName142=Product
+ParameterUpdate142=1
+ParameterName143=Product Category
+ParameterUpdate143=1
+ParameterName144=Purchase-URL
+ParameterUpdate144=1
+ParameterName145=Q Factor
+ParameterUpdate145=1
+ParameterName146=Quiescent Current
+ParameterUpdate146=1
+ParameterName147=Radiation Hardening
+ParameterUpdate147=1
+ParameterName148=REACH SVHC
+ParameterUpdate148=1
+ParameterName149=Resistance
+ParameterUpdate149=1
+ParameterName150=Resistor Type
+ParameterUpdate150=1
+ParameterName151=Reverse Voltage
+ParameterUpdate151=1
+ParameterName152=RoHS
+ParameterUpdate152=1
+ParameterName153=RoHS Compliant
+ParameterUpdate153=1
+ParameterName154=RoHSCompliant
+ParameterUpdate154=1
+ParameterName155=Row Spacing
+ParameterUpdate155=1
+ParameterName156=Self Resonant Frequency
+ParameterUpdate156=1
+ParameterName157=Series
+ParameterUpdate157=1
+ParameterName158=Shielding
+ParameterUpdate158=1
+ParameterName159=SnapEDA_Link
+ParameterUpdate159=1
+ParameterName160=Standard
+ParameterUpdate160=1
+ParameterName161=Standoff Height
+ParameterUpdate161=1
+ParameterName162=Temperature
+ParameterUpdate162=1
+ParameterName163=Temperature Characteristic
+ParameterUpdate163=1
+ParameterName164=Temperature Coefficient
+ParameterUpdate164=1
+ParameterName165=Temperature Range High
+ParameterUpdate165=1
+ParameterName166=Temperature Range Low
+ParameterUpdate166=1
+ParameterName167=Termination
+ParameterUpdate167=1
+ParameterName168=Termination Style
+ParameterUpdate168=1
+ParameterName169=Test Current
+ParameterUpdate169=1
+ParameterName170=Test Frequency
+ParameterUpdate170=1
+ParameterName171=Thickness
+ParameterUpdate171=1
+ParameterName172=Tolerance
+ParameterUpdate172=1
+ParameterName173=Value
+ParameterUpdate173=1
+ParameterName174=Viewing Angle
+ParameterUpdate174=1
+ParameterName175=Voltage
+ParameterUpdate175=1
+ParameterName176=Voltage - Max
+ParameterUpdate176=1
+ParameterName177=Voltage Rating
+ParameterUpdate177=1
+ParameterName178=Voltage Rating (DC)
+ParameterUpdate178=1
+ParameterName179=Wavelength
+ParameterUpdate179=1
+ParameterName180=Weight
+ParameterUpdate180=1
+ParameterName181=Width
+ParameterUpdate181=1
+ParameterName182=Working Voltage
+ParameterUpdate182=1
+ModelTypeGroup0=PCBLIB
+ModelTypeUpdate0=1
+ModelType0=PCBLIB
+ModelName0=BGA124C65P13X13_900X900X100
+ModelUpdate0=1
+ModelType1=PCBLIB
+ModelName1=BGAS124C65P13X13_900X900X100
+ModelUpdate1=1
+ModelType2=PCBLIB
+ModelName2=CAPC1608X90X35LL10T15
+ModelUpdate2=1
+ModelType3=PCBLIB
+ModelName3=CAPC1608X90X35ML10T15
+ModelUpdate3=1
+ModelType4=PCBLIB
+ModelName4=CAPC1608X90X35NL10T15
+ModelUpdate4=1
+ModelType5=PCBLIB
+ModelName5=FP-BLM18-0_15-t0_8-IPC_A
+ModelUpdate5=1
+ModelType6=PCBLIB
+ModelName6=FP-BLM18-0_15-t0_8-IPC_B
+ModelUpdate6=1
+ModelType7=PCBLIB
+ModelName7=FP-BLM18-0_15-t0_8-IPC_C
+ModelUpdate7=1
+ModelType8=PCBLIB
+ModelName8=FP-BLM18-0_15-t0_8-MFG
+ModelUpdate8=1
+ModelType9=PCBLIB
+ModelName9=FP-C0603C-CF-IPC_A
+ModelUpdate9=1
+ModelType10=PCBLIB
+ModelName10=FP-C0603C-CF-IPC_B
+ModelUpdate10=1
+ModelType11=PCBLIB
+ModelName11=FP-C0603C-CF-IPC_C
+ModelUpdate11=1
+ModelType12=PCBLIB
+ModelName12=FP-C0603C-CF-MFG
+ModelUpdate12=1
+ModelType13=PCBLIB
+ModelName13=FP-CRCW0805-e3-IPC_A
+ModelUpdate13=1
+ModelType14=PCBLIB
+ModelName14=FP-CRCW0805-e3-IPC_B
+ModelUpdate14=1
+ModelType15=PCBLIB
+ModelName15=FP-CRCW0805-e3-IPC_C
+ModelUpdate15=1
+ModelType16=PCBLIB
+ModelName16=FP-CRCW0805-e3-MFG
+ModelUpdate16=1
+ModelType17=PCBLIB
+ModelName17=FP-GJM155-0_05-IPC_A
+ModelUpdate17=1
+ModelType18=PCBLIB
+ModelName18=FP-GJM155-0_05-IPC_B
+ModelUpdate18=1
+ModelType19=PCBLIB
+ModelName19=FP-GJM155-0_05-IPC_C
+ModelUpdate19=1
+ModelType20=PCBLIB
+ModelName20=FP-GJM155-0_05-MFG
+ModelUpdate20=1
+ModelType21=PCBLIB
+ModelName21=FP-GRM155-0_1-IPC_A
+ModelUpdate21=1
+ModelType22=PCBLIB
+ModelName22=FP-GRM155-0_1-IPC_B
+ModelUpdate22=1
+ModelType23=PCBLIB
+ModelName23=FP-GRM155-0_1-IPC_C
+ModelUpdate23=1
+ModelType24=PCBLIB
+ModelName24=FP-GRM155-0_1-MFG
+ModelUpdate24=1
+ModelType25=PCBLIB
+ModelName25=FP-GRM15-IPC_A
+ModelUpdate25=1
+ModelType26=PCBLIB
+ModelName26=FP-GRM15-IPC_B
+ModelUpdate26=1
+ModelType27=PCBLIB
+ModelName27=FP-GRM15-IPC_C
+ModelUpdate27=1
+ModelType28=PCBLIB
+ModelName28=FP-GRM15-MFG
+ModelUpdate28=1
+ModelType29=PCBLIB
+ModelName29=FP-GRM188-0_1-e0_2_0_55-IPC_A
+ModelUpdate29=1
+ModelType30=PCBLIB
+ModelName30=FP-GRM188-0_1-e0_2_0_55-IPC_B
+ModelUpdate30=1
+ModelType31=PCBLIB
+ModelName31=FP-GRM188-0_1-e0_2_0_55-IPC_C
+ModelUpdate31=1
+ModelType32=PCBLIB
+ModelName32=FP-GRM188-0_1-e0_2_0_55-MFG
+ModelUpdate32=1
+ModelType33=PCBLIB
+ModelName33=FP-LQM21PH_G0-IPC_A
+ModelUpdate33=1
+ModelType34=PCBLIB
+ModelName34=FP-LQM21PH_G0-IPC_B
+ModelUpdate34=1
+ModelType35=PCBLIB
+ModelName35=FP-LQM21PH_G0-IPC_C
+ModelUpdate35=1
+ModelType36=PCBLIB
+ModelName36=FP-LQM21PH_G0-MFG
+ModelUpdate36=1
+ModelType37=PCBLIB
+ModelName37=FP-LQP03TG_02-IPC_A
+ModelUpdate37=1
+ModelType38=PCBLIB
+ModelName38=FP-LQP03TG_02-IPC_B
+ModelUpdate38=1
+ModelType39=PCBLIB
+ModelName39=FP-LQP03TG_02-IPC_C
+ModelUpdate39=1
+ModelType40=PCBLIB
+ModelName40=FP-LQP03TG_02-MFG
+ModelUpdate40=1
+ModelType41=PCBLIB
+ModelName41=FP-LTST-C190GKT-MFG
+ModelUpdate41=1
+ModelType42=PCBLIB
+ModelName42=FP-SOT23-5L-7049676-IPC_A
+ModelUpdate42=1
+ModelType43=PCBLIB
+ModelName43=FP-SOT23-5L-7049676-IPC_B
+ModelUpdate43=1
+ModelType44=PCBLIB
+ModelName44=FP-SOT23-5L-7049676-IPC_C
+ModelUpdate44=1
+ModelType45=PCBLIB
+ModelName45=FP-SOT23-5L-7049676-MFG
+ModelUpdate45=1
+ModelType46=PCBLIB
+ModelName46=MOLX-104031-0811_V
+ModelUpdate46=1
+ModelType47=PCBLIB
+ModelName47=MOLX-105133-0001_V
+ModelUpdate47=1
+ModelType48=PCBLIB
+ModelName48=RESC1005X40X25LL05T05
+ModelUpdate48=1
+ModelType49=PCBLIB
+ModelName49=RESC1005X40X25LL05T10
+ModelUpdate49=1
+ModelType50=PCBLIB
+ModelName50=RESC1005X40X25ML05T05
+ModelUpdate50=1
+ModelType51=PCBLIB
+ModelName51=RESC1005X40X25ML05T10
+ModelUpdate51=1
+ModelType52=PCBLIB
+ModelName52=RESC1005X40X25NL05T05
+ModelUpdate52=1
+ModelType53=PCBLIB
+ModelName53=RESC1005X40X25NL05T10
+ModelUpdate53=1
+ModelType54=PCBLIB
+ModelName54=SMTC-FTSH-105-01-L-DV-K_V
+ModelUpdate54=1
+ModelType55=PCBLIB
+ModelName55=XDCR_2450AT18B100E
+ModelUpdate55=1
+ModelType56=PCBLIB
+ModelName56=ZF5S-10-01-X-WT
+ModelUpdate56=1
+
+[DatabaseUpdateOptions]
+SelectedOnly=0
+UpdateVariants=1
+UpdateToLatestRevision=1
+PartTypes=0
+
+[Comparison Options]
+ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0
+ComparisonOptions1=Kind=Net Class|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0
+ComparisonOptions2=Kind=Component Class|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0
+ComparisonOptions3=Kind=Rule|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0
+ComparisonOptions4=Kind=Differential Pair|MinPercent=50|MinMatch=1|ShowMatch=0|UseName=0|InclAllRules=0
+ComparisonOptions5=Kind=Structure Class|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0
+
+[SmartPDF]
+PageOptions=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+Configuration_Name1=OutputConfigurationParameter1
+Configuration_Item1=DesignatorDisplayMode=Physical|PrintArea=DesignExtent|PrintAreaLowerLeftCornerX=0|PrintAreaLowerLeftCornerY=0|PrintAreaUpperRightCornerX=0|PrintAreaUpperRightCornerY=0|Record=PcbPrintView|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name2=OutputConfigurationParameter2
+Configuration_Item2=IncludeBoardCutouts=False|IncludeBottomLayerComponents=True|IncludeMultiLayerComponents=True|IncludeTopLayerComponents=True|IncludeViewports=True|Index=0|Mirror=False|Name=Multilayer Composite Print|PadNumberFontSize=14|Record=PcbPrintOut|ShowHoles=False|ShowPadNets=False|ShowPadNumbers=False|SubstituteFonts=False|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name3=OutputConfigurationParameter3
+Configuration_Item3=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=TopOverlay|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name4=OutputConfigurationParameter4
+Configuration_Item4=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=TopLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name5=OutputConfigurationParameter5
+Configuration_Item5=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=MidLayer1|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name6=OutputConfigurationParameter6
+Configuration_Item6=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=MidLayer2|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name7=OutputConfigurationParameter7
+Configuration_Item7=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=BottomLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name8=OutputConfigurationParameter8
+Configuration_Item8=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=MultiLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name9=OutputConfigurationParameter9
+Configuration_Item9=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=BottomOverlay|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name10=OutputConfigurationParameter10
+Configuration_Item10=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical1|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name11=OutputConfigurationParameter11
+Configuration_Item11=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical2|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name12=OutputConfigurationParameter12
+Configuration_Item12=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical3|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name13=OutputConfigurationParameter13
+Configuration_Item13=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical4|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name14=OutputConfigurationParameter14
+Configuration_Item14=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical5|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name15=OutputConfigurationParameter15
+Configuration_Item15=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical6|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name16=OutputConfigurationParameter16
+Configuration_Item16=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical7|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name17=OutputConfigurationParameter17
+Configuration_Item17=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical8|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name18=OutputConfigurationParameter18
+Configuration_Item18=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical9|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name19=OutputConfigurationParameter19
+Configuration_Item19=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical13|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+Configuration_Name20=OutputConfigurationParameter20
+Configuration_Item20=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical15|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\harsh\OneDrive\Desktop\GitHub Projects\Wearable-Cardiac-Monitor-JY16-Capstone\Capstone Circuit JY16\Cypress PSoC6 Embedded Bluetooth Solution\PSoC6 Cardiac Arrest PCB.PcbDoc
+

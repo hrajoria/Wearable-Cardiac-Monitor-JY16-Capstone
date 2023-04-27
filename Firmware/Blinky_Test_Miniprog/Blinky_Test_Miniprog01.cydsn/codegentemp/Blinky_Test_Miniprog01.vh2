@@ -1,0 +1,77 @@
+--
+--	Conversion of Blinky_Test_Miniprog01.v to vh2:
+--
+--	Cypress Semiconductor - WARP Version 6.3 IR 41
+--	Sun Apr 23 14:17:29 2023
+--
+
+USE cypress.cypress.all;
+USE cypress.rtlpkg.all;
+ENTITY top_RTL IS
+ATTRIBUTE part_name of top_RTL:TYPE IS "cpsoc3";
+END top_RTL;
+--------------------------------------------------------
+ARCHITECTURE R_T_L OF top_RTL IS
+SIGNAL one : bit;
+SIGNAL zero : bit;
+SIGNAL tmpFB_0__Pin_GreenLED_net_0 : bit;
+SIGNAL tmpIO_0__Pin_GreenLED_net_0 : bit;
+TERMINAL Net_436 : bit;
+TERMINAL tmpSIOVREF__Pin_GreenLED_net_0 : bit;
+TERMINAL Net_727 : bit;
+TERMINAL Net_251 : bit;
+BEGIN
+
+one <=  ('1') ;
+
+zero <=  ('0') ;
+
+Pin_GreenLED:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"04354f71-dc6f-4ff2-be96-0f7dffb1fea7",
+		drive_mode=>"2",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"O",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"1",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__Pin_GreenLED_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Pin_GreenLED_net_0),
+		annotation=>Net_436,
+		siovref=>(tmpSIOVREF__Pin_GreenLED_net_0));
+LED:cy_annotation_universal_v1_0
+	GENERIC MAP(comp_name=>"LED_v1_0",
+		port_names=>"A, K",
+		width=>2)
+	PORT MAP(connect=>(Net_727, Net_251));
+R_2:cy_annotation_universal_v1_0
+	GENERIC MAP(comp_name=>"Resistor_v1_0",
+		port_names=>"T1, T2",
+		width=>2)
+	PORT MAP(connect=>(Net_436, Net_251));
+P6_VDD:cy_annotation_universal_v1_0
+	GENERIC MAP(comp_name=>"Power_v1_0",
+		port_names=>"T1",
+		width=>1)
+	PORT MAP(connect=>Net_727);
+
+END R_T_L;

@@ -1,0 +1,6 @@
+C:\Users\Nusair Islam\Desktop\PSOC\Master\Master.cydsn\Master.cyprj|dac499a9-83b0-49da-a7e5-e301e136d1f6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|e285601a-43cc-465f-962e-0118ae93f407
+C:\Users\Nusair Islam\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|f4de07a1-e621-4dea-b64b-72d371ba5f51
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|c1dd3f6e-47a7-4ced-abbc-3ac6fd5bb7d9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|2cf3f6a3-cab5-4b02-886b-3da7401b960e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|1996caaa-8c28-416e-a872-02c96ffc2d35

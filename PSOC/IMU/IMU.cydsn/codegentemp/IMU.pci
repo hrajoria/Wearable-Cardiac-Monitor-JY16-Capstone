@@ -1,0 +1,15 @@
+# IMU
+# 2023-03-21 19:59:27Z
+
+dont_use_location p4usbcell -1 -1 0
+dont_use_location USB -1 -1 0
+dont_use_location usbcell -1 -1 0
+set_location "ClockGenBlock" CLK_GEN -1 -1 0
+set_io "CY_CPUSS_SWJ_SWCLK_TCLK(0)" iocell 6 7
+set_io "CY_CPUSS_SWJ_SWDIO_TMS(0)" iocell 6 6
+set_io "\UART:tx(0)\" iocell 5 1
+set_io "\UART:rx(0)\" iocell 5 0
+set_io "\mSPI:sclk_m(0)\" iocell 10 2
+set_io "\mSPI:ss0_m(0)\" iocell 10 3
+set_io "\mSPI:mosi_m(0)\" iocell 10 0
+set_io "\mSPI:miso_m(0)\" iocell 10 1

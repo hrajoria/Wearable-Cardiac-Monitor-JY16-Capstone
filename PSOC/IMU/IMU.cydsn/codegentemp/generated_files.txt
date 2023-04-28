@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="us-ascii"?>
+
+<fileSet version="1" anchorPath="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cyfitter_cfg.h" value="HEADER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cyfitter_sysint_cfg.h" value="HEADER;;;;;Pins and Interrupts" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cyfitter_sysint_cfg.c" value="SOURCE_C;CortexM0p,CortexM4;;;;Pins and Interrupts" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cyfitter_cfg.c" value="SOURCE_C;CortexM0p;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cymetadata.c" value="SOURCE_C;CortexM0p,CortexM4;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cydevice_trm.h" value="HEADER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cydevicegnu_trm.inc" value="HEADER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cydevicerv_trm.inc" value="HEADER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cydeviceiar_trm.inc" value="HEADER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cyfitter_gpio.h" value="HEADER;;;;;Pins and Interrupts" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cyfitter_sysint.h" value="HEADER;;;;;Pins and Interrupts" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\UART.c" value="SOURCE_C;CortexM0p,CortexM4;;;;UART" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\UART.h" value="HEADER;;;;;UART" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\mSPI.c" value="SOURCE_C;CortexM0p,CortexM4;;;;mSPI" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\mSPI.h" value="HEADER;;;;;mSPI" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\UART_SCBCLK.h" value="HEADER;;;;;UART_SCBCLK" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\mSPI_SCBCLK.h" value="HEADER;;;;;mSPI_SCBCLK" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cycodeshareimport.ld" value="OTHER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cycodeshareexport.ld" value="OTHER;;;;;" />
+  <file name="C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\codegentemp\cycodeshareimport.scat" value="OTHER;;;;;" />
+</fileSet>

@@ -1,0 +1,6 @@
+C:\Users\Nusair Islam\Desktop\PSOC\IMU\IMU.cydsn\IMU.cyprj|5452c848-9b17-442b-963e-9bc835454228
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|52daa975-d135-4f43-a045-6a4e99e1f87c
+C:\Users\Nusair Islam\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|5d030fb2-cb7e-4b27-a9fa-dc11383e0c14
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|4a4f6f97-5d8f-4d62-ad97-4c3bff970f5e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|2dfa8305-6d76-44da-9dd4-3eff2b63b2b9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|db85754e-3742-4bd1-9acc-b6640aa6f09e

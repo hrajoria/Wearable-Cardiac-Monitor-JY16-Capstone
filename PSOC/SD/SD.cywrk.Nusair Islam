@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="SD\SD\CM4 (Core 1)\Source Files\main_cm4.c">
+<ExpandedNodeIds>
+<v>SD</v>
+<v>SD\SD</v>
+<v>SD\SD\TopDesign</v>
+<v>SD\SD\SD.cydwr</v>
+<v>SD\SD\SD.cydwr\Pins</v>
+<v>SD\SD\SD.cydwr\Analog</v>
+<v>SD\SD\SD.cydwr\DMA</v>
+<v>SD\SD\SD.cydwr\Clocks</v>
+<v>SD\SD\SD.cydwr\Interrupts</v>
+<v>SD\SD\SD.cydwr\System</v>
+<v>SD\SD\SD.cydwr\Directives</v>
+<v>SD\SD\CM0p (Core 0)</v>
+<v>SD\SD\CM0p (Core 0)\ARM GCC Generic</v>
+<v>SD\SD\CM0p (Core 0)\ARM GCC Generic\cy8c6xx7_cm0plus.ld</v>
+<v>SD\SD\CM0p (Core 0)\ARM IAR Generic</v>
+<v>SD\SD\CM0p (Core 0)\ARM IAR Generic\cy8c6xx7_cm0plus.icf</v>
+<v>SD\SD\CM0p (Core 0)\ARM MDK Generic</v>
+<v>SD\SD\CM0p (Core 0)\ARM MDK Generic\cy8c6xx7_cm0plus.scat</v>
+<v>SD\SD\CM0p (Core 0)\Header Files</v>
+<v>SD\SD\CM0p (Core 0)\Source Files</v>
+<v>SD\SD\CM0p (Core 0)\Source Files\ARM GCC Generic</v>
+<v>SD\SD\CM0p (Core 0)\Source Files\ARM GCC Generic\startup_psoc6_01_cm0plus.S</v>
+<v>SD\SD\CM0p (Core 0)\Source Files\ARM IAR Generic</v>
+<v>SD\SD\CM0p (Core 0)\Source Files\ARM IAR Generic\startup_psoc6_01_cm0plus.s</v>
+<v>SD\SD\CM0p (Core 0)\Source Files\ARM MDK Generic</v>
+<v>SD\SD\CM0p (Core 0)\Source Files\ARM MDK Generic\startup_psoc6_01_cm0plus.s</v>
+<v>SD\SD\CM0p (Core 0)\Source Files\main_cm0p.c</v>
+<v>SD\SD\CM0p (Core 0)\Source Files\system_psoc6_cm0plus.c</v>
+<v>SD\SD\CM4 (Core 1)</v>
+<v>SD\SD\CM4 (Core 1)\ARM GCC Generic</v>
+<v>SD\SD\CM4 (Core 1)\ARM GCC Generic\cy8c6xx7_cm4_dual.ld</v>
+<v>SD\SD\CM4 (Core 1)\ARM IAR Generic</v>
+<v>SD\SD\CM4 (Core 1)\ARM IAR Generic\cy8c6xx7_cm4_dual.icf</v>
+<v>SD\SD\CM4 (Core 1)\ARM MDK Generic</v>
+<v>SD\SD\CM4 (Core 1)\ARM MDK Generic\cy8c6xx7_cm4_dual.scat</v>
+<v>SD\SD\CM4 (Core 1)\Header Files</v>
+<v>SD\SD\CM4 (Core 1)\Header Files\diskio.h</v>
+<v>SD\SD\CM4 (Core 1)\Header Files\ff.h</v>
+<v>SD\SD\CM4 (Core 1)\Header Files\ffconf.h</v>
+<v>SD\SD\CM4 (Core 1)\Header Files\integer.h</v>
+<v>SD\SD\CM4 (Core 1)\Source Files</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM GCC Generic</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM GCC Generic\startup_psoc6_01_cm4.S</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM IAR Generic</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM IAR Generic\startup_psoc6_01_cm4.s</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM MDK Generic</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM MDK Generic\startup_psoc6_01_cm4.s</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\diskio.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ff.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ffsystem.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ffunicode.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\main_cm4.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\system_psoc6_cm4.c</v>
+<v>SD\SD\Shared Files</v>
+<v>SD\SD\Shared Files\cyapicallbacks.h</v>
+<v>SD\SD\Shared Files\system_psoc6.h</v>
+<v>SD\SD\Generated_Source</v>
+<v>SD\SD\Generated_Source\PSoC6</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>SD\SD\CM4 (Core 1)\Header Files\ffconf.h</v>
+<v>SD\SD\CM4 (Core 1)\Header Files\integer.h</v>
+<v>SD\SD\CM4 (Core 1)\Source Files</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM GCC Generic</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM GCC Generic\startup_psoc6_01_cm4.S</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM IAR Generic</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM IAR Generic\startup_psoc6_01_cm4.s</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM MDK Generic</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ARM MDK Generic\startup_psoc6_01_cm4.s</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\diskio.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ff.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ffsystem.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\ffunicode.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\main_cm4.c</v>
+<v>SD\SD\CM4 (Core 1)\Source Files\system_psoc6_cm4.c</v>
+<v>SD\SD\Shared Files</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>SD</v>
+<v>SD\SD</v>
+<v>SD\SD\TopDesign</v>
+<v>SD\SD\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>SD</v>
+<v>SD\SD</v>
+<v>SD\SD\TopDesign</v>
+<v>SD\SD\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>SD</v>
+<v>SD\SD</v>
+<v>SD\SD\CortexM0p</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_ezi2c.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_i2c.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_spi.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_uart.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysanalog.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysclk.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysint.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib_gcc.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syspm.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_systick.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_trigmux.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_wdt.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\main_cm0p.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\myUART.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\sdSPI.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm0plus.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm0plus.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\SD.elf</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\SD.hex</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\SD.map</v>
+<v>SD\SD\CortexM4</v>
+<v>SD\SD\CortexM4\ARM_GCC_541</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_ezi2c.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_i2c.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_spi.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_uart.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_sysanalog.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_sysclk.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_sysint.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_syslib.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_syslib_gcc.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_syspm.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_systick.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_trigmux.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_wdt.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\diskio.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\ff.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\ffsystem.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\ffunicode.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\main_cm4.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\myUART.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\sdSPI.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm4.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm4.lst</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\SD.elf</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\SD.hex</v>
+<v>SD\SD\CortexM4\ARM_GCC_541\Debug\SD.map</v>
+<v>SD\SD\SD.gpdsc</v>
+<v>SD\SD\SD.rpt</v>
+<v>SD\SD\SD_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>SD</v>
+<v>SD\SD</v>
+<v>SD\SD\CortexM0p</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
+<v>SD\SD\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>SD</v>
+<v>SD\SD</v>
+<v>SD\SD\PSoC 6 Architecture TRM</v>
+<v>SD\SD\PSoC 63 Family Datasheet</v>
+<v>SD\SD\Peripheral Driver Library</v>
+<v>SD\SD\System Reference Guides</v>
+<v>SD\SD\SCB_SPI_PDL_v2_0.pdf</v>
+<v>SD\SD\SCB_UART_PDL_v2_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>SD</v>
+<v>SD\SD</v>
+<v>SD\SD\PSoC 6 Architecture TRM</v>
+<v>SD\SD\PSoC 63 Family Datasheet</v>
+<v>SD\SD\Peripheral Driver Library</v>
+<v>SD\SD\System Reference Guides</v>
+<v>SD\SD\SCB_SPI_PDL_v2_0.pdf</v>
+<v>SD\SD\SCB_UART_PDL_v2_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\SD.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\SD.cydsn\SD.cydwr" />
+<name v=".\SD.cydsn\main_cm4.c" />
+<name v=".\SD.cydsn\Generated_Source\PSoC6\sdSPI.h" />
+<name v=".\SD.cydsn\main_cm0p.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1036, 343" SelectedTabbedMdiWindow="4c979917-7ab0-4149-97a1-9ad09e8c3de0"><DocumentWindow Key="C:\Users\Nusair Islam\Desktop\PSOC\SD\SD.cydsn\TopDesign\TopDesign.cysch" Guid="3e5c4615-97f1-4df8-aa60-d6f963917fb3" /><DocumentWindow Key="C:\Users\Nusair Islam\Desktop\PSOC\SD\SD.cydsn\SD.cydwr" Guid="5f15debe-be22-439f-973c-c4f49ef30960" /><DocumentWindow Key="C:\Users\Nusair Islam\Desktop\PSOC\SD\SD.cydsn\main_cm4.c" Guid="4c979917-7ab0-4149-97a1-9ad09e8c3de0" /><DocumentWindow Key="C:\Users\Nusair Islam\Desktop\PSOC\SD\SD.cydsn\Generated_Source\PSoC6\sdSPI.h" Guid="d5a2c693-3287-4117-a879-2807f109c92e" /><DocumentWindow Key="C:\Users\Nusair Islam\Desktop\PSOC\SD\SD.cydsn\main_cm0p.c" Guid="89292001-cbae-44ba-9043-d3ff277c6e99" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="abe126cc-7911-4b38-ad88-ea61b991b4b9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

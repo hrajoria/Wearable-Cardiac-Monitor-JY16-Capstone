@@ -1,0 +1,2059 @@
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.fpu fpv4-sp-d16
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 1
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.thumb
+  15              		.syntax unified
+  16              		.file	"diskio.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.section	.text.disk_status,"ax",%progbits
+  21              		.align	2
+  22              		.global	disk_status
+  23              		.thumb
+  24              		.thumb_func
+  25              		.type	disk_status, %function
+  26              	disk_status:
+  27              	.LFB0:
+  28              		.file 1 "diskio.c"
+   1:diskio.c      **** /*-----------------------------------------------------------------------*/
+   2:diskio.c      **** /* Low level disk I/O module skeleton for FatFs     (C)ChaN, 2016        */
+   3:diskio.c      **** /*-----------------------------------------------------------------------*/
+   4:diskio.c      **** /* If a working storage control module is available, it should be        */
+   5:diskio.c      **** /* attached to the FatFs via a glue function rather than modifying it.   */
+   6:diskio.c      **** /* This is an example of glue functions to attach various exsisting      */
+   7:diskio.c      **** /* storage control modules to the FatFs module with a defined API.       */
+   8:diskio.c      **** /*-----------------------------------------------------------------------*/
+   9:diskio.c      **** 
+  10:diskio.c      **** #include "diskio.h"		/* FatFs lower layer API */
+  11:diskio.c      **** 
+  12:diskio.c      **** /* Definitions of physical drive number for each drive */
+  13:diskio.c      **** #define DEV_RAM		0	/* Example: Map Ramdisk to physical drive 0 */
+  14:diskio.c      **** #define DEV_MMC		1	/* Example: Map MMC/SD card to physical drive 1 */
+  15:diskio.c      **** #define DEV_USB		2	/* Example: Map USB MSD to physical drive 2 */
+  16:diskio.c      **** 
+  17:diskio.c      **** 
+  18:diskio.c      **** /*-----------------------------------------------------------------------*/
+  19:diskio.c      **** /* Get Drive Status                                                      */
+  20:diskio.c      **** /*-----------------------------------------------------------------------*/
+  21:diskio.c      **** 
+  22:diskio.c      **** DSTATUS disk_status (
+  23:diskio.c      **** 	BYTE pdrv		/* Physical drive nmuber to identify the drive */
+  24:diskio.c      **** )
+  25:diskio.c      **** {
+  29              		.loc 1 25 0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 2
+
+
+  33              	.LVL0:
+  34 0000 08B5     		push	{r3, lr}
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  26:diskio.c      **** 	DSTATUS stat;
+  27:diskio.c      **** 	int result;
+  28:diskio.c      **** 
+  29:diskio.c      **** 	switch (pdrv) {
+  38              		.loc 1 29 0
+  39 0002 0128     		cmp	r0, #1
+  40 0004 06D0     		beq	.L3
+  41 0006 10B1     		cbz	r0, .L4
+  42 0008 0228     		cmp	r0, #2
+  43 000a 06D0     		beq	.L5
+  44 000c 07E0     		b	.L2
+  45              	.L4:
+  46              	.LBB2:
+  30:diskio.c      **** 	case DEV_RAM :
+  31:diskio.c      **** 		result = RAM_disk_status();
+  47              		.loc 1 31 0
+  48 000e FFF7FEFF 		bl	RAM_disk_status
+  49              	.LVL1:
+  32:diskio.c      **** 
+  33:diskio.c      **** 		// translate the reslut code here
+  34:diskio.c      **** 
+  35:diskio.c      **** 		return stat;
+  50              		.loc 1 35 0
+  51 0012 04E0     		b	.L2
+  52              	.LVL2:
+  53              	.L3:
+  36:diskio.c      **** 
+  37:diskio.c      **** 	case DEV_MMC :
+  38:diskio.c      **** 		result = MMC_disk_status();
+  54              		.loc 1 38 0
+  55 0014 FFF7FEFF 		bl	MMC_disk_status
+  56              	.LVL3:
+  39:diskio.c      **** 
+  40:diskio.c      **** 		// translate the reslut code here
+  41:diskio.c      **** 
+  42:diskio.c      **** 		return stat;
+  57              		.loc 1 42 0
+  58 0018 01E0     		b	.L2
+  59              	.LVL4:
+  60              	.L5:
+  43:diskio.c      **** 
+  44:diskio.c      **** 	case DEV_USB :
+  45:diskio.c      **** 		result = USB_disk_status();
+  61              		.loc 1 45 0
+  62 001a FFF7FEFF 		bl	USB_disk_status
+  63              	.LVL5:
+  64              	.L2:
+  65              	.LBE2:
+  46:diskio.c      **** 
+  47:diskio.c      **** 		// translate the reslut code here
+  48:diskio.c      **** 
+  49:diskio.c      **** 		return stat;
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 3
+
+
+  50:diskio.c      **** 	}
+  51:diskio.c      **** 	return STA_NOINIT;
+  52:diskio.c      **** }
+  66              		.loc 1 52 0
+  67 001e 0120     		movs	r0, #1
+  68 0020 08BD     		pop	{r3, pc}
+  69              		.cfi_endproc
+  70              	.LFE0:
+  71              		.size	disk_status, .-disk_status
+  72 0022 00BF     		.section	.text.disk_initialize,"ax",%progbits
+  73              		.align	2
+  74              		.global	disk_initialize
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	disk_initialize, %function
+  78              	disk_initialize:
+  79              	.LFB1:
+  53:diskio.c      **** 
+  54:diskio.c      **** 
+  55:diskio.c      **** 
+  56:diskio.c      **** /*-----------------------------------------------------------------------*/
+  57:diskio.c      **** /* Inidialize a Drive                                                    */
+  58:diskio.c      **** /*-----------------------------------------------------------------------*/
+  59:diskio.c      **** 
+  60:diskio.c      **** DSTATUS disk_initialize (
+  61:diskio.c      **** 	BYTE pdrv				/* Physical drive nmuber to identify the drive */
+  62:diskio.c      **** )
+  63:diskio.c      **** {
+  80              		.loc 1 63 0
+  81              		.cfi_startproc
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              	.LVL6:
+  85 0000 08B5     		push	{r3, lr}
+  86              		.cfi_def_cfa_offset 8
+  87              		.cfi_offset 3, -8
+  88              		.cfi_offset 14, -4
+  64:diskio.c      **** 	DSTATUS stat;
+  65:diskio.c      **** 	int result;
+  66:diskio.c      **** 
+  67:diskio.c      **** 	switch (pdrv) {
+  89              		.loc 1 67 0
+  90 0002 0128     		cmp	r0, #1
+  91 0004 06D0     		beq	.L9
+  92 0006 10B1     		cbz	r0, .L10
+  93 0008 0228     		cmp	r0, #2
+  94 000a 06D0     		beq	.L11
+  95 000c 07E0     		b	.L8
+  96              	.L10:
+  97              	.LBB3:
+  68:diskio.c      **** 	case DEV_RAM :
+  69:diskio.c      **** 		result = RAM_disk_initialize();
+  98              		.loc 1 69 0
+  99 000e FFF7FEFF 		bl	RAM_disk_initialize
+ 100              	.LVL7:
+  70:diskio.c      **** 
+  71:diskio.c      **** 		// translate the reslut code here
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 4
+
+
+  72:diskio.c      **** 
+  73:diskio.c      **** 		return stat;
+ 101              		.loc 1 73 0
+ 102 0012 04E0     		b	.L8
+ 103              	.LVL8:
+ 104              	.L9:
+  74:diskio.c      **** 
+  75:diskio.c      **** 	case DEV_MMC :
+  76:diskio.c      **** 		result = MMC_disk_initialize();
+ 105              		.loc 1 76 0
+ 106 0014 FFF7FEFF 		bl	MMC_disk_initialize
+ 107              	.LVL9:
+  77:diskio.c      **** 
+  78:diskio.c      **** 		// translate the reslut code here
+  79:diskio.c      **** 
+  80:diskio.c      **** 		return stat;
+ 108              		.loc 1 80 0
+ 109 0018 01E0     		b	.L8
+ 110              	.LVL10:
+ 111              	.L11:
+  81:diskio.c      **** 
+  82:diskio.c      **** 	case DEV_USB :
+  83:diskio.c      **** 		result = USB_disk_initialize();
+ 112              		.loc 1 83 0
+ 113 001a FFF7FEFF 		bl	USB_disk_initialize
+ 114              	.LVL11:
+ 115              	.L8:
+ 116              	.LBE3:
+  84:diskio.c      **** 
+  85:diskio.c      **** 		// translate the reslut code here
+  86:diskio.c      **** 
+  87:diskio.c      **** 		return stat;
+  88:diskio.c      **** 	}
+  89:diskio.c      **** 	return STA_NOINIT;
+  90:diskio.c      **** }
+ 117              		.loc 1 90 0
+ 118 001e 0120     		movs	r0, #1
+ 119 0020 08BD     		pop	{r3, pc}
+ 120              		.cfi_endproc
+ 121              	.LFE1:
+ 122              		.size	disk_initialize, .-disk_initialize
+ 123 0022 00BF     		.section	.text.disk_read,"ax",%progbits
+ 124              		.align	2
+ 125              		.global	disk_read
+ 126              		.thumb
+ 127              		.thumb_func
+ 128              		.type	disk_read, %function
+ 129              	disk_read:
+ 130              	.LFB2:
+  91:diskio.c      **** 
+  92:diskio.c      **** 
+  93:diskio.c      **** 
+  94:diskio.c      **** /*-----------------------------------------------------------------------*/
+  95:diskio.c      **** /* Read Sector(s)                                                        */
+  96:diskio.c      **** /*-----------------------------------------------------------------------*/
+  97:diskio.c      **** 
+  98:diskio.c      **** DRESULT disk_read (
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 5
+
+
+  99:diskio.c      **** 	BYTE pdrv,		/* Physical drive nmuber to identify the drive */
+ 100:diskio.c      **** 	BYTE *buff,		/* Data buffer to store read data */
+ 101:diskio.c      **** 	DWORD sector,	/* Start sector in LBA */
+ 102:diskio.c      **** 	UINT count		/* Number of sectors to read */
+ 103:diskio.c      **** )
+ 104:diskio.c      **** {
+ 131              		.loc 1 104 0
+ 132              		.cfi_startproc
+ 133              		@ args = 0, pretend = 0, frame = 0
+ 134              		@ frame_needed = 0, uses_anonymous_args = 0
+ 135              	.LVL12:
+ 136 0000 10B5     		push	{r4, lr}
+ 137              		.cfi_def_cfa_offset 8
+ 138              		.cfi_offset 4, -8
+ 139              		.cfi_offset 14, -4
+ 140 0002 0C46     		mov	r4, r1
+ 141 0004 1146     		mov	r1, r2
+ 142              	.LVL13:
+ 105:diskio.c      **** 	DRESULT res;
+ 106:diskio.c      **** 	int result;
+ 107:diskio.c      **** 
+ 108:diskio.c      **** 	switch (pdrv) {
+ 143              		.loc 1 108 0
+ 144 0006 0128     		cmp	r0, #1
+ 145 0008 08D0     		beq	.L15
+ 146 000a 10B1     		cbz	r0, .L16
+ 147 000c 0228     		cmp	r0, #2
+ 148 000e 0AD0     		beq	.L17
+ 149 0010 0DE0     		b	.L14
+ 150              	.L16:
+ 151              	.LBB4:
+ 109:diskio.c      **** 	case DEV_RAM :
+ 110:diskio.c      **** 		// translate the arguments here
+ 111:diskio.c      **** 
+ 112:diskio.c      **** 		result = RAM_disk_read(buff, sector, count);
+ 152              		.loc 1 112 0
+ 153 0012 1A46     		mov	r2, r3
+ 154              	.LVL14:
+ 155 0014 2046     		mov	r0, r4
+ 156              	.LVL15:
+ 157 0016 FFF7FEFF 		bl	RAM_disk_read
+ 158              	.LVL16:
+ 113:diskio.c      **** 
+ 114:diskio.c      **** 		// translate the reslut code here
+ 115:diskio.c      **** 
+ 116:diskio.c      **** 		return res;
+ 159              		.loc 1 116 0
+ 160 001a 08E0     		b	.L14
+ 161              	.LVL17:
+ 162              	.L15:
+ 117:diskio.c      **** 
+ 118:diskio.c      **** 	case DEV_MMC :
+ 119:diskio.c      **** 		// translate the arguments here
+ 120:diskio.c      **** 
+ 121:diskio.c      **** 		result = MMC_disk_read(buff, sector, count);
+ 163              		.loc 1 121 0
+ 164 001c 1A46     		mov	r2, r3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 6
+
+
+ 165 001e 2046     		mov	r0, r4
+ 166              	.LVL18:
+ 167 0020 FFF7FEFF 		bl	MMC_disk_read
+ 168              	.LVL19:
+ 122:diskio.c      **** 
+ 123:diskio.c      **** 		// translate the reslut code here
+ 124:diskio.c      **** 
+ 125:diskio.c      **** 		return res;
+ 169              		.loc 1 125 0
+ 170 0024 03E0     		b	.L14
+ 171              	.LVL20:
+ 172              	.L17:
+ 126:diskio.c      **** 
+ 127:diskio.c      **** 	case DEV_USB :
+ 128:diskio.c      **** 		// translate the arguments here
+ 129:diskio.c      **** 
+ 130:diskio.c      **** 		result = USB_disk_read(buff, sector, count);
+ 173              		.loc 1 130 0
+ 174 0026 1A46     		mov	r2, r3
+ 175 0028 2046     		mov	r0, r4
+ 176              	.LVL21:
+ 177 002a FFF7FEFF 		bl	USB_disk_read
+ 178              	.LVL22:
+ 179              	.L14:
+ 180              	.LBE4:
+ 131:diskio.c      **** 
+ 132:diskio.c      **** 		// translate the reslut code here
+ 133:diskio.c      **** 
+ 134:diskio.c      **** 		return res;
+ 135:diskio.c      **** 	}
+ 136:diskio.c      **** 
+ 137:diskio.c      **** 	return RES_PARERR;
+ 138:diskio.c      **** }
+ 181              		.loc 1 138 0
+ 182 002e 0420     		movs	r0, #4
+ 183 0030 10BD     		pop	{r4, pc}
+ 184              		.cfi_endproc
+ 185              	.LFE2:
+ 186              		.size	disk_read, .-disk_read
+ 187 0032 00BF     		.section	.text.disk_write,"ax",%progbits
+ 188              		.align	2
+ 189              		.global	disk_write
+ 190              		.thumb
+ 191              		.thumb_func
+ 192              		.type	disk_write, %function
+ 193              	disk_write:
+ 194              	.LFB3:
+ 139:diskio.c      **** 
+ 140:diskio.c      **** 
+ 141:diskio.c      **** 
+ 142:diskio.c      **** /*-----------------------------------------------------------------------*/
+ 143:diskio.c      **** /* Write Sector(s)                                                       */
+ 144:diskio.c      **** /*-----------------------------------------------------------------------*/
+ 145:diskio.c      **** 
+ 146:diskio.c      **** DRESULT disk_write (
+ 147:diskio.c      **** 	BYTE pdrv,			/* Physical drive nmuber to identify the drive */
+ 148:diskio.c      **** 	const BYTE *buff,	/* Data to be written */
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 7
+
+
+ 149:diskio.c      **** 	DWORD sector,		/* Start sector in LBA */
+ 150:diskio.c      **** 	UINT count			/* Number of sectors to write */
+ 151:diskio.c      **** )
+ 152:diskio.c      **** {
+ 195              		.loc 1 152 0
+ 196              		.cfi_startproc
+ 197              		@ args = 0, pretend = 0, frame = 0
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199              	.LVL23:
+ 200 0000 10B5     		push	{r4, lr}
+ 201              		.cfi_def_cfa_offset 8
+ 202              		.cfi_offset 4, -8
+ 203              		.cfi_offset 14, -4
+ 204 0002 0C46     		mov	r4, r1
+ 205 0004 1146     		mov	r1, r2
+ 206              	.LVL24:
+ 153:diskio.c      **** 	DRESULT res;
+ 154:diskio.c      **** 	int result;
+ 155:diskio.c      **** 
+ 156:diskio.c      **** 	switch (pdrv) {
+ 207              		.loc 1 156 0
+ 208 0006 0128     		cmp	r0, #1
+ 209 0008 08D0     		beq	.L21
+ 210 000a 10B1     		cbz	r0, .L22
+ 211 000c 0228     		cmp	r0, #2
+ 212 000e 0AD0     		beq	.L23
+ 213 0010 0DE0     		b	.L20
+ 214              	.L22:
+ 215              	.LBB5:
+ 157:diskio.c      **** 	case DEV_RAM :
+ 158:diskio.c      **** 		// translate the arguments here
+ 159:diskio.c      **** 
+ 160:diskio.c      **** 		result = RAM_disk_write(buff, sector, count);
+ 216              		.loc 1 160 0
+ 217 0012 1A46     		mov	r2, r3
+ 218              	.LVL25:
+ 219 0014 2046     		mov	r0, r4
+ 220              	.LVL26:
+ 221 0016 FFF7FEFF 		bl	RAM_disk_write
+ 222              	.LVL27:
+ 161:diskio.c      **** 
+ 162:diskio.c      **** 		// translate the reslut code here
+ 163:diskio.c      **** 
+ 164:diskio.c      **** 		return res;
+ 223              		.loc 1 164 0
+ 224 001a 08E0     		b	.L20
+ 225              	.LVL28:
+ 226              	.L21:
+ 165:diskio.c      **** 
+ 166:diskio.c      **** 	case DEV_MMC :
+ 167:diskio.c      **** 		// translate the arguments here
+ 168:diskio.c      **** 
+ 169:diskio.c      **** 		result = MMC_disk_write(buff, sector, count);
+ 227              		.loc 1 169 0
+ 228 001c 1A46     		mov	r2, r3
+ 229 001e 2046     		mov	r0, r4
+ 230              	.LVL29:
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 8
+
+
+ 231 0020 FFF7FEFF 		bl	MMC_disk_write
+ 232              	.LVL30:
+ 170:diskio.c      **** 
+ 171:diskio.c      **** 		// translate the reslut code here
+ 172:diskio.c      **** 
+ 173:diskio.c      **** 		return res;
+ 233              		.loc 1 173 0
+ 234 0024 03E0     		b	.L20
+ 235              	.LVL31:
+ 236              	.L23:
+ 174:diskio.c      **** 
+ 175:diskio.c      **** 	case DEV_USB :
+ 176:diskio.c      **** 		// translate the arguments here
+ 177:diskio.c      **** 
+ 178:diskio.c      **** 		result = USB_disk_write(buff, sector, count);
+ 237              		.loc 1 178 0
+ 238 0026 1A46     		mov	r2, r3
+ 239 0028 2046     		mov	r0, r4
+ 240              	.LVL32:
+ 241 002a FFF7FEFF 		bl	USB_disk_write
+ 242              	.LVL33:
+ 243              	.L20:
+ 244              	.LBE5:
+ 179:diskio.c      **** 
+ 180:diskio.c      **** 		// translate the reslut code here
+ 181:diskio.c      **** 
+ 182:diskio.c      **** 		return res;
+ 183:diskio.c      **** 	}
+ 184:diskio.c      **** 
+ 185:diskio.c      **** 	return RES_PARERR;
+ 186:diskio.c      **** }
+ 245              		.loc 1 186 0
+ 246 002e 0420     		movs	r0, #4
+ 247 0030 10BD     		pop	{r4, pc}
+ 248              		.cfi_endproc
+ 249              	.LFE3:
+ 250              		.size	disk_write, .-disk_write
+ 251 0032 00BF     		.section	.text.disk_ioctl,"ax",%progbits
+ 252              		.align	2
+ 253              		.global	disk_ioctl
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.type	disk_ioctl, %function
+ 257              	disk_ioctl:
+ 258              	.LFB4:
+ 187:diskio.c      **** 
+ 188:diskio.c      **** 
+ 189:diskio.c      **** 
+ 190:diskio.c      **** /*-----------------------------------------------------------------------*/
+ 191:diskio.c      **** /* Miscellaneous Functions                                               */
+ 192:diskio.c      **** /*-----------------------------------------------------------------------*/
+ 193:diskio.c      **** 
+ 194:diskio.c      **** DRESULT disk_ioctl (
+ 195:diskio.c      **** 	BYTE pdrv,		/* Physical drive nmuber (0..) */
+ 196:diskio.c      **** 	BYTE cmd,		/* Control code */
+ 197:diskio.c      **** 	void *buff		/* Buffer to send/receive control data */
+ 198:diskio.c      **** )
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 9
+
+
+ 199:diskio.c      **** {
+ 259              		.loc 1 199 0
+ 260              		.cfi_startproc
+ 261              		@ args = 0, pretend = 0, frame = 0
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+ 263              		@ link register save eliminated.
+ 264              	.LVL34:
+ 200:diskio.c      **** 	DRESULT res;
+ 201:diskio.c      **** 	int result;
+ 202:diskio.c      **** 
+ 203:diskio.c      **** 	switch (pdrv) {
+ 204:diskio.c      **** 	case DEV_RAM :
+ 205:diskio.c      **** 
+ 206:diskio.c      **** 		// Process of the command for the RAM drive
+ 207:diskio.c      **** 
+ 208:diskio.c      **** 		return res;
+ 209:diskio.c      **** 
+ 210:diskio.c      **** 	case DEV_MMC :
+ 211:diskio.c      **** 
+ 212:diskio.c      **** 		// Process of the command for the MMC/SD card
+ 213:diskio.c      **** 
+ 214:diskio.c      **** 		return res;
+ 215:diskio.c      **** 
+ 216:diskio.c      **** 	case DEV_USB :
+ 217:diskio.c      **** 
+ 218:diskio.c      **** 		// Process of the command the USB drive
+ 219:diskio.c      **** 
+ 220:diskio.c      **** 		return res;
+ 221:diskio.c      **** 	}
+ 222:diskio.c      **** 
+ 223:diskio.c      **** 	return RES_PARERR;
+ 224:diskio.c      **** }
+ 265              		.loc 1 224 0
+ 266 0000 0420     		movs	r0, #4
+ 267              	.LVL35:
+ 268 0002 7047     		bx	lr
+ 269              		.cfi_endproc
+ 270              	.LFE4:
+ 271              		.size	disk_ioctl, .-disk_ioctl
+ 272              		.text
+ 273              	.Letext0:
+ 274              		.file 2 "integer.h"
+ 275              		.file 3 "diskio.h"
+ 276              		.section	.debug_info,"",%progbits
+ 277              	.Ldebug_info0:
+ 278 0000 C6040000 		.4byte	0x4c6
+ 279 0004 0400     		.2byte	0x4
+ 280 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 281 000a 04       		.byte	0x4
+ 282 000b 01       		.uleb128 0x1
+ 283 000c 6B010000 		.4byte	.LASF40
+ 284 0010 0C       		.byte	0xc
+ 285 0011 31000000 		.4byte	.LASF41
+ 286 0015 03010000 		.4byte	.LASF42
+ 287 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 288 001d 00000000 		.4byte	0
+ 289 0021 00000000 		.4byte	.Ldebug_line0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 10
+
+
+ 290 0025 02       		.uleb128 0x2
+ 291 0026 04       		.byte	0x4
+ 292 0027 05       		.byte	0x5
+ 293 0028 696E7400 		.ascii	"int\000"
+ 294 002c 03       		.uleb128 0x3
+ 295 002d 66010000 		.4byte	.LASF1
+ 296 0031 02       		.byte	0x2
+ 297 0032 13       		.byte	0x13
+ 298 0033 37000000 		.4byte	0x37
+ 299 0037 04       		.uleb128 0x4
+ 300 0038 04       		.byte	0x4
+ 301 0039 07       		.byte	0x7
+ 302 003a 32010000 		.4byte	.LASF0
+ 303 003e 03       		.uleb128 0x3
+ 304 003f 48000000 		.4byte	.LASF2
+ 305 0043 02       		.byte	0x2
+ 306 0044 16       		.byte	0x16
+ 307 0045 49000000 		.4byte	0x49
+ 308 0049 04       		.uleb128 0x4
+ 309 004a 01       		.byte	0x1
+ 310 004b 08       		.byte	0x8
+ 311 004c 9A000000 		.4byte	.LASF3
+ 312 0050 04       		.uleb128 0x4
+ 313 0051 02       		.byte	0x2
+ 314 0052 05       		.byte	0x5
+ 315 0053 3F020000 		.4byte	.LASF4
+ 316 0057 04       		.uleb128 0x4
+ 317 0058 02       		.byte	0x2
+ 318 0059 07       		.byte	0x7
+ 319 005a BA000000 		.4byte	.LASF5
+ 320 005e 04       		.uleb128 0x4
+ 321 005f 04       		.byte	0x4
+ 322 0060 05       		.byte	0x5
+ 323 0061 6D020000 		.4byte	.LASF6
+ 324 0065 03       		.uleb128 0x3
+ 325 0066 21000000 		.4byte	.LASF7
+ 326 006a 02       		.byte	0x2
+ 327 006b 1F       		.byte	0x1f
+ 328 006c 70000000 		.4byte	0x70
+ 329 0070 04       		.uleb128 0x4
+ 330 0071 04       		.byte	0x4
+ 331 0072 07       		.byte	0x7
+ 332 0073 A8000000 		.4byte	.LASF8
+ 333 0077 04       		.uleb128 0x4
+ 334 0078 08       		.byte	0x8
+ 335 0079 07       		.byte	0x7
+ 336 007a 4F010000 		.4byte	.LASF9
+ 337 007e 03       		.uleb128 0x3
+ 338 007f D8000000 		.4byte	.LASF10
+ 339 0083 03       		.byte	0x3
+ 340 0084 10       		.byte	0x10
+ 341 0085 3E000000 		.4byte	0x3e
+ 342 0089 05       		.uleb128 0x5
+ 343 008a 01       		.byte	0x1
+ 344 008b 49000000 		.4byte	0x49
+ 345 008f 03       		.byte	0x3
+ 346 0090 13       		.byte	0x13
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 11
+
+
+ 347 0091 B4000000 		.4byte	0xb4
+ 348 0095 06       		.uleb128 0x6
+ 349 0096 32020000 		.4byte	.LASF11
+ 350 009a 00       		.byte	0
+ 351 009b 06       		.uleb128 0x6
+ 352 009c 54020000 		.4byte	.LASF12
+ 353 00a0 01       		.byte	0x1
+ 354 00a1 06       		.uleb128 0x6
+ 355 00a2 27000000 		.4byte	.LASF13
+ 356 00a6 02       		.byte	0x2
+ 357 00a7 06       		.uleb128 0x6
+ 358 00a8 CD000000 		.4byte	.LASF14
+ 359 00ac 03       		.byte	0x3
+ 360 00ad 06       		.uleb128 0x6
+ 361 00ae A4020000 		.4byte	.LASF15
+ 362 00b2 04       		.byte	0x4
+ 363 00b3 00       		.byte	0
+ 364 00b4 03       		.uleb128 0x3
+ 365 00b5 FB000000 		.4byte	.LASF16
+ 366 00b9 03       		.byte	0x3
+ 367 00ba 19       		.byte	0x19
+ 368 00bb 89000000 		.4byte	0x89
+ 369 00bf 07       		.uleb128 0x7
+ 370 00c0 8E000000 		.4byte	.LASF22
+ 371 00c4 01       		.byte	0x1
+ 372 00c5 16       		.byte	0x16
+ 373 00c6 7E000000 		.4byte	0x7e
+ 374 00ca 00000000 		.4byte	.LFB0
+ 375 00ce 22000000 		.4byte	.LFE0-.LFB0
+ 376 00d2 01       		.uleb128 0x1
+ 377 00d3 9C       		.byte	0x9c
+ 378 00d4 56010000 		.4byte	0x156
+ 379 00d8 08       		.uleb128 0x8
+ 380 00d9 C3020000 		.4byte	.LASF24
+ 381 00dd 01       		.byte	0x1
+ 382 00de 17       		.byte	0x17
+ 383 00df 3E000000 		.4byte	0x3e
+ 384 00e3 00000000 		.4byte	.LLST0
+ 385 00e7 09       		.uleb128 0x9
+ 386 00e8 00000000 		.4byte	.LASF17
+ 387 00ec 01       		.byte	0x1
+ 388 00ed 1A       		.byte	0x1a
+ 389 00ee 7E000000 		.4byte	0x7e
+ 390 00f2 09       		.uleb128 0x9
+ 391 00f3 05000000 		.4byte	.LASF18
+ 392 00f7 01       		.byte	0x1
+ 393 00f8 1B       		.byte	0x1b
+ 394 00f9 25000000 		.4byte	0x25
+ 395 00fd 0A       		.uleb128 0xa
+ 396 00fe 0E000000 		.4byte	.LBB2
+ 397 0102 10000000 		.4byte	.LBE2-.LBB2
+ 398 0106 0B       		.uleb128 0xb
+ 399 0107 3F010000 		.4byte	.LASF19
+ 400 010b 01       		.byte	0x1
+ 401 010c 1F       		.byte	0x1f
+ 402 010d 25000000 		.4byte	0x25
+ 403 0111 17010000 		.4byte	0x117
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 12
+
+
+ 404 0115 0C       		.uleb128 0xc
+ 405 0116 00       		.byte	0
+ 406 0117 0B       		.uleb128 0xb
+ 407 0118 85020000 		.4byte	.LASF20
+ 408 011c 01       		.byte	0x1
+ 409 011d 26       		.byte	0x26
+ 410 011e 25000000 		.4byte	0x25
+ 411 0122 28010000 		.4byte	0x128
+ 412 0126 0C       		.uleb128 0xc
+ 413 0127 00       		.byte	0
+ 414 0128 0B       		.uleb128 0xb
+ 415 0129 E0000000 		.4byte	.LASF21
+ 416 012d 01       		.byte	0x1
+ 417 012e 2D       		.byte	0x2d
+ 418 012f 25000000 		.4byte	0x25
+ 419 0133 39010000 		.4byte	0x139
+ 420 0137 0C       		.uleb128 0xc
+ 421 0138 00       		.byte	0
+ 422 0139 0D       		.uleb128 0xd
+ 423 013a 12000000 		.4byte	.LVL1
+ 424 013e 45040000 		.4byte	0x445
+ 425 0142 0D       		.uleb128 0xd
+ 426 0143 18000000 		.4byte	.LVL3
+ 427 0147 50040000 		.4byte	0x450
+ 428 014b 0D       		.uleb128 0xd
+ 429 014c 1E000000 		.4byte	.LVL5
+ 430 0150 5B040000 		.4byte	0x45b
+ 431 0154 00       		.byte	0
+ 432 0155 00       		.byte	0
+ 433 0156 07       		.uleb128 0x7
+ 434 0157 70000000 		.4byte	.LASF23
+ 435 015b 01       		.byte	0x1
+ 436 015c 3C       		.byte	0x3c
+ 437 015d 7E000000 		.4byte	0x7e
+ 438 0161 00000000 		.4byte	.LFB1
+ 439 0165 22000000 		.4byte	.LFE1-.LFB1
+ 440 0169 01       		.uleb128 0x1
+ 441 016a 9C       		.byte	0x9c
+ 442 016b ED010000 		.4byte	0x1ed
+ 443 016f 08       		.uleb128 0x8
+ 444 0170 C3020000 		.4byte	.LASF24
+ 445 0174 01       		.byte	0x1
+ 446 0175 3D       		.byte	0x3d
+ 447 0176 3E000000 		.4byte	0x3e
+ 448 017a 53000000 		.4byte	.LLST1
+ 449 017e 09       		.uleb128 0x9
+ 450 017f 00000000 		.4byte	.LASF17
+ 451 0183 01       		.byte	0x1
+ 452 0184 40       		.byte	0x40
+ 453 0185 7E000000 		.4byte	0x7e
+ 454 0189 09       		.uleb128 0x9
+ 455 018a 05000000 		.4byte	.LASF18
+ 456 018e 01       		.byte	0x1
+ 457 018f 41       		.byte	0x41
+ 458 0190 25000000 		.4byte	0x25
+ 459 0194 0A       		.uleb128 0xa
+ 460 0195 0E000000 		.4byte	.LBB3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 13
+
+
+ 461 0199 10000000 		.4byte	.LBE3-.LBB3
+ 462 019d 0B       		.uleb128 0xb
+ 463 019e AF020000 		.4byte	.LASF25
+ 464 01a2 01       		.byte	0x1
+ 465 01a3 45       		.byte	0x45
+ 466 01a4 25000000 		.4byte	0x25
+ 467 01a8 AE010000 		.4byte	0x1ae
+ 468 01ac 0C       		.uleb128 0xc
+ 469 01ad 00       		.byte	0
+ 470 01ae 0B       		.uleb128 0xb
+ 471 01af 5C000000 		.4byte	.LASF26
+ 472 01b3 01       		.byte	0x1
+ 473 01b4 4C       		.byte	0x4c
+ 474 01b5 25000000 		.4byte	0x25
+ 475 01b9 BF010000 		.4byte	0x1bf
+ 476 01bd 0C       		.uleb128 0xc
+ 477 01be 00       		.byte	0
+ 478 01bf 0B       		.uleb128 0xb
+ 479 01c0 1E020000 		.4byte	.LASF27
+ 480 01c4 01       		.byte	0x1
+ 481 01c5 53       		.byte	0x53
+ 482 01c6 25000000 		.4byte	0x25
+ 483 01ca D0010000 		.4byte	0x1d0
+ 484 01ce 0C       		.uleb128 0xc
+ 485 01cf 00       		.byte	0
+ 486 01d0 0D       		.uleb128 0xd
+ 487 01d1 12000000 		.4byte	.LVL7
+ 488 01d5 66040000 		.4byte	0x466
+ 489 01d9 0D       		.uleb128 0xd
+ 490 01da 18000000 		.4byte	.LVL9
+ 491 01de 71040000 		.4byte	0x471
+ 492 01e2 0D       		.uleb128 0xd
+ 493 01e3 1E000000 		.4byte	.LVL11
+ 494 01e7 7C040000 		.4byte	0x47c
+ 495 01eb 00       		.byte	0
+ 496 01ec 00       		.byte	0
+ 497 01ed 07       		.uleb128 0x7
+ 498 01ee 9A020000 		.4byte	.LASF28
+ 499 01f2 01       		.byte	0x1
+ 500 01f3 62       		.byte	0x62
+ 501 01f4 B4000000 		.4byte	0xb4
+ 502 01f8 00000000 		.4byte	.LFB2
+ 503 01fc 32000000 		.4byte	.LFE2-.LFB2
+ 504 0200 01       		.uleb128 0x1
+ 505 0201 9C       		.byte	0x9c
+ 506 0202 E3020000 		.4byte	0x2e3
+ 507 0206 08       		.uleb128 0x8
+ 508 0207 C3020000 		.4byte	.LASF24
+ 509 020b 01       		.byte	0x1
+ 510 020c 63       		.byte	0x63
+ 511 020d 3E000000 		.4byte	0x3e
+ 512 0211 A6000000 		.4byte	.LLST2
+ 513 0215 08       		.uleb128 0x8
+ 514 0216 95020000 		.4byte	.LASF29
+ 515 021a 01       		.byte	0x1
+ 516 021b 64       		.byte	0x64
+ 517 021c E3020000 		.4byte	0x2e3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 14
+
+
+ 518 0220 F9000000 		.4byte	.LLST3
+ 519 0224 08       		.uleb128 0x8
+ 520 0225 1A000000 		.4byte	.LASF30
+ 521 0229 01       		.byte	0x1
+ 522 022a 65       		.byte	0x65
+ 523 022b 65000000 		.4byte	0x65
+ 524 022f 17010000 		.4byte	.LLST4
+ 525 0233 08       		.uleb128 0x8
+ 526 0234 39020000 		.4byte	.LASF31
+ 527 0238 01       		.byte	0x1
+ 528 0239 66       		.byte	0x66
+ 529 023a 2C000000 		.4byte	0x2c
+ 530 023e 75010000 		.4byte	.LLST5
+ 531 0242 0E       		.uleb128 0xe
+ 532 0243 72657300 		.ascii	"res\000"
+ 533 0247 01       		.byte	0x1
+ 534 0248 69       		.byte	0x69
+ 535 0249 B4000000 		.4byte	0xb4
+ 536 024d 09       		.uleb128 0x9
+ 537 024e 05000000 		.4byte	.LASF18
+ 538 0252 01       		.byte	0x1
+ 539 0253 6A       		.byte	0x6a
+ 540 0254 25000000 		.4byte	0x25
+ 541 0258 0A       		.uleb128 0xa
+ 542 0259 12000000 		.4byte	.LBB4
+ 543 025d 1C000000 		.4byte	.LBE4-.LBB4
+ 544 0261 0B       		.uleb128 0xb
+ 545 0262 3A000000 		.4byte	.LASF32
+ 546 0266 01       		.byte	0x1
+ 547 0267 70       		.byte	0x70
+ 548 0268 25000000 		.4byte	0x25
+ 549 026c 72020000 		.4byte	0x272
+ 550 0270 0C       		.uleb128 0xc
+ 551 0271 00       		.byte	0
+ 552 0272 0B       		.uleb128 0xb
+ 553 0273 0C000000 		.4byte	.LASF33
+ 554 0277 01       		.byte	0x1
+ 555 0278 79       		.byte	0x79
+ 556 0279 25000000 		.4byte	0x25
+ 557 027d 83020000 		.4byte	0x283
+ 558 0281 0C       		.uleb128 0xc
+ 559 0282 00       		.byte	0
+ 560 0283 0B       		.uleb128 0xb
+ 561 0284 80000000 		.4byte	.LASF34
+ 562 0288 01       		.byte	0x1
+ 563 0289 82       		.byte	0x82
+ 564 028a 25000000 		.4byte	0x25
+ 565 028e 94020000 		.4byte	0x294
+ 566 0292 0C       		.uleb128 0xc
+ 567 0293 00       		.byte	0
+ 568 0294 0F       		.uleb128 0xf
+ 569 0295 1A000000 		.4byte	.LVL16
+ 570 0299 87040000 		.4byte	0x487
+ 571 029d AF020000 		.4byte	0x2af
+ 572 02a1 10       		.uleb128 0x10
+ 573 02a2 01       		.uleb128 0x1
+ 574 02a3 50       		.byte	0x50
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 15
+
+
+ 575 02a4 02       		.uleb128 0x2
+ 576 02a5 74       		.byte	0x74
+ 577 02a6 00       		.sleb128 0
+ 578 02a7 10       		.uleb128 0x10
+ 579 02a8 01       		.uleb128 0x1
+ 580 02a9 52       		.byte	0x52
+ 581 02aa 03       		.uleb128 0x3
+ 582 02ab F3       		.byte	0xf3
+ 583 02ac 01       		.uleb128 0x1
+ 584 02ad 53       		.byte	0x53
+ 585 02ae 00       		.byte	0
+ 586 02af 0F       		.uleb128 0xf
+ 587 02b0 24000000 		.4byte	.LVL19
+ 588 02b4 92040000 		.4byte	0x492
+ 589 02b8 CA020000 		.4byte	0x2ca
+ 590 02bc 10       		.uleb128 0x10
+ 591 02bd 01       		.uleb128 0x1
+ 592 02be 50       		.byte	0x50
+ 593 02bf 02       		.uleb128 0x2
+ 594 02c0 74       		.byte	0x74
+ 595 02c1 00       		.sleb128 0
+ 596 02c2 10       		.uleb128 0x10
+ 597 02c3 01       		.uleb128 0x1
+ 598 02c4 52       		.byte	0x52
+ 599 02c5 03       		.uleb128 0x3
+ 600 02c6 F3       		.byte	0xf3
+ 601 02c7 01       		.uleb128 0x1
+ 602 02c8 53       		.byte	0x53
+ 603 02c9 00       		.byte	0
+ 604 02ca 11       		.uleb128 0x11
+ 605 02cb 2E000000 		.4byte	.LVL22
+ 606 02cf 9D040000 		.4byte	0x49d
+ 607 02d3 10       		.uleb128 0x10
+ 608 02d4 01       		.uleb128 0x1
+ 609 02d5 50       		.byte	0x50
+ 610 02d6 02       		.uleb128 0x2
+ 611 02d7 74       		.byte	0x74
+ 612 02d8 00       		.sleb128 0
+ 613 02d9 10       		.uleb128 0x10
+ 614 02da 01       		.uleb128 0x1
+ 615 02db 52       		.byte	0x52
+ 616 02dc 03       		.uleb128 0x3
+ 617 02dd F3       		.byte	0xf3
+ 618 02de 01       		.uleb128 0x1
+ 619 02df 53       		.byte	0x53
+ 620 02e0 00       		.byte	0
+ 621 02e1 00       		.byte	0
+ 622 02e2 00       		.byte	0
+ 623 02e3 12       		.uleb128 0x12
+ 624 02e4 04       		.byte	0x4
+ 625 02e5 3E000000 		.4byte	0x3e
+ 626 02e9 07       		.uleb128 0x7
+ 627 02ea 49020000 		.4byte	.LASF35
+ 628 02ee 01       		.byte	0x1
+ 629 02ef 92       		.byte	0x92
+ 630 02f0 B4000000 		.4byte	0xb4
+ 631 02f4 00000000 		.4byte	.LFB3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 16
+
+
+ 632 02f8 32000000 		.4byte	.LFE3-.LFB3
+ 633 02fc 01       		.uleb128 0x1
+ 634 02fd 9C       		.byte	0x9c
+ 635 02fe DF030000 		.4byte	0x3df
+ 636 0302 08       		.uleb128 0x8
+ 637 0303 C3020000 		.4byte	.LASF24
+ 638 0307 01       		.byte	0x1
+ 639 0308 93       		.byte	0x93
+ 640 0309 3E000000 		.4byte	0x3e
+ 641 030d C8010000 		.4byte	.LLST6
+ 642 0311 08       		.uleb128 0x8
+ 643 0312 95020000 		.4byte	.LASF29
+ 644 0316 01       		.byte	0x1
+ 645 0317 94       		.byte	0x94
+ 646 0318 DF030000 		.4byte	0x3df
+ 647 031c 1B020000 		.4byte	.LLST7
+ 648 0320 08       		.uleb128 0x8
+ 649 0321 1A000000 		.4byte	.LASF30
+ 650 0325 01       		.byte	0x1
+ 651 0326 95       		.byte	0x95
+ 652 0327 65000000 		.4byte	0x65
+ 653 032b 39020000 		.4byte	.LLST8
+ 654 032f 08       		.uleb128 0x8
+ 655 0330 39020000 		.4byte	.LASF31
+ 656 0334 01       		.byte	0x1
+ 657 0335 96       		.byte	0x96
+ 658 0336 2C000000 		.4byte	0x2c
+ 659 033a 97020000 		.4byte	.LLST9
+ 660 033e 0E       		.uleb128 0xe
+ 661 033f 72657300 		.ascii	"res\000"
+ 662 0343 01       		.byte	0x1
+ 663 0344 99       		.byte	0x99
+ 664 0345 B4000000 		.4byte	0xb4
+ 665 0349 09       		.uleb128 0x9
+ 666 034a 05000000 		.4byte	.LASF18
+ 667 034e 01       		.byte	0x1
+ 668 034f 9A       		.byte	0x9a
+ 669 0350 25000000 		.4byte	0x25
+ 670 0354 0A       		.uleb128 0xa
+ 671 0355 12000000 		.4byte	.LBB5
+ 672 0359 1C000000 		.4byte	.LBE5-.LBB5
+ 673 035d 0B       		.uleb128 0xb
+ 674 035e 76020000 		.4byte	.LASF36
+ 675 0362 01       		.byte	0x1
+ 676 0363 A0       		.byte	0xa0
+ 677 0364 25000000 		.4byte	0x25
+ 678 0368 6E030000 		.4byte	0x36e
+ 679 036c 0C       		.uleb128 0xc
+ 680 036d 00       		.byte	0
+ 681 036e 0B       		.uleb128 0xb
+ 682 036f 4D000000 		.4byte	.LASF37
+ 683 0373 01       		.byte	0x1
+ 684 0374 A9       		.byte	0xa9
+ 685 0375 25000000 		.4byte	0x25
+ 686 0379 7F030000 		.4byte	0x37f
+ 687 037d 0C       		.uleb128 0xc
+ 688 037e 00       		.byte	0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 17
+
+
+ 689 037f 0B       		.uleb128 0xb
+ 690 0380 5E020000 		.4byte	.LASF38
+ 691 0384 01       		.byte	0x1
+ 692 0385 B2       		.byte	0xb2
+ 693 0386 25000000 		.4byte	0x25
+ 694 038a 90030000 		.4byte	0x390
+ 695 038e 0C       		.uleb128 0xc
+ 696 038f 00       		.byte	0
+ 697 0390 0F       		.uleb128 0xf
+ 698 0391 1A000000 		.4byte	.LVL27
+ 699 0395 A8040000 		.4byte	0x4a8
+ 700 0399 AB030000 		.4byte	0x3ab
+ 701 039d 10       		.uleb128 0x10
+ 702 039e 01       		.uleb128 0x1
+ 703 039f 50       		.byte	0x50
+ 704 03a0 02       		.uleb128 0x2
+ 705 03a1 74       		.byte	0x74
+ 706 03a2 00       		.sleb128 0
+ 707 03a3 10       		.uleb128 0x10
+ 708 03a4 01       		.uleb128 0x1
+ 709 03a5 52       		.byte	0x52
+ 710 03a6 03       		.uleb128 0x3
+ 711 03a7 F3       		.byte	0xf3
+ 712 03a8 01       		.uleb128 0x1
+ 713 03a9 53       		.byte	0x53
+ 714 03aa 00       		.byte	0
+ 715 03ab 0F       		.uleb128 0xf
+ 716 03ac 24000000 		.4byte	.LVL30
+ 717 03b0 B3040000 		.4byte	0x4b3
+ 718 03b4 C6030000 		.4byte	0x3c6
+ 719 03b8 10       		.uleb128 0x10
+ 720 03b9 01       		.uleb128 0x1
+ 721 03ba 50       		.byte	0x50
+ 722 03bb 02       		.uleb128 0x2
+ 723 03bc 74       		.byte	0x74
+ 724 03bd 00       		.sleb128 0
+ 725 03be 10       		.uleb128 0x10
+ 726 03bf 01       		.uleb128 0x1
+ 727 03c0 52       		.byte	0x52
+ 728 03c1 03       		.uleb128 0x3
+ 729 03c2 F3       		.byte	0xf3
+ 730 03c3 01       		.uleb128 0x1
+ 731 03c4 53       		.byte	0x53
+ 732 03c5 00       		.byte	0
+ 733 03c6 11       		.uleb128 0x11
+ 734 03c7 2E000000 		.4byte	.LVL33
+ 735 03cb BE040000 		.4byte	0x4be
+ 736 03cf 10       		.uleb128 0x10
+ 737 03d0 01       		.uleb128 0x1
+ 738 03d1 50       		.byte	0x50
+ 739 03d2 02       		.uleb128 0x2
+ 740 03d3 74       		.byte	0x74
+ 741 03d4 00       		.sleb128 0
+ 742 03d5 10       		.uleb128 0x10
+ 743 03d6 01       		.uleb128 0x1
+ 744 03d7 52       		.byte	0x52
+ 745 03d8 03       		.uleb128 0x3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 18
+
+
+ 746 03d9 F3       		.byte	0xf3
+ 747 03da 01       		.uleb128 0x1
+ 748 03db 53       		.byte	0x53
+ 749 03dc 00       		.byte	0
+ 750 03dd 00       		.byte	0
+ 751 03de 00       		.byte	0
+ 752 03df 12       		.uleb128 0x12
+ 753 03e0 04       		.byte	0x4
+ 754 03e1 E5030000 		.4byte	0x3e5
+ 755 03e5 13       		.uleb128 0x13
+ 756 03e6 3E000000 		.4byte	0x3e
+ 757 03ea 07       		.uleb128 0x7
+ 758 03eb F0000000 		.4byte	.LASF39
+ 759 03ef 01       		.byte	0x1
+ 760 03f0 C2       		.byte	0xc2
+ 761 03f1 B4000000 		.4byte	0xb4
+ 762 03f5 00000000 		.4byte	.LFB4
+ 763 03f9 04000000 		.4byte	.LFE4-.LFB4
+ 764 03fd 01       		.uleb128 0x1
+ 765 03fe 9C       		.byte	0x9c
+ 766 03ff 43040000 		.4byte	0x443
+ 767 0403 08       		.uleb128 0x8
+ 768 0404 C3020000 		.4byte	.LASF24
+ 769 0408 01       		.byte	0x1
+ 770 0409 C3       		.byte	0xc3
+ 771 040a 3E000000 		.4byte	0x3e
+ 772 040e EA020000 		.4byte	.LLST10
+ 773 0412 14       		.uleb128 0x14
+ 774 0413 636D6400 		.ascii	"cmd\000"
+ 775 0417 01       		.byte	0x1
+ 776 0418 C4       		.byte	0xc4
+ 777 0419 3E000000 		.4byte	0x3e
+ 778 041d 01       		.uleb128 0x1
+ 779 041e 51       		.byte	0x51
+ 780 041f 15       		.uleb128 0x15
+ 781 0420 95020000 		.4byte	.LASF29
+ 782 0424 01       		.byte	0x1
+ 783 0425 C5       		.byte	0xc5
+ 784 0426 43040000 		.4byte	0x443
+ 785 042a 01       		.uleb128 0x1
+ 786 042b 52       		.byte	0x52
+ 787 042c 0E       		.uleb128 0xe
+ 788 042d 72657300 		.ascii	"res\000"
+ 789 0431 01       		.byte	0x1
+ 790 0432 C8       		.byte	0xc8
+ 791 0433 B4000000 		.4byte	0xb4
+ 792 0437 09       		.uleb128 0x9
+ 793 0438 05000000 		.4byte	.LASF18
+ 794 043c 01       		.byte	0x1
+ 795 043d C9       		.byte	0xc9
+ 796 043e 25000000 		.4byte	0x25
+ 797 0442 00       		.byte	0
+ 798 0443 16       		.uleb128 0x16
+ 799 0444 04       		.byte	0x4
+ 800 0445 17       		.uleb128 0x17
+ 801 0446 3F010000 		.4byte	.LASF19
+ 802 044a 3F010000 		.4byte	.LASF19
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 19
+
+
+ 803 044e 01       		.byte	0x1
+ 804 044f 1F       		.byte	0x1f
+ 805 0450 17       		.uleb128 0x17
+ 806 0451 85020000 		.4byte	.LASF20
+ 807 0455 85020000 		.4byte	.LASF20
+ 808 0459 01       		.byte	0x1
+ 809 045a 26       		.byte	0x26
+ 810 045b 17       		.uleb128 0x17
+ 811 045c E0000000 		.4byte	.LASF21
+ 812 0460 E0000000 		.4byte	.LASF21
+ 813 0464 01       		.byte	0x1
+ 814 0465 2D       		.byte	0x2d
+ 815 0466 17       		.uleb128 0x17
+ 816 0467 AF020000 		.4byte	.LASF25
+ 817 046b AF020000 		.4byte	.LASF25
+ 818 046f 01       		.byte	0x1
+ 819 0470 45       		.byte	0x45
+ 820 0471 17       		.uleb128 0x17
+ 821 0472 5C000000 		.4byte	.LASF26
+ 822 0476 5C000000 		.4byte	.LASF26
+ 823 047a 01       		.byte	0x1
+ 824 047b 4C       		.byte	0x4c
+ 825 047c 17       		.uleb128 0x17
+ 826 047d 1E020000 		.4byte	.LASF27
+ 827 0481 1E020000 		.4byte	.LASF27
+ 828 0485 01       		.byte	0x1
+ 829 0486 53       		.byte	0x53
+ 830 0487 17       		.uleb128 0x17
+ 831 0488 3A000000 		.4byte	.LASF32
+ 832 048c 3A000000 		.4byte	.LASF32
+ 833 0490 01       		.byte	0x1
+ 834 0491 70       		.byte	0x70
+ 835 0492 17       		.uleb128 0x17
+ 836 0493 0C000000 		.4byte	.LASF33
+ 837 0497 0C000000 		.4byte	.LASF33
+ 838 049b 01       		.byte	0x1
+ 839 049c 79       		.byte	0x79
+ 840 049d 17       		.uleb128 0x17
+ 841 049e 80000000 		.4byte	.LASF34
+ 842 04a2 80000000 		.4byte	.LASF34
+ 843 04a6 01       		.byte	0x1
+ 844 04a7 82       		.byte	0x82
+ 845 04a8 17       		.uleb128 0x17
+ 846 04a9 76020000 		.4byte	.LASF36
+ 847 04ad 76020000 		.4byte	.LASF36
+ 848 04b1 01       		.byte	0x1
+ 849 04b2 A0       		.byte	0xa0
+ 850 04b3 17       		.uleb128 0x17
+ 851 04b4 4D000000 		.4byte	.LASF37
+ 852 04b8 4D000000 		.4byte	.LASF37
+ 853 04bc 01       		.byte	0x1
+ 854 04bd A9       		.byte	0xa9
+ 855 04be 17       		.uleb128 0x17
+ 856 04bf 5E020000 		.4byte	.LASF38
+ 857 04c3 5E020000 		.4byte	.LASF38
+ 858 04c7 01       		.byte	0x1
+ 859 04c8 B2       		.byte	0xb2
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 20
+
+
+ 860 04c9 00       		.byte	0
+ 861              		.section	.debug_abbrev,"",%progbits
+ 862              	.Ldebug_abbrev0:
+ 863 0000 01       		.uleb128 0x1
+ 864 0001 11       		.uleb128 0x11
+ 865 0002 01       		.byte	0x1
+ 866 0003 25       		.uleb128 0x25
+ 867 0004 0E       		.uleb128 0xe
+ 868 0005 13       		.uleb128 0x13
+ 869 0006 0B       		.uleb128 0xb
+ 870 0007 03       		.uleb128 0x3
+ 871 0008 0E       		.uleb128 0xe
+ 872 0009 1B       		.uleb128 0x1b
+ 873 000a 0E       		.uleb128 0xe
+ 874 000b 55       		.uleb128 0x55
+ 875 000c 17       		.uleb128 0x17
+ 876 000d 11       		.uleb128 0x11
+ 877 000e 01       		.uleb128 0x1
+ 878 000f 10       		.uleb128 0x10
+ 879 0010 17       		.uleb128 0x17
+ 880 0011 00       		.byte	0
+ 881 0012 00       		.byte	0
+ 882 0013 02       		.uleb128 0x2
+ 883 0014 24       		.uleb128 0x24
+ 884 0015 00       		.byte	0
+ 885 0016 0B       		.uleb128 0xb
+ 886 0017 0B       		.uleb128 0xb
+ 887 0018 3E       		.uleb128 0x3e
+ 888 0019 0B       		.uleb128 0xb
+ 889 001a 03       		.uleb128 0x3
+ 890 001b 08       		.uleb128 0x8
+ 891 001c 00       		.byte	0
+ 892 001d 00       		.byte	0
+ 893 001e 03       		.uleb128 0x3
+ 894 001f 16       		.uleb128 0x16
+ 895 0020 00       		.byte	0
+ 896 0021 03       		.uleb128 0x3
+ 897 0022 0E       		.uleb128 0xe
+ 898 0023 3A       		.uleb128 0x3a
+ 899 0024 0B       		.uleb128 0xb
+ 900 0025 3B       		.uleb128 0x3b
+ 901 0026 0B       		.uleb128 0xb
+ 902 0027 49       		.uleb128 0x49
+ 903 0028 13       		.uleb128 0x13
+ 904 0029 00       		.byte	0
+ 905 002a 00       		.byte	0
+ 906 002b 04       		.uleb128 0x4
+ 907 002c 24       		.uleb128 0x24
+ 908 002d 00       		.byte	0
+ 909 002e 0B       		.uleb128 0xb
+ 910 002f 0B       		.uleb128 0xb
+ 911 0030 3E       		.uleb128 0x3e
+ 912 0031 0B       		.uleb128 0xb
+ 913 0032 03       		.uleb128 0x3
+ 914 0033 0E       		.uleb128 0xe
+ 915 0034 00       		.byte	0
+ 916 0035 00       		.byte	0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 21
+
+
+ 917 0036 05       		.uleb128 0x5
+ 918 0037 04       		.uleb128 0x4
+ 919 0038 01       		.byte	0x1
+ 920 0039 0B       		.uleb128 0xb
+ 921 003a 0B       		.uleb128 0xb
+ 922 003b 49       		.uleb128 0x49
+ 923 003c 13       		.uleb128 0x13
+ 924 003d 3A       		.uleb128 0x3a
+ 925 003e 0B       		.uleb128 0xb
+ 926 003f 3B       		.uleb128 0x3b
+ 927 0040 0B       		.uleb128 0xb
+ 928 0041 01       		.uleb128 0x1
+ 929 0042 13       		.uleb128 0x13
+ 930 0043 00       		.byte	0
+ 931 0044 00       		.byte	0
+ 932 0045 06       		.uleb128 0x6
+ 933 0046 28       		.uleb128 0x28
+ 934 0047 00       		.byte	0
+ 935 0048 03       		.uleb128 0x3
+ 936 0049 0E       		.uleb128 0xe
+ 937 004a 1C       		.uleb128 0x1c
+ 938 004b 0B       		.uleb128 0xb
+ 939 004c 00       		.byte	0
+ 940 004d 00       		.byte	0
+ 941 004e 07       		.uleb128 0x7
+ 942 004f 2E       		.uleb128 0x2e
+ 943 0050 01       		.byte	0x1
+ 944 0051 3F       		.uleb128 0x3f
+ 945 0052 19       		.uleb128 0x19
+ 946 0053 03       		.uleb128 0x3
+ 947 0054 0E       		.uleb128 0xe
+ 948 0055 3A       		.uleb128 0x3a
+ 949 0056 0B       		.uleb128 0xb
+ 950 0057 3B       		.uleb128 0x3b
+ 951 0058 0B       		.uleb128 0xb
+ 952 0059 27       		.uleb128 0x27
+ 953 005a 19       		.uleb128 0x19
+ 954 005b 49       		.uleb128 0x49
+ 955 005c 13       		.uleb128 0x13
+ 956 005d 11       		.uleb128 0x11
+ 957 005e 01       		.uleb128 0x1
+ 958 005f 12       		.uleb128 0x12
+ 959 0060 06       		.uleb128 0x6
+ 960 0061 40       		.uleb128 0x40
+ 961 0062 18       		.uleb128 0x18
+ 962 0063 9742     		.uleb128 0x2117
+ 963 0065 19       		.uleb128 0x19
+ 964 0066 01       		.uleb128 0x1
+ 965 0067 13       		.uleb128 0x13
+ 966 0068 00       		.byte	0
+ 967 0069 00       		.byte	0
+ 968 006a 08       		.uleb128 0x8
+ 969 006b 05       		.uleb128 0x5
+ 970 006c 00       		.byte	0
+ 971 006d 03       		.uleb128 0x3
+ 972 006e 0E       		.uleb128 0xe
+ 973 006f 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 22
+
+
+ 974 0070 0B       		.uleb128 0xb
+ 975 0071 3B       		.uleb128 0x3b
+ 976 0072 0B       		.uleb128 0xb
+ 977 0073 49       		.uleb128 0x49
+ 978 0074 13       		.uleb128 0x13
+ 979 0075 02       		.uleb128 0x2
+ 980 0076 17       		.uleb128 0x17
+ 981 0077 00       		.byte	0
+ 982 0078 00       		.byte	0
+ 983 0079 09       		.uleb128 0x9
+ 984 007a 34       		.uleb128 0x34
+ 985 007b 00       		.byte	0
+ 986 007c 03       		.uleb128 0x3
+ 987 007d 0E       		.uleb128 0xe
+ 988 007e 3A       		.uleb128 0x3a
+ 989 007f 0B       		.uleb128 0xb
+ 990 0080 3B       		.uleb128 0x3b
+ 991 0081 0B       		.uleb128 0xb
+ 992 0082 49       		.uleb128 0x49
+ 993 0083 13       		.uleb128 0x13
+ 994 0084 00       		.byte	0
+ 995 0085 00       		.byte	0
+ 996 0086 0A       		.uleb128 0xa
+ 997 0087 0B       		.uleb128 0xb
+ 998 0088 01       		.byte	0x1
+ 999 0089 11       		.uleb128 0x11
+ 1000 008a 01       		.uleb128 0x1
+ 1001 008b 12       		.uleb128 0x12
+ 1002 008c 06       		.uleb128 0x6
+ 1003 008d 00       		.byte	0
+ 1004 008e 00       		.byte	0
+ 1005 008f 0B       		.uleb128 0xb
+ 1006 0090 2E       		.uleb128 0x2e
+ 1007 0091 01       		.byte	0x1
+ 1008 0092 3F       		.uleb128 0x3f
+ 1009 0093 19       		.uleb128 0x19
+ 1010 0094 03       		.uleb128 0x3
+ 1011 0095 0E       		.uleb128 0xe
+ 1012 0096 3A       		.uleb128 0x3a
+ 1013 0097 0B       		.uleb128 0xb
+ 1014 0098 3B       		.uleb128 0x3b
+ 1015 0099 0B       		.uleb128 0xb
+ 1016 009a 49       		.uleb128 0x49
+ 1017 009b 13       		.uleb128 0x13
+ 1018 009c 3C       		.uleb128 0x3c
+ 1019 009d 19       		.uleb128 0x19
+ 1020 009e 01       		.uleb128 0x1
+ 1021 009f 13       		.uleb128 0x13
+ 1022 00a0 00       		.byte	0
+ 1023 00a1 00       		.byte	0
+ 1024 00a2 0C       		.uleb128 0xc
+ 1025 00a3 18       		.uleb128 0x18
+ 1026 00a4 00       		.byte	0
+ 1027 00a5 00       		.byte	0
+ 1028 00a6 00       		.byte	0
+ 1029 00a7 0D       		.uleb128 0xd
+ 1030 00a8 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 23
+
+
+ 1031 00ab 00       		.byte	0
+ 1032 00ac 11       		.uleb128 0x11
+ 1033 00ad 01       		.uleb128 0x1
+ 1034 00ae 31       		.uleb128 0x31
+ 1035 00af 13       		.uleb128 0x13
+ 1036 00b0 00       		.byte	0
+ 1037 00b1 00       		.byte	0
+ 1038 00b2 0E       		.uleb128 0xe
+ 1039 00b3 34       		.uleb128 0x34
+ 1040 00b4 00       		.byte	0
+ 1041 00b5 03       		.uleb128 0x3
+ 1042 00b6 08       		.uleb128 0x8
+ 1043 00b7 3A       		.uleb128 0x3a
+ 1044 00b8 0B       		.uleb128 0xb
+ 1045 00b9 3B       		.uleb128 0x3b
+ 1046 00ba 0B       		.uleb128 0xb
+ 1047 00bb 49       		.uleb128 0x49
+ 1048 00bc 13       		.uleb128 0x13
+ 1049 00bd 00       		.byte	0
+ 1050 00be 00       		.byte	0
+ 1051 00bf 0F       		.uleb128 0xf
+ 1052 00c0 898201   		.uleb128 0x4109
+ 1053 00c3 01       		.byte	0x1
+ 1054 00c4 11       		.uleb128 0x11
+ 1055 00c5 01       		.uleb128 0x1
+ 1056 00c6 31       		.uleb128 0x31
+ 1057 00c7 13       		.uleb128 0x13
+ 1058 00c8 01       		.uleb128 0x1
+ 1059 00c9 13       		.uleb128 0x13
+ 1060 00ca 00       		.byte	0
+ 1061 00cb 00       		.byte	0
+ 1062 00cc 10       		.uleb128 0x10
+ 1063 00cd 8A8201   		.uleb128 0x410a
+ 1064 00d0 00       		.byte	0
+ 1065 00d1 02       		.uleb128 0x2
+ 1066 00d2 18       		.uleb128 0x18
+ 1067 00d3 9142     		.uleb128 0x2111
+ 1068 00d5 18       		.uleb128 0x18
+ 1069 00d6 00       		.byte	0
+ 1070 00d7 00       		.byte	0
+ 1071 00d8 11       		.uleb128 0x11
+ 1072 00d9 898201   		.uleb128 0x4109
+ 1073 00dc 01       		.byte	0x1
+ 1074 00dd 11       		.uleb128 0x11
+ 1075 00de 01       		.uleb128 0x1
+ 1076 00df 31       		.uleb128 0x31
+ 1077 00e0 13       		.uleb128 0x13
+ 1078 00e1 00       		.byte	0
+ 1079 00e2 00       		.byte	0
+ 1080 00e3 12       		.uleb128 0x12
+ 1081 00e4 0F       		.uleb128 0xf
+ 1082 00e5 00       		.byte	0
+ 1083 00e6 0B       		.uleb128 0xb
+ 1084 00e7 0B       		.uleb128 0xb
+ 1085 00e8 49       		.uleb128 0x49
+ 1086 00e9 13       		.uleb128 0x13
+ 1087 00ea 00       		.byte	0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 24
+
+
+ 1088 00eb 00       		.byte	0
+ 1089 00ec 13       		.uleb128 0x13
+ 1090 00ed 26       		.uleb128 0x26
+ 1091 00ee 00       		.byte	0
+ 1092 00ef 49       		.uleb128 0x49
+ 1093 00f0 13       		.uleb128 0x13
+ 1094 00f1 00       		.byte	0
+ 1095 00f2 00       		.byte	0
+ 1096 00f3 14       		.uleb128 0x14
+ 1097 00f4 05       		.uleb128 0x5
+ 1098 00f5 00       		.byte	0
+ 1099 00f6 03       		.uleb128 0x3
+ 1100 00f7 08       		.uleb128 0x8
+ 1101 00f8 3A       		.uleb128 0x3a
+ 1102 00f9 0B       		.uleb128 0xb
+ 1103 00fa 3B       		.uleb128 0x3b
+ 1104 00fb 0B       		.uleb128 0xb
+ 1105 00fc 49       		.uleb128 0x49
+ 1106 00fd 13       		.uleb128 0x13
+ 1107 00fe 02       		.uleb128 0x2
+ 1108 00ff 18       		.uleb128 0x18
+ 1109 0100 00       		.byte	0
+ 1110 0101 00       		.byte	0
+ 1111 0102 15       		.uleb128 0x15
+ 1112 0103 05       		.uleb128 0x5
+ 1113 0104 00       		.byte	0
+ 1114 0105 03       		.uleb128 0x3
+ 1115 0106 0E       		.uleb128 0xe
+ 1116 0107 3A       		.uleb128 0x3a
+ 1117 0108 0B       		.uleb128 0xb
+ 1118 0109 3B       		.uleb128 0x3b
+ 1119 010a 0B       		.uleb128 0xb
+ 1120 010b 49       		.uleb128 0x49
+ 1121 010c 13       		.uleb128 0x13
+ 1122 010d 02       		.uleb128 0x2
+ 1123 010e 18       		.uleb128 0x18
+ 1124 010f 00       		.byte	0
+ 1125 0110 00       		.byte	0
+ 1126 0111 16       		.uleb128 0x16
+ 1127 0112 0F       		.uleb128 0xf
+ 1128 0113 00       		.byte	0
+ 1129 0114 0B       		.uleb128 0xb
+ 1130 0115 0B       		.uleb128 0xb
+ 1131 0116 00       		.byte	0
+ 1132 0117 00       		.byte	0
+ 1133 0118 17       		.uleb128 0x17
+ 1134 0119 2E       		.uleb128 0x2e
+ 1135 011a 00       		.byte	0
+ 1136 011b 3F       		.uleb128 0x3f
+ 1137 011c 19       		.uleb128 0x19
+ 1138 011d 3C       		.uleb128 0x3c
+ 1139 011e 19       		.uleb128 0x19
+ 1140 011f 6E       		.uleb128 0x6e
+ 1141 0120 0E       		.uleb128 0xe
+ 1142 0121 03       		.uleb128 0x3
+ 1143 0122 0E       		.uleb128 0xe
+ 1144 0123 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 25
+
+
+ 1145 0124 0B       		.uleb128 0xb
+ 1146 0125 3B       		.uleb128 0x3b
+ 1147 0126 0B       		.uleb128 0xb
+ 1148 0127 00       		.byte	0
+ 1149 0128 00       		.byte	0
+ 1150 0129 00       		.byte	0
+ 1151              		.section	.debug_loc,"",%progbits
+ 1152              	.Ldebug_loc0:
+ 1153              	.LLST0:
+ 1154 0000 00000000 		.4byte	.LVL0
+ 1155 0004 11000000 		.4byte	.LVL1-1
+ 1156 0008 0100     		.2byte	0x1
+ 1157 000a 50       		.byte	0x50
+ 1158 000b 11000000 		.4byte	.LVL1-1
+ 1159 000f 14000000 		.4byte	.LVL2
+ 1160 0013 0400     		.2byte	0x4
+ 1161 0015 F3       		.byte	0xf3
+ 1162 0016 01       		.uleb128 0x1
+ 1163 0017 50       		.byte	0x50
+ 1164 0018 9F       		.byte	0x9f
+ 1165 0019 14000000 		.4byte	.LVL2
+ 1166 001d 17000000 		.4byte	.LVL3-1
+ 1167 0021 0100     		.2byte	0x1
+ 1168 0023 50       		.byte	0x50
+ 1169 0024 17000000 		.4byte	.LVL3-1
+ 1170 0028 1A000000 		.4byte	.LVL4
+ 1171 002c 0400     		.2byte	0x4
+ 1172 002e F3       		.byte	0xf3
+ 1173 002f 01       		.uleb128 0x1
+ 1174 0030 50       		.byte	0x50
+ 1175 0031 9F       		.byte	0x9f
+ 1176 0032 1A000000 		.4byte	.LVL4
+ 1177 0036 1D000000 		.4byte	.LVL5-1
+ 1178 003a 0100     		.2byte	0x1
+ 1179 003c 50       		.byte	0x50
+ 1180 003d 1D000000 		.4byte	.LVL5-1
+ 1181 0041 22000000 		.4byte	.LFE0
+ 1182 0045 0400     		.2byte	0x4
+ 1183 0047 F3       		.byte	0xf3
+ 1184 0048 01       		.uleb128 0x1
+ 1185 0049 50       		.byte	0x50
+ 1186 004a 9F       		.byte	0x9f
+ 1187 004b 00000000 		.4byte	0
+ 1188 004f 00000000 		.4byte	0
+ 1189              	.LLST1:
+ 1190 0053 00000000 		.4byte	.LVL6
+ 1191 0057 11000000 		.4byte	.LVL7-1
+ 1192 005b 0100     		.2byte	0x1
+ 1193 005d 50       		.byte	0x50
+ 1194 005e 11000000 		.4byte	.LVL7-1
+ 1195 0062 14000000 		.4byte	.LVL8
+ 1196 0066 0400     		.2byte	0x4
+ 1197 0068 F3       		.byte	0xf3
+ 1198 0069 01       		.uleb128 0x1
+ 1199 006a 50       		.byte	0x50
+ 1200 006b 9F       		.byte	0x9f
+ 1201 006c 14000000 		.4byte	.LVL8
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 26
+
+
+ 1202 0070 17000000 		.4byte	.LVL9-1
+ 1203 0074 0100     		.2byte	0x1
+ 1204 0076 50       		.byte	0x50
+ 1205 0077 17000000 		.4byte	.LVL9-1
+ 1206 007b 1A000000 		.4byte	.LVL10
+ 1207 007f 0400     		.2byte	0x4
+ 1208 0081 F3       		.byte	0xf3
+ 1209 0082 01       		.uleb128 0x1
+ 1210 0083 50       		.byte	0x50
+ 1211 0084 9F       		.byte	0x9f
+ 1212 0085 1A000000 		.4byte	.LVL10
+ 1213 0089 1D000000 		.4byte	.LVL11-1
+ 1214 008d 0100     		.2byte	0x1
+ 1215 008f 50       		.byte	0x50
+ 1216 0090 1D000000 		.4byte	.LVL11-1
+ 1217 0094 22000000 		.4byte	.LFE1
+ 1218 0098 0400     		.2byte	0x4
+ 1219 009a F3       		.byte	0xf3
+ 1220 009b 01       		.uleb128 0x1
+ 1221 009c 50       		.byte	0x50
+ 1222 009d 9F       		.byte	0x9f
+ 1223 009e 00000000 		.4byte	0
+ 1224 00a2 00000000 		.4byte	0
+ 1225              	.LLST2:
+ 1226 00a6 00000000 		.4byte	.LVL12
+ 1227 00aa 16000000 		.4byte	.LVL15
+ 1228 00ae 0100     		.2byte	0x1
+ 1229 00b0 50       		.byte	0x50
+ 1230 00b1 16000000 		.4byte	.LVL15
+ 1231 00b5 1C000000 		.4byte	.LVL17
+ 1232 00b9 0400     		.2byte	0x4
+ 1233 00bb F3       		.byte	0xf3
+ 1234 00bc 01       		.uleb128 0x1
+ 1235 00bd 50       		.byte	0x50
+ 1236 00be 9F       		.byte	0x9f
+ 1237 00bf 1C000000 		.4byte	.LVL17
+ 1238 00c3 20000000 		.4byte	.LVL18
+ 1239 00c7 0100     		.2byte	0x1
+ 1240 00c9 50       		.byte	0x50
+ 1241 00ca 20000000 		.4byte	.LVL18
+ 1242 00ce 26000000 		.4byte	.LVL20
+ 1243 00d2 0400     		.2byte	0x4
+ 1244 00d4 F3       		.byte	0xf3
+ 1245 00d5 01       		.uleb128 0x1
+ 1246 00d6 50       		.byte	0x50
+ 1247 00d7 9F       		.byte	0x9f
+ 1248 00d8 26000000 		.4byte	.LVL20
+ 1249 00dc 2A000000 		.4byte	.LVL21
+ 1250 00e0 0100     		.2byte	0x1
+ 1251 00e2 50       		.byte	0x50
+ 1252 00e3 2A000000 		.4byte	.LVL21
+ 1253 00e7 32000000 		.4byte	.LFE2
+ 1254 00eb 0400     		.2byte	0x4
+ 1255 00ed F3       		.byte	0xf3
+ 1256 00ee 01       		.uleb128 0x1
+ 1257 00ef 50       		.byte	0x50
+ 1258 00f0 9F       		.byte	0x9f
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 27
+
+
+ 1259 00f1 00000000 		.4byte	0
+ 1260 00f5 00000000 		.4byte	0
+ 1261              	.LLST3:
+ 1262 00f9 00000000 		.4byte	.LVL12
+ 1263 00fd 06000000 		.4byte	.LVL13
+ 1264 0101 0100     		.2byte	0x1
+ 1265 0103 51       		.byte	0x51
+ 1266 0104 06000000 		.4byte	.LVL13
+ 1267 0108 32000000 		.4byte	.LFE2
+ 1268 010c 0100     		.2byte	0x1
+ 1269 010e 54       		.byte	0x54
+ 1270 010f 00000000 		.4byte	0
+ 1271 0113 00000000 		.4byte	0
+ 1272              	.LLST4:
+ 1273 0117 00000000 		.4byte	.LVL12
+ 1274 011b 14000000 		.4byte	.LVL14
+ 1275 011f 0100     		.2byte	0x1
+ 1276 0121 52       		.byte	0x52
+ 1277 0122 14000000 		.4byte	.LVL14
+ 1278 0126 19000000 		.4byte	.LVL16-1
+ 1279 012a 0100     		.2byte	0x1
+ 1280 012c 51       		.byte	0x51
+ 1281 012d 19000000 		.4byte	.LVL16-1
+ 1282 0131 1C000000 		.4byte	.LVL17
+ 1283 0135 0400     		.2byte	0x4
+ 1284 0137 F3       		.byte	0xf3
+ 1285 0138 01       		.uleb128 0x1
+ 1286 0139 52       		.byte	0x52
+ 1287 013a 9F       		.byte	0x9f
+ 1288 013b 1C000000 		.4byte	.LVL17
+ 1289 013f 23000000 		.4byte	.LVL19-1
+ 1290 0143 0100     		.2byte	0x1
+ 1291 0145 51       		.byte	0x51
+ 1292 0146 23000000 		.4byte	.LVL19-1
+ 1293 014a 26000000 		.4byte	.LVL20
+ 1294 014e 0400     		.2byte	0x4
+ 1295 0150 F3       		.byte	0xf3
+ 1296 0151 01       		.uleb128 0x1
+ 1297 0152 52       		.byte	0x52
+ 1298 0153 9F       		.byte	0x9f
+ 1299 0154 26000000 		.4byte	.LVL20
+ 1300 0158 2D000000 		.4byte	.LVL22-1
+ 1301 015c 0100     		.2byte	0x1
+ 1302 015e 51       		.byte	0x51
+ 1303 015f 2D000000 		.4byte	.LVL22-1
+ 1304 0163 32000000 		.4byte	.LFE2
+ 1305 0167 0400     		.2byte	0x4
+ 1306 0169 F3       		.byte	0xf3
+ 1307 016a 01       		.uleb128 0x1
+ 1308 016b 52       		.byte	0x52
+ 1309 016c 9F       		.byte	0x9f
+ 1310 016d 00000000 		.4byte	0
+ 1311 0171 00000000 		.4byte	0
+ 1312              	.LLST5:
+ 1313 0175 00000000 		.4byte	.LVL12
+ 1314 0179 19000000 		.4byte	.LVL16-1
+ 1315 017d 0100     		.2byte	0x1
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 28
+
+
+ 1316 017f 53       		.byte	0x53
+ 1317 0180 19000000 		.4byte	.LVL16-1
+ 1318 0184 1C000000 		.4byte	.LVL17
+ 1319 0188 0400     		.2byte	0x4
+ 1320 018a F3       		.byte	0xf3
+ 1321 018b 01       		.uleb128 0x1
+ 1322 018c 53       		.byte	0x53
+ 1323 018d 9F       		.byte	0x9f
+ 1324 018e 1C000000 		.4byte	.LVL17
+ 1325 0192 23000000 		.4byte	.LVL19-1
+ 1326 0196 0100     		.2byte	0x1
+ 1327 0198 53       		.byte	0x53
+ 1328 0199 23000000 		.4byte	.LVL19-1
+ 1329 019d 26000000 		.4byte	.LVL20
+ 1330 01a1 0400     		.2byte	0x4
+ 1331 01a3 F3       		.byte	0xf3
+ 1332 01a4 01       		.uleb128 0x1
+ 1333 01a5 53       		.byte	0x53
+ 1334 01a6 9F       		.byte	0x9f
+ 1335 01a7 26000000 		.4byte	.LVL20
+ 1336 01ab 2D000000 		.4byte	.LVL22-1
+ 1337 01af 0100     		.2byte	0x1
+ 1338 01b1 53       		.byte	0x53
+ 1339 01b2 2D000000 		.4byte	.LVL22-1
+ 1340 01b6 32000000 		.4byte	.LFE2
+ 1341 01ba 0400     		.2byte	0x4
+ 1342 01bc F3       		.byte	0xf3
+ 1343 01bd 01       		.uleb128 0x1
+ 1344 01be 53       		.byte	0x53
+ 1345 01bf 9F       		.byte	0x9f
+ 1346 01c0 00000000 		.4byte	0
+ 1347 01c4 00000000 		.4byte	0
+ 1348              	.LLST6:
+ 1349 01c8 00000000 		.4byte	.LVL23
+ 1350 01cc 16000000 		.4byte	.LVL26
+ 1351 01d0 0100     		.2byte	0x1
+ 1352 01d2 50       		.byte	0x50
+ 1353 01d3 16000000 		.4byte	.LVL26
+ 1354 01d7 1C000000 		.4byte	.LVL28
+ 1355 01db 0400     		.2byte	0x4
+ 1356 01dd F3       		.byte	0xf3
+ 1357 01de 01       		.uleb128 0x1
+ 1358 01df 50       		.byte	0x50
+ 1359 01e0 9F       		.byte	0x9f
+ 1360 01e1 1C000000 		.4byte	.LVL28
+ 1361 01e5 20000000 		.4byte	.LVL29
+ 1362 01e9 0100     		.2byte	0x1
+ 1363 01eb 50       		.byte	0x50
+ 1364 01ec 20000000 		.4byte	.LVL29
+ 1365 01f0 26000000 		.4byte	.LVL31
+ 1366 01f4 0400     		.2byte	0x4
+ 1367 01f6 F3       		.byte	0xf3
+ 1368 01f7 01       		.uleb128 0x1
+ 1369 01f8 50       		.byte	0x50
+ 1370 01f9 9F       		.byte	0x9f
+ 1371 01fa 26000000 		.4byte	.LVL31
+ 1372 01fe 2A000000 		.4byte	.LVL32
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 29
+
+
+ 1373 0202 0100     		.2byte	0x1
+ 1374 0204 50       		.byte	0x50
+ 1375 0205 2A000000 		.4byte	.LVL32
+ 1376 0209 32000000 		.4byte	.LFE3
+ 1377 020d 0400     		.2byte	0x4
+ 1378 020f F3       		.byte	0xf3
+ 1379 0210 01       		.uleb128 0x1
+ 1380 0211 50       		.byte	0x50
+ 1381 0212 9F       		.byte	0x9f
+ 1382 0213 00000000 		.4byte	0
+ 1383 0217 00000000 		.4byte	0
+ 1384              	.LLST7:
+ 1385 021b 00000000 		.4byte	.LVL23
+ 1386 021f 06000000 		.4byte	.LVL24
+ 1387 0223 0100     		.2byte	0x1
+ 1388 0225 51       		.byte	0x51
+ 1389 0226 06000000 		.4byte	.LVL24
+ 1390 022a 32000000 		.4byte	.LFE3
+ 1391 022e 0100     		.2byte	0x1
+ 1392 0230 54       		.byte	0x54
+ 1393 0231 00000000 		.4byte	0
+ 1394 0235 00000000 		.4byte	0
+ 1395              	.LLST8:
+ 1396 0239 00000000 		.4byte	.LVL23
+ 1397 023d 14000000 		.4byte	.LVL25
+ 1398 0241 0100     		.2byte	0x1
+ 1399 0243 52       		.byte	0x52
+ 1400 0244 14000000 		.4byte	.LVL25
+ 1401 0248 19000000 		.4byte	.LVL27-1
+ 1402 024c 0100     		.2byte	0x1
+ 1403 024e 51       		.byte	0x51
+ 1404 024f 19000000 		.4byte	.LVL27-1
+ 1405 0253 1C000000 		.4byte	.LVL28
+ 1406 0257 0400     		.2byte	0x4
+ 1407 0259 F3       		.byte	0xf3
+ 1408 025a 01       		.uleb128 0x1
+ 1409 025b 52       		.byte	0x52
+ 1410 025c 9F       		.byte	0x9f
+ 1411 025d 1C000000 		.4byte	.LVL28
+ 1412 0261 23000000 		.4byte	.LVL30-1
+ 1413 0265 0100     		.2byte	0x1
+ 1414 0267 51       		.byte	0x51
+ 1415 0268 23000000 		.4byte	.LVL30-1
+ 1416 026c 26000000 		.4byte	.LVL31
+ 1417 0270 0400     		.2byte	0x4
+ 1418 0272 F3       		.byte	0xf3
+ 1419 0273 01       		.uleb128 0x1
+ 1420 0274 52       		.byte	0x52
+ 1421 0275 9F       		.byte	0x9f
+ 1422 0276 26000000 		.4byte	.LVL31
+ 1423 027a 2D000000 		.4byte	.LVL33-1
+ 1424 027e 0100     		.2byte	0x1
+ 1425 0280 51       		.byte	0x51
+ 1426 0281 2D000000 		.4byte	.LVL33-1
+ 1427 0285 32000000 		.4byte	.LFE3
+ 1428 0289 0400     		.2byte	0x4
+ 1429 028b F3       		.byte	0xf3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 30
+
+
+ 1430 028c 01       		.uleb128 0x1
+ 1431 028d 52       		.byte	0x52
+ 1432 028e 9F       		.byte	0x9f
+ 1433 028f 00000000 		.4byte	0
+ 1434 0293 00000000 		.4byte	0
+ 1435              	.LLST9:
+ 1436 0297 00000000 		.4byte	.LVL23
+ 1437 029b 19000000 		.4byte	.LVL27-1
+ 1438 029f 0100     		.2byte	0x1
+ 1439 02a1 53       		.byte	0x53
+ 1440 02a2 19000000 		.4byte	.LVL27-1
+ 1441 02a6 1C000000 		.4byte	.LVL28
+ 1442 02aa 0400     		.2byte	0x4
+ 1443 02ac F3       		.byte	0xf3
+ 1444 02ad 01       		.uleb128 0x1
+ 1445 02ae 53       		.byte	0x53
+ 1446 02af 9F       		.byte	0x9f
+ 1447 02b0 1C000000 		.4byte	.LVL28
+ 1448 02b4 23000000 		.4byte	.LVL30-1
+ 1449 02b8 0100     		.2byte	0x1
+ 1450 02ba 53       		.byte	0x53
+ 1451 02bb 23000000 		.4byte	.LVL30-1
+ 1452 02bf 26000000 		.4byte	.LVL31
+ 1453 02c3 0400     		.2byte	0x4
+ 1454 02c5 F3       		.byte	0xf3
+ 1455 02c6 01       		.uleb128 0x1
+ 1456 02c7 53       		.byte	0x53
+ 1457 02c8 9F       		.byte	0x9f
+ 1458 02c9 26000000 		.4byte	.LVL31
+ 1459 02cd 2D000000 		.4byte	.LVL33-1
+ 1460 02d1 0100     		.2byte	0x1
+ 1461 02d3 53       		.byte	0x53
+ 1462 02d4 2D000000 		.4byte	.LVL33-1
+ 1463 02d8 32000000 		.4byte	.LFE3
+ 1464 02dc 0400     		.2byte	0x4
+ 1465 02de F3       		.byte	0xf3
+ 1466 02df 01       		.uleb128 0x1
+ 1467 02e0 53       		.byte	0x53
+ 1468 02e1 9F       		.byte	0x9f
+ 1469 02e2 00000000 		.4byte	0
+ 1470 02e6 00000000 		.4byte	0
+ 1471              	.LLST10:
+ 1472 02ea 00000000 		.4byte	.LVL34
+ 1473 02ee 02000000 		.4byte	.LVL35
+ 1474 02f2 0100     		.2byte	0x1
+ 1475 02f4 50       		.byte	0x50
+ 1476 02f5 02000000 		.4byte	.LVL35
+ 1477 02f9 04000000 		.4byte	.LFE4
+ 1478 02fd 0400     		.2byte	0x4
+ 1479 02ff F3       		.byte	0xf3
+ 1480 0300 01       		.uleb128 0x1
+ 1481 0301 50       		.byte	0x50
+ 1482 0302 9F       		.byte	0x9f
+ 1483 0303 00000000 		.4byte	0
+ 1484 0307 00000000 		.4byte	0
+ 1485              		.section	.debug_aranges,"",%progbits
+ 1486 0000 3C000000 		.4byte	0x3c
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 31
+
+
+ 1487 0004 0200     		.2byte	0x2
+ 1488 0006 00000000 		.4byte	.Ldebug_info0
+ 1489 000a 04       		.byte	0x4
+ 1490 000b 00       		.byte	0
+ 1491 000c 0000     		.2byte	0
+ 1492 000e 0000     		.2byte	0
+ 1493 0010 00000000 		.4byte	.LFB0
+ 1494 0014 22000000 		.4byte	.LFE0-.LFB0
+ 1495 0018 00000000 		.4byte	.LFB1
+ 1496 001c 22000000 		.4byte	.LFE1-.LFB1
+ 1497 0020 00000000 		.4byte	.LFB2
+ 1498 0024 32000000 		.4byte	.LFE2-.LFB2
+ 1499 0028 00000000 		.4byte	.LFB3
+ 1500 002c 32000000 		.4byte	.LFE3-.LFB3
+ 1501 0030 00000000 		.4byte	.LFB4
+ 1502 0034 04000000 		.4byte	.LFE4-.LFB4
+ 1503 0038 00000000 		.4byte	0
+ 1504 003c 00000000 		.4byte	0
+ 1505              		.section	.debug_ranges,"",%progbits
+ 1506              	.Ldebug_ranges0:
+ 1507 0000 00000000 		.4byte	.LFB0
+ 1508 0004 22000000 		.4byte	.LFE0
+ 1509 0008 00000000 		.4byte	.LFB1
+ 1510 000c 22000000 		.4byte	.LFE1
+ 1511 0010 00000000 		.4byte	.LFB2
+ 1512 0014 32000000 		.4byte	.LFE2
+ 1513 0018 00000000 		.4byte	.LFB3
+ 1514 001c 32000000 		.4byte	.LFE3
+ 1515 0020 00000000 		.4byte	.LFB4
+ 1516 0024 04000000 		.4byte	.LFE4
+ 1517 0028 00000000 		.4byte	0
+ 1518 002c 00000000 		.4byte	0
+ 1519              		.section	.debug_line,"",%progbits
+ 1520              	.Ldebug_line0:
+ 1521 0000 AB000000 		.section	.debug_str,"MS",%progbits,1
+ 1521      02003800 
+ 1521      00000201 
+ 1521      FB0E0D00 
+ 1521      01010101 
+ 1522              	.LASF17:
+ 1523 0000 73746174 		.ascii	"stat\000"
+ 1523      00
+ 1524              	.LASF18:
+ 1525 0005 72657375 		.ascii	"result\000"
+ 1525      6C7400
+ 1526              	.LASF33:
+ 1527 000c 4D4D435F 		.ascii	"MMC_disk_read\000"
+ 1527      6469736B 
+ 1527      5F726561 
+ 1527      6400
+ 1528              	.LASF30:
+ 1529 001a 73656374 		.ascii	"sector\000"
+ 1529      6F7200
+ 1530              	.LASF7:
+ 1531 0021 44574F52 		.ascii	"DWORD\000"
+ 1531      4400
+ 1532              	.LASF13:
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 32
+
+
+ 1533 0027 5245535F 		.ascii	"RES_WRPRT\000"
+ 1533      57525052 
+ 1533      5400
+ 1534              	.LASF41:
+ 1535 0031 6469736B 		.ascii	"diskio.c\000"
+ 1535      696F2E63 
+ 1535      00
+ 1536              	.LASF32:
+ 1537 003a 52414D5F 		.ascii	"RAM_disk_read\000"
+ 1537      6469736B 
+ 1537      5F726561 
+ 1537      6400
+ 1538              	.LASF2:
+ 1539 0048 42595445 		.ascii	"BYTE\000"
+ 1539      00
+ 1540              	.LASF37:
+ 1541 004d 4D4D435F 		.ascii	"MMC_disk_write\000"
+ 1541      6469736B 
+ 1541      5F777269 
+ 1541      746500
+ 1542              	.LASF26:
+ 1543 005c 4D4D435F 		.ascii	"MMC_disk_initialize\000"
+ 1543      6469736B 
+ 1543      5F696E69 
+ 1543      7469616C 
+ 1543      697A6500 
+ 1544              	.LASF23:
+ 1545 0070 6469736B 		.ascii	"disk_initialize\000"
+ 1545      5F696E69 
+ 1545      7469616C 
+ 1545      697A6500 
+ 1546              	.LASF34:
+ 1547 0080 5553425F 		.ascii	"USB_disk_read\000"
+ 1547      6469736B 
+ 1547      5F726561 
+ 1547      6400
+ 1548              	.LASF22:
+ 1549 008e 6469736B 		.ascii	"disk_status\000"
+ 1549      5F737461 
+ 1549      74757300 
+ 1550              	.LASF3:
+ 1551 009a 756E7369 		.ascii	"unsigned char\000"
+ 1551      676E6564 
+ 1551      20636861 
+ 1551      7200
+ 1552              	.LASF8:
+ 1553 00a8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1553      20756E73 
+ 1553      69676E65 
+ 1553      6420696E 
+ 1553      7400
+ 1554              	.LASF5:
+ 1555 00ba 73686F72 		.ascii	"short unsigned int\000"
+ 1555      7420756E 
+ 1555      7369676E 
+ 1555      65642069 
+ 1555      6E7400
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 33
+
+
+ 1556              	.LASF14:
+ 1557 00cd 5245535F 		.ascii	"RES_NOTRDY\000"
+ 1557      4E4F5452 
+ 1557      445900
+ 1558              	.LASF10:
+ 1559 00d8 44535441 		.ascii	"DSTATUS\000"
+ 1559      54555300 
+ 1560              	.LASF21:
+ 1561 00e0 5553425F 		.ascii	"USB_disk_status\000"
+ 1561      6469736B 
+ 1561      5F737461 
+ 1561      74757300 
+ 1562              	.LASF39:
+ 1563 00f0 6469736B 		.ascii	"disk_ioctl\000"
+ 1563      5F696F63 
+ 1563      746C00
+ 1564              	.LASF16:
+ 1565 00fb 44524553 		.ascii	"DRESULT\000"
+ 1565      554C5400 
+ 1566              	.LASF42:
+ 1567 0103 433A5C55 		.ascii	"C:\\Users\\Nusair Islam\\Desktop\\PSOC\\SD\\SD.cyds"
+ 1567      73657273 
+ 1567      5C4E7573 
+ 1567      61697220 
+ 1567      49736C61 
+ 1568 0130 6E00     		.ascii	"n\000"
+ 1569              	.LASF0:
+ 1570 0132 756E7369 		.ascii	"unsigned int\000"
+ 1570      676E6564 
+ 1570      20696E74 
+ 1570      00
+ 1571              	.LASF19:
+ 1572 013f 52414D5F 		.ascii	"RAM_disk_status\000"
+ 1572      6469736B 
+ 1572      5F737461 
+ 1572      74757300 
+ 1573              	.LASF9:
+ 1574 014f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1574      206C6F6E 
+ 1574      6720756E 
+ 1574      7369676E 
+ 1574      65642069 
+ 1575              	.LASF1:
+ 1576 0166 55494E54 		.ascii	"UINT\000"
+ 1576      00
+ 1577              	.LASF40:
+ 1578 016b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1578      43313120 
+ 1578      352E342E 
+ 1578      31203230 
+ 1578      31363036 
+ 1579 019e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
+ 1579      20726576 
+ 1579      6973696F 
+ 1579      6E203233 
+ 1579      37373135 
+ 1580 01d1 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 34
+
+
+ 1580      70202D6D 
+ 1580      6670753D 
+ 1580      66707634 
+ 1580      2D73702D 
+ 1581 0204 65637469 		.ascii	"ections -ffat-lto-objects\000"
+ 1581      6F6E7320 
+ 1581      2D666661 
+ 1581      742D6C74 
+ 1581      6F2D6F62 
+ 1582              	.LASF27:
+ 1583 021e 5553425F 		.ascii	"USB_disk_initialize\000"
+ 1583      6469736B 
+ 1583      5F696E69 
+ 1583      7469616C 
+ 1583      697A6500 
+ 1584              	.LASF11:
+ 1585 0232 5245535F 		.ascii	"RES_OK\000"
+ 1585      4F4B00
+ 1586              	.LASF31:
+ 1587 0239 636F756E 		.ascii	"count\000"
+ 1587      7400
+ 1588              	.LASF4:
+ 1589 023f 73686F72 		.ascii	"short int\000"
+ 1589      7420696E 
+ 1589      7400
+ 1590              	.LASF35:
+ 1591 0249 6469736B 		.ascii	"disk_write\000"
+ 1591      5F777269 
+ 1591      746500
+ 1592              	.LASF12:
+ 1593 0254 5245535F 		.ascii	"RES_ERROR\000"
+ 1593      4552524F 
+ 1593      5200
+ 1594              	.LASF38:
+ 1595 025e 5553425F 		.ascii	"USB_disk_write\000"
+ 1595      6469736B 
+ 1595      5F777269 
+ 1595      746500
+ 1596              	.LASF6:
+ 1597 026d 6C6F6E67 		.ascii	"long int\000"
+ 1597      20696E74 
+ 1597      00
+ 1598              	.LASF36:
+ 1599 0276 52414D5F 		.ascii	"RAM_disk_write\000"
+ 1599      6469736B 
+ 1599      5F777269 
+ 1599      746500
+ 1600              	.LASF20:
+ 1601 0285 4D4D435F 		.ascii	"MMC_disk_status\000"
+ 1601      6469736B 
+ 1601      5F737461 
+ 1601      74757300 
+ 1602              	.LASF29:
+ 1603 0295 62756666 		.ascii	"buff\000"
+ 1603      00
+ 1604              	.LASF28:
+ 1605 029a 6469736B 		.ascii	"disk_read\000"
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc2eRtDE.s 			page 35
+
+
+ 1605      5F726561 
+ 1605      6400
+ 1606              	.LASF15:
+ 1607 02a4 5245535F 		.ascii	"RES_PARERR\000"
+ 1607      50415245 
+ 1607      525200
+ 1608              	.LASF25:
+ 1609 02af 52414D5F 		.ascii	"RAM_disk_initialize\000"
+ 1609      6469736B 
+ 1609      5F696E69 
+ 1609      7469616C 
+ 1609      697A6500 
+ 1610              	.LASF24:
+ 1611 02c3 70647276 		.ascii	"pdrv\000"
+ 1611      00
+ 1612              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

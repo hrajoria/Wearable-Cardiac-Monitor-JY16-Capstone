@@ -1,0 +1,4843 @@
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.fpu fpv4-sp-d16
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 1
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.thumb
+  15              		.syntax unified
+  16              		.file	"main_cm4.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.section	.text.main,"ax",%progbits
+  21              		.align	2
+  22              		.global	main
+  23              		.thumb
+  24              		.thumb_func
+  25              		.type	main, %function
+  26              	main:
+  27              	.LFB555:
+  28              		.file 1 "main_cm4.c"
+   1:main_cm4.c    **** /* ========================================
+   2:main_cm4.c    ****  *
+   3:main_cm4.c    ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main_cm4.c    ****  * All Rights Reserved
+   5:main_cm4.c    ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main_cm4.c    ****  *
+   7:main_cm4.c    ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main_cm4.c    ****  * WHICH IS THE PROPERTY OF your company.
+   9:main_cm4.c    ****  *
+  10:main_cm4.c    ****  * ========================================
+  11:main_cm4.c    **** */
+  12:main_cm4.c    **** #include "project.h"
+  13:main_cm4.c    **** #include "stdio.h"
+  14:main_cm4.c    **** #include "math.h"
+  15:main_cm4.c    **** 
+  16:main_cm4.c    **** #include "uartio.h"
+  17:main_cm4.c    **** #include "IMU.h"
+  18:main_cm4.c    **** #include "PPG.h"
+  19:main_cm4.c    **** 
+  20:main_cm4.c    **** 
+  21:main_cm4.c    **** int main(void)
+  22:main_cm4.c    **** {
+  29              		.loc 1 22 0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 104
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 2
+
+
+  36              		.cfi_offset 14, -4
+  37 0002 9AB0     		sub	sp, sp, #104
+  38              		.cfi_def_cfa_offset 112
+  39              	.LBB4:
+  40              	.LBB5:
+  41              		.file 2 "Generated_Source\\PSoC6\\pdl\\cmsis/include/cmsis_gcc.h"
+   1:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @version  V5.0.3
+   5:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @date     16. January 2018
+   6:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /*
+   8:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Copyright (c) 2009-2017 ARM Limited. All rights reserved.
+   9:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  10:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  12:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  16:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  18:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * limitations under the License.
+  23:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+  24:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  25:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  28:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  34:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  38:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  39:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  43:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  46:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  49:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif                                           
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 3
+
+
+  52:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  55:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __USED
+  56:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  58:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  61:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  64:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  67:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  70:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  78:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  86:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  94:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 102:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 4
+
+
+ 109:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 110:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 113:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 116:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ 117:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ 118:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 119:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 120:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 121:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   @{
+ 122:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+ 123:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ 124:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**
+ 125:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 126:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 127:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 128:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+ 129:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 130:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** {
+ 131:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+  42              		.loc 2 131 0
+  43              		.syntax unified
+  44              	@ 131 "Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h" 1
+  45 0004 62B6     		cpsie i
+  46              	@ 0 "" 2
+  47              		.thumb
+  48              		.syntax unified
+  49              	.LBE5:
+  50              	.LBE4:
+  23:main_cm4.c    ****     __enable_irq(); /* Enable global interrupts. */
+  24:main_cm4.c    ****     UartInit();
+  51              		.loc 1 24 0
+  52 0006 FFF7FEFF 		bl	UartInit
+  53              	.LVL0:
+  25:main_cm4.c    ****     print("Hello World, Master\n\r");
+  54              		.loc 1 25 0
+  55 000a 2848     		ldr	r0, .L6
+  56 000c FFF7FEFF 		bl	print
+  57              	.LVL1:
+  26:main_cm4.c    ****     char str[100];
+  27:main_cm4.c    ****     
+  28:main_cm4.c    ****     if(!init_ICM20649()){
+  58              		.loc 1 28 0
+  59 0010 FFF7FEFF 		bl	init_ICM20649
+  60              	.LVL2:
+  61 0014 18B9     		cbnz	r0, .L2
+  29:main_cm4.c    ****         print("Failed to start IMU\n\r");
+  62              		.loc 1 29 0
+  63 0016 2648     		ldr	r0, .L6+4
+  64 0018 FFF7FEFF 		bl	print
+  65              	.LVL3:
+  30:main_cm4.c    ****         return 0;
+  66              		.loc 1 30 0
+  67 001c 43E0     		b	.L3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 5
+
+
+  68              	.L2:
+  31:main_cm4.c    ****     }
+  32:main_cm4.c    ****     if(!setupPPG()){
+  69              		.loc 1 32 0
+  70 001e FFF7FEFF 		bl	setupPPG
+  71              	.LVL4:
+  72 0022 18B9     		cbnz	r0, .L4
+  33:main_cm4.c    ****         print("Failed to start PPG\n\r");
+  73              		.loc 1 33 0
+  74 0024 2348     		ldr	r0, .L6+8
+  75 0026 FFF7FEFF 		bl	print
+  76              	.LVL5:
+  34:main_cm4.c    ****         return 0;
+  77              		.loc 1 34 0
+  78 002a 3CE0     		b	.L3
+  79              	.L4:
+  35:main_cm4.c    ****     }
+  36:main_cm4.c    ****     
+  37:main_cm4.c    ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  38:main_cm4.c    **** 
+  39:main_cm4.c    ****     for(;;)
+  40:main_cm4.c    ****     {
+  41:main_cm4.c    ****         updateIMU();
+  80              		.loc 1 41 0 discriminator 1
+  81 002c FFF7FEFF 		bl	updateIMU
+  82              	.LVL6:
+  42:main_cm4.c    ****         updateLEDs();
+  83              		.loc 1 42 0 discriminator 1
+  84 0030 FFF7FEFF 		bl	updateLEDs
+  85              	.LVL7:
+  43:main_cm4.c    ****         print("AccX:");
+  86              		.loc 1 43 0 discriminator 1
+  87 0034 2048     		ldr	r0, .L6+12
+  88 0036 FFF7FEFF 		bl	print
+  89              	.LVL8:
+  44:main_cm4.c    ****         printDouble(imu.acc.g.x);
+  90              		.loc 1 44 0 discriminator 1
+  91 003a 204C     		ldr	r4, .L6+16
+  92 003c D4E90001 		ldrd	r0, [r4]
+  93 0040 FFF7FEFF 		bl	printDouble
+  94              	.LVL9:
+  45:main_cm4.c    ****         print(",AccY:");
+  95              		.loc 1 45 0 discriminator 1
+  96 0044 1E48     		ldr	r0, .L6+20
+  97 0046 FFF7FEFF 		bl	print
+  98              	.LVL10:
+  46:main_cm4.c    ****         printDouble(imu.acc.g.y);
+  99              		.loc 1 46 0 discriminator 1
+ 100 004a D4E90201 		ldrd	r0, [r4, #8]
+ 101 004e FFF7FEFF 		bl	printDouble
+ 102              	.LVL11:
+  47:main_cm4.c    ****         print(",AccZ:");
+ 103              		.loc 1 47 0 discriminator 1
+ 104 0052 1C48     		ldr	r0, .L6+24
+ 105 0054 FFF7FEFF 		bl	print
+ 106              	.LVL12:
+  48:main_cm4.c    ****         printDouble(imu.acc.g.z);
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 6
+
+
+ 107              		.loc 1 48 0 discriminator 1
+ 108 0058 D4E90401 		ldrd	r0, [r4, #16]
+ 109 005c FFF7FEFF 		bl	printDouble
+ 110              	.LVL13:
+  49:main_cm4.c    ****         print(",GyroX:");
+ 111              		.loc 1 49 0 discriminator 1
+ 112 0060 1948     		ldr	r0, .L6+28
+ 113 0062 FFF7FEFF 		bl	print
+ 114              	.LVL14:
+  50:main_cm4.c    ****         printDouble(imu.gyro.x);
+ 115              		.loc 1 50 0 discriminator 1
+ 116 0066 D4E90C01 		ldrd	r0, [r4, #48]
+ 117 006a FFF7FEFF 		bl	printDouble
+ 118              	.LVL15:
+  51:main_cm4.c    ****         print(",GyroY:");
+ 119              		.loc 1 51 0 discriminator 1
+ 120 006e 1748     		ldr	r0, .L6+32
+ 121 0070 FFF7FEFF 		bl	print
+ 122              	.LVL16:
+  52:main_cm4.c    ****         printDouble(imu.gyro.y);
+ 123              		.loc 1 52 0 discriminator 1
+ 124 0074 D4E90E01 		ldrd	r0, [r4, #56]
+ 125 0078 FFF7FEFF 		bl	printDouble
+ 126              	.LVL17:
+  53:main_cm4.c    ****         print(",GyroZ:");
+ 127              		.loc 1 53 0 discriminator 1
+ 128 007c 1448     		ldr	r0, .L6+36
+ 129 007e FFF7FEFF 		bl	print
+ 130              	.LVL18:
+  54:main_cm4.c    ****         printDouble(imu.gyro.z);
+ 131              		.loc 1 54 0 discriminator 1
+ 132 0082 D4E91001 		ldrd	r0, [r4, #64]
+ 133 0086 FFF7FEFF 		bl	printDouble
+ 134              	.LVL19:
+  55:main_cm4.c    ****         
+  56:main_cm4.c    ****         sprintf(str, ",IR:%u,Red:%u\n\r",ppg.ir,ppg.red);
+ 135              		.loc 1 56 0 discriminator 1
+ 136 008a 124A     		ldr	r2, .L6+40
+ 137 008c 5368     		ldr	r3, [r2, #4]
+ 138 008e 1268     		ldr	r2, [r2]
+ 139 0090 1149     		ldr	r1, .L6+44
+ 140 0092 01A8     		add	r0, sp, #4
+ 141 0094 FFF7FEFF 		bl	sprintf
+ 142              	.LVL20:
+  57:main_cm4.c    ****         print(str);
+ 143              		.loc 1 57 0 discriminator 1
+ 144 0098 01A8     		add	r0, sp, #4
+ 145 009a FFF7FEFF 		bl	print
+ 146              	.LVL21:
+  58:main_cm4.c    ****         
+  59:main_cm4.c    ****         CyDelay(1);
+ 147              		.loc 1 59 0 discriminator 1
+ 148 009e 0120     		movs	r0, #1
+ 149 00a0 FFF7FEFF 		bl	Cy_SysLib_Delay
+ 150              	.LVL22:
+ 151 00a4 C2E7     		b	.L4
+ 152              	.L3:
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 7
+
+
+  60:main_cm4.c    ****     }
+  61:main_cm4.c    **** }
+ 153              		.loc 1 61 0
+ 154 00a6 0020     		movs	r0, #0
+ 155 00a8 1AB0     		add	sp, sp, #104
+ 156              		.cfi_def_cfa_offset 8
+ 157              		@ sp needed
+ 158 00aa 10BD     		pop	{r4, pc}
+ 159              	.L7:
+ 160              		.align	2
+ 161              	.L6:
+ 162 00ac 00000000 		.word	.LC0
+ 163 00b0 18000000 		.word	.LC1
+ 164 00b4 30000000 		.word	.LC2
+ 165 00b8 48000000 		.word	.LC3
+ 166 00bc 00000000 		.word	imu
+ 167 00c0 50000000 		.word	.LC4
+ 168 00c4 58000000 		.word	.LC5
+ 169 00c8 60000000 		.word	.LC6
+ 170 00cc 68000000 		.word	.LC7
+ 171 00d0 70000000 		.word	.LC8
+ 172 00d4 00000000 		.word	ppg
+ 173 00d8 78000000 		.word	.LC9
+ 174              		.cfi_endproc
+ 175              	.LFE555:
+ 176              		.size	main, .-main
+ 177              		.comm	ppg,8,4
+ 178              		.comm	imu,72,8
+ 179              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 180              		.align	2
+ 181              	.LC0:
+ 182 0000 48656C6C 		.ascii	"Hello World, Master\012\015\000"
+ 182      6F20576F 
+ 182      726C642C 
+ 182      204D6173 
+ 182      7465720A 
+ 183 0016 0000     		.space	2
+ 184              	.LC1:
+ 185 0018 4661696C 		.ascii	"Failed to start IMU\012\015\000"
+ 185      65642074 
+ 185      6F207374 
+ 185      61727420 
+ 185      494D550A 
+ 186 002e 0000     		.space	2
+ 187              	.LC2:
+ 188 0030 4661696C 		.ascii	"Failed to start PPG\012\015\000"
+ 188      65642074 
+ 188      6F207374 
+ 188      61727420 
+ 188      5050470A 
+ 189 0046 0000     		.space	2
+ 190              	.LC3:
+ 191 0048 41636358 		.ascii	"AccX:\000"
+ 191      3A00
+ 192 004e 0000     		.space	2
+ 193              	.LC4:
+ 194 0050 2C416363 		.ascii	",AccY:\000"
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 8
+
+
+ 194      593A00
+ 195 0057 00       		.space	1
+ 196              	.LC5:
+ 197 0058 2C416363 		.ascii	",AccZ:\000"
+ 197      5A3A00
+ 198 005f 00       		.space	1
+ 199              	.LC6:
+ 200 0060 2C477972 		.ascii	",GyroX:\000"
+ 200      6F583A00 
+ 201              	.LC7:
+ 202 0068 2C477972 		.ascii	",GyroY:\000"
+ 202      6F593A00 
+ 203              	.LC8:
+ 204 0070 2C477972 		.ascii	",GyroZ:\000"
+ 204      6F5A3A00 
+ 205              	.LC9:
+ 206 0078 2C49523A 		.ascii	",IR:%u,Red:%u\012\015\000"
+ 206      25752C52 
+ 206      65643A25 
+ 206      750A0D00 
+ 207              		.text
+ 208              	.Letext0:
+ 209              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 210              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 211              		.file 5 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
+ 212              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/scb/cy_scb_i2c.h"
+ 213              		.file 7 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/scb/cy_scb_spi.h"
+ 214              		.file 8 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/scb/cy_scb_uart.h"
+ 215              		.file 9 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_stack.h"
+ 216              		.file 10 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_stack_host_main.h"
+ 217              		.file 11 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_gap.h"
+ 218              		.file 12 "IMU.h"
+ 219              		.file 13 "PPG.h"
+ 220              		.file 14 "Generated_Source\\PSoC6\\pdl\\cmsis/include/core_cm4.h"
+ 221              		.file 15 "Generated_Source\\PSoC6/UART.h"
+ 222              		.file 16 "Generated_Source\\PSoC6/ppgI2C.h"
+ 223              		.file 17 "Generated_Source\\PSoC6/imuSPI.h"
+ 224              		.file 18 "uartio.h"
+ 225              		.file 19 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4
+ 226              		.file 20 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/syslib/cy_syslib.h"
+ 227              		.section	.debug_info,"",%progbits
+ 228              	.Ldebug_info0:
+ 229 0000 C00F0000 		.4byte	0xfc0
+ 230 0004 0400     		.2byte	0x4
+ 231 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 232 000a 04       		.byte	0x4
+ 233 000b 01       		.uleb128 0x1
+ 234 000c A4040000 		.4byte	.LASF316
+ 235 0010 0C       		.byte	0xc
+ 236 0011 8C000000 		.4byte	.LASF317
+ 237 0015 D9010000 		.4byte	.LASF318
+ 238 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 239 001d 00000000 		.4byte	0
+ 240 0021 00000000 		.4byte	.Ldebug_line0
+ 241 0025 02       		.uleb128 0x2
+ 242 0026 02       		.byte	0x2
+ 243 0027 05       		.byte	0x5
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 9
+
+
+ 244 0028 7E150000 		.4byte	.LASF0
+ 245 002c 02       		.uleb128 0x2
+ 246 002d 01       		.byte	0x1
+ 247 002e 06       		.byte	0x6
+ 248 002f BF1A0000 		.4byte	.LASF1
+ 249 0033 03       		.uleb128 0x3
+ 250 0034 35170000 		.4byte	.LASF3
+ 251 0038 03       		.byte	0x3
+ 252 0039 1D       		.byte	0x1d
+ 253 003a 3E000000 		.4byte	0x3e
+ 254 003e 02       		.uleb128 0x2
+ 255 003f 01       		.byte	0x1
+ 256 0040 08       		.byte	0x8
+ 257 0041 F2180000 		.4byte	.LASF2
+ 258 0045 03       		.uleb128 0x3
+ 259 0046 25100000 		.4byte	.LASF4
+ 260 004a 03       		.byte	0x3
+ 261 004b 29       		.byte	0x29
+ 262 004c 25000000 		.4byte	0x25
+ 263 0050 03       		.uleb128 0x3
+ 264 0051 FB0B0000 		.4byte	.LASF5
+ 265 0055 03       		.byte	0x3
+ 266 0056 2B       		.byte	0x2b
+ 267 0057 5B000000 		.4byte	0x5b
+ 268 005b 02       		.uleb128 0x2
+ 269 005c 02       		.byte	0x2
+ 270 005d 07       		.byte	0x7
+ 271 005e 1D130000 		.4byte	.LASF6
+ 272 0062 03       		.uleb128 0x3
+ 273 0063 BB020000 		.4byte	.LASF7
+ 274 0067 03       		.byte	0x3
+ 275 0068 3F       		.byte	0x3f
+ 276 0069 6D000000 		.4byte	0x6d
+ 277 006d 02       		.uleb128 0x2
+ 278 006e 04       		.byte	0x4
+ 279 006f 05       		.byte	0x5
+ 280 0070 C3150000 		.4byte	.LASF8
+ 281 0074 03       		.uleb128 0x3
+ 282 0075 25190000 		.4byte	.LASF9
+ 283 0079 03       		.byte	0x3
+ 284 007a 41       		.byte	0x41
+ 285 007b 7F000000 		.4byte	0x7f
+ 286 007f 02       		.uleb128 0x2
+ 287 0080 04       		.byte	0x4
+ 288 0081 07       		.byte	0x7
+ 289 0082 6D180000 		.4byte	.LASF10
+ 290 0086 02       		.uleb128 0x2
+ 291 0087 08       		.byte	0x8
+ 292 0088 05       		.byte	0x5
+ 293 0089 820F0000 		.4byte	.LASF11
+ 294 008d 02       		.uleb128 0x2
+ 295 008e 08       		.byte	0x8
+ 296 008f 07       		.byte	0x7
+ 297 0090 24080000 		.4byte	.LASF12
+ 298 0094 04       		.uleb128 0x4
+ 299 0095 04       		.byte	0x4
+ 300 0096 05       		.byte	0x5
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 10
+
+
+ 301 0097 696E7400 		.ascii	"int\000"
+ 302 009b 02       		.uleb128 0x2
+ 303 009c 04       		.byte	0x4
+ 304 009d 07       		.byte	0x7
+ 305 009e 10020000 		.4byte	.LASF13
+ 306 00a2 03       		.uleb128 0x3
+ 307 00a3 250E0000 		.4byte	.LASF14
+ 308 00a7 04       		.byte	0x4
+ 309 00a8 18       		.byte	0x18
+ 310 00a9 33000000 		.4byte	0x33
+ 311 00ad 03       		.uleb128 0x3
+ 312 00ae E4070000 		.4byte	.LASF15
+ 313 00b2 04       		.byte	0x4
+ 314 00b3 20       		.byte	0x20
+ 315 00b4 45000000 		.4byte	0x45
+ 316 00b8 03       		.uleb128 0x3
+ 317 00b9 77130000 		.4byte	.LASF16
+ 318 00bd 04       		.byte	0x4
+ 319 00be 24       		.byte	0x24
+ 320 00bf 50000000 		.4byte	0x50
+ 321 00c3 03       		.uleb128 0x3
+ 322 00c4 9D180000 		.4byte	.LASF17
+ 323 00c8 04       		.byte	0x4
+ 324 00c9 2C       		.byte	0x2c
+ 325 00ca 62000000 		.4byte	0x62
+ 326 00ce 03       		.uleb128 0x3
+ 327 00cf 9C060000 		.4byte	.LASF18
+ 328 00d3 04       		.byte	0x4
+ 329 00d4 30       		.byte	0x30
+ 330 00d5 74000000 		.4byte	0x74
+ 331 00d9 02       		.uleb128 0x2
+ 332 00da 04       		.byte	0x4
+ 333 00db 07       		.byte	0x7
+ 334 00dc BB140000 		.4byte	.LASF19
+ 335 00e0 05       		.uleb128 0x5
+ 336 00e1 CE000000 		.4byte	0xce
+ 337 00e5 02       		.uleb128 0x2
+ 338 00e6 08       		.byte	0x8
+ 339 00e7 04       		.byte	0x4
+ 340 00e8 3A130000 		.4byte	.LASF20
+ 341 00ec 06       		.uleb128 0x6
+ 342 00ed B8       		.byte	0xb8
+ 343 00ee 05       		.byte	0x5
+ 344 00ef 34       		.byte	0x34
+ 345 00f0 FD040000 		.4byte	0x4fd
+ 346 00f4 07       		.uleb128 0x7
+ 347 00f5 D4020000 		.4byte	.LASF21
+ 348 00f9 05       		.byte	0x5
+ 349 00fa 37       		.byte	0x37
+ 350 00fb CE000000 		.4byte	0xce
+ 351 00ff 00       		.byte	0
+ 352 0100 07       		.uleb128 0x7
+ 353 0101 B00C0000 		.4byte	.LASF22
+ 354 0105 05       		.byte	0x5
+ 355 0106 38       		.byte	0x38
+ 356 0107 CE000000 		.4byte	0xce
+ 357 010b 04       		.byte	0x4
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 11
+
+
+ 358 010c 07       		.uleb128 0x7
+ 359 010d 63010000 		.4byte	.LASF23
+ 360 0111 05       		.byte	0x5
+ 361 0112 39       		.byte	0x39
+ 362 0113 CE000000 		.4byte	0xce
+ 363 0117 08       		.byte	0x8
+ 364 0118 07       		.uleb128 0x7
+ 365 0119 C3080000 		.4byte	.LASF24
+ 366 011d 05       		.byte	0x5
+ 367 011e 3A       		.byte	0x3a
+ 368 011f CE000000 		.4byte	0xce
+ 369 0123 0C       		.byte	0xc
+ 370 0124 07       		.uleb128 0x7
+ 371 0125 33160000 		.4byte	.LASF25
+ 372 0129 05       		.byte	0x5
+ 373 012a 3B       		.byte	0x3b
+ 374 012b CE000000 		.4byte	0xce
+ 375 012f 10       		.byte	0x10
+ 376 0130 07       		.uleb128 0x7
+ 377 0131 52100000 		.4byte	.LASF26
+ 378 0135 05       		.byte	0x5
+ 379 0136 3C       		.byte	0x3c
+ 380 0137 CE000000 		.4byte	0xce
+ 381 013b 14       		.byte	0x14
+ 382 013c 07       		.uleb128 0x7
+ 383 013d BE0A0000 		.4byte	.LASF27
+ 384 0141 05       		.byte	0x5
+ 385 0142 3D       		.byte	0x3d
+ 386 0143 CE000000 		.4byte	0xce
+ 387 0147 18       		.byte	0x18
+ 388 0148 07       		.uleb128 0x7
+ 389 0149 AD1B0000 		.4byte	.LASF28
+ 390 014d 05       		.byte	0x5
+ 391 014e 3E       		.byte	0x3e
+ 392 014f CE000000 		.4byte	0xce
+ 393 0153 1C       		.byte	0x1c
+ 394 0154 07       		.uleb128 0x7
+ 395 0155 900F0000 		.4byte	.LASF29
+ 396 0159 05       		.byte	0x5
+ 397 015a 3F       		.byte	0x3f
+ 398 015b CE000000 		.4byte	0xce
+ 399 015f 20       		.byte	0x20
+ 400 0160 07       		.uleb128 0x7
+ 401 0161 A70F0000 		.4byte	.LASF30
+ 402 0165 05       		.byte	0x5
+ 403 0166 40       		.byte	0x40
+ 404 0167 CE000000 		.4byte	0xce
+ 405 016b 24       		.byte	0x24
+ 406 016c 07       		.uleb128 0x7
+ 407 016d CC150000 		.4byte	.LASF31
+ 408 0171 05       		.byte	0x5
+ 409 0172 43       		.byte	0x43
+ 410 0173 A2000000 		.4byte	0xa2
+ 411 0177 28       		.byte	0x28
+ 412 0178 07       		.uleb128 0x7
+ 413 0179 66070000 		.4byte	.LASF32
+ 414 017d 05       		.byte	0x5
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 12
+
+
+ 415 017e 44       		.byte	0x44
+ 416 017f A2000000 		.4byte	0xa2
+ 417 0183 29       		.byte	0x29
+ 418 0184 07       		.uleb128 0x7
+ 419 0185 E2130000 		.4byte	.LASF33
+ 420 0189 05       		.byte	0x5
+ 421 018a 45       		.byte	0x45
+ 422 018b A2000000 		.4byte	0xa2
+ 423 018f 2A       		.byte	0x2a
+ 424 0190 07       		.uleb128 0x7
+ 425 0191 13160000 		.4byte	.LASF34
+ 426 0195 05       		.byte	0x5
+ 427 0196 46       		.byte	0x46
+ 428 0197 A2000000 		.4byte	0xa2
+ 429 019b 2B       		.byte	0x2b
+ 430 019c 07       		.uleb128 0x7
+ 431 019d E6150000 		.4byte	.LASF35
+ 432 01a1 05       		.byte	0x5
+ 433 01a2 47       		.byte	0x47
+ 434 01a3 A2000000 		.4byte	0xa2
+ 435 01a7 2C       		.byte	0x2c
+ 436 01a8 07       		.uleb128 0x7
+ 437 01a9 60180000 		.4byte	.LASF36
+ 438 01ad 05       		.byte	0x5
+ 439 01ae 48       		.byte	0x48
+ 440 01af A2000000 		.4byte	0xa2
+ 441 01b3 2D       		.byte	0x2d
+ 442 01b4 07       		.uleb128 0x7
+ 443 01b5 741C0000 		.4byte	.LASF37
+ 444 01b9 05       		.byte	0x5
+ 445 01ba 49       		.byte	0x49
+ 446 01bb A2000000 		.4byte	0xa2
+ 447 01bf 2E       		.byte	0x2e
+ 448 01c0 07       		.uleb128 0x7
+ 449 01c1 731B0000 		.4byte	.LASF38
+ 450 01c5 05       		.byte	0x5
+ 451 01c6 4A       		.byte	0x4a
+ 452 01c7 A2000000 		.4byte	0xa2
+ 453 01cb 2F       		.byte	0x2f
+ 454 01cc 07       		.uleb128 0x7
+ 455 01cd 650B0000 		.4byte	.LASF39
+ 456 01d1 05       		.byte	0x5
+ 457 01d2 4B       		.byte	0x4b
+ 458 01d3 A2000000 		.4byte	0xa2
+ 459 01d7 30       		.byte	0x30
+ 460 01d8 07       		.uleb128 0x7
+ 461 01d9 89110000 		.4byte	.LASF40
+ 462 01dd 05       		.byte	0x5
+ 463 01de 4E       		.byte	0x4e
+ 464 01df A2000000 		.4byte	0xa2
+ 465 01e3 31       		.byte	0x31
+ 466 01e4 07       		.uleb128 0x7
+ 467 01e5 D61A0000 		.4byte	.LASF41
+ 468 01e9 05       		.byte	0x5
+ 469 01ea 4F       		.byte	0x4f
+ 470 01eb A2000000 		.4byte	0xa2
+ 471 01ef 32       		.byte	0x32
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 13
+
+
+ 472 01f0 07       		.uleb128 0x7
+ 473 01f1 03110000 		.4byte	.LASF42
+ 474 01f5 05       		.byte	0x5
+ 475 01f6 50       		.byte	0x50
+ 476 01f7 A2000000 		.4byte	0xa2
+ 477 01fb 33       		.byte	0x33
+ 478 01fc 07       		.uleb128 0x7
+ 479 01fd 750C0000 		.4byte	.LASF43
+ 480 0201 05       		.byte	0x5
+ 481 0202 51       		.byte	0x51
+ 482 0203 A2000000 		.4byte	0xa2
+ 483 0207 34       		.byte	0x34
+ 484 0208 07       		.uleb128 0x7
+ 485 0209 97080000 		.4byte	.LASF44
+ 486 020d 05       		.byte	0x5
+ 487 020e 52       		.byte	0x52
+ 488 020f AD000000 		.4byte	0xad
+ 489 0213 36       		.byte	0x36
+ 490 0214 07       		.uleb128 0x7
+ 491 0215 0B030000 		.4byte	.LASF45
+ 492 0219 05       		.byte	0x5
+ 493 021a 53       		.byte	0x53
+ 494 021b AD000000 		.4byte	0xad
+ 495 021f 38       		.byte	0x38
+ 496 0220 07       		.uleb128 0x7
+ 497 0221 A8100000 		.4byte	.LASF46
+ 498 0225 05       		.byte	0x5
+ 499 0226 54       		.byte	0x54
+ 500 0227 AD000000 		.4byte	0xad
+ 501 022b 3A       		.byte	0x3a
+ 502 022c 07       		.uleb128 0x7
+ 503 022d C5020000 		.4byte	.LASF47
+ 504 0231 05       		.byte	0x5
+ 505 0232 55       		.byte	0x55
+ 506 0233 A2000000 		.4byte	0xa2
+ 507 0237 3C       		.byte	0x3c
+ 508 0238 07       		.uleb128 0x7
+ 509 0239 E7090000 		.4byte	.LASF48
+ 510 023d 05       		.byte	0x5
+ 511 023e 56       		.byte	0x56
+ 512 023f A2000000 		.4byte	0xa2
+ 513 0243 3D       		.byte	0x3d
+ 514 0244 07       		.uleb128 0x7
+ 515 0245 B61B0000 		.4byte	.LASF49
+ 516 0249 05       		.byte	0x5
+ 517 024a 57       		.byte	0x57
+ 518 024b A2000000 		.4byte	0xa2
+ 519 024f 3E       		.byte	0x3e
+ 520 0250 07       		.uleb128 0x7
+ 521 0251 FB000000 		.4byte	.LASF50
+ 522 0255 05       		.byte	0x5
+ 523 0256 58       		.byte	0x58
+ 524 0257 A2000000 		.4byte	0xa2
+ 525 025b 3F       		.byte	0x3f
+ 526 025c 07       		.uleb128 0x7
+ 527 025d 8E020000 		.4byte	.LASF51
+ 528 0261 05       		.byte	0x5
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 14
+
+
+ 529 0262 59       		.byte	0x59
+ 530 0263 A2000000 		.4byte	0xa2
+ 531 0267 40       		.byte	0x40
+ 532 0268 07       		.uleb128 0x7
+ 533 0269 D4110000 		.4byte	.LASF52
+ 534 026d 05       		.byte	0x5
+ 535 026e 5A       		.byte	0x5a
+ 536 026f A2000000 		.4byte	0xa2
+ 537 0273 41       		.byte	0x41
+ 538 0274 07       		.uleb128 0x7
+ 539 0275 8E070000 		.4byte	.LASF53
+ 540 0279 05       		.byte	0x5
+ 541 027a 5B       		.byte	0x5b
+ 542 027b A2000000 		.4byte	0xa2
+ 543 027f 42       		.byte	0x42
+ 544 0280 07       		.uleb128 0x7
+ 545 0281 9E0B0000 		.4byte	.LASF54
+ 546 0285 05       		.byte	0x5
+ 547 0286 5C       		.byte	0x5c
+ 548 0287 A2000000 		.4byte	0xa2
+ 549 028b 43       		.byte	0x43
+ 550 028c 07       		.uleb128 0x7
+ 551 028d 3C0D0000 		.4byte	.LASF55
+ 552 0291 05       		.byte	0x5
+ 553 0292 5D       		.byte	0x5d
+ 554 0293 A2000000 		.4byte	0xa2
+ 555 0297 44       		.byte	0x44
+ 556 0298 07       		.uleb128 0x7
+ 557 0299 21160000 		.4byte	.LASF56
+ 558 029d 05       		.byte	0x5
+ 559 029e 5E       		.byte	0x5e
+ 560 029f CE000000 		.4byte	0xce
+ 561 02a3 48       		.byte	0x48
+ 562 02a4 07       		.uleb128 0x7
+ 563 02a5 5E0D0000 		.4byte	.LASF57
+ 564 02a9 05       		.byte	0x5
+ 565 02aa 5F       		.byte	0x5f
+ 566 02ab CE000000 		.4byte	0xce
+ 567 02af 4C       		.byte	0x4c
+ 568 02b0 07       		.uleb128 0x7
+ 569 02b1 621A0000 		.4byte	.LASF58
+ 570 02b5 05       		.byte	0x5
+ 571 02b6 60       		.byte	0x60
+ 572 02b7 A2000000 		.4byte	0xa2
+ 573 02bb 50       		.byte	0x50
+ 574 02bc 07       		.uleb128 0x7
+ 575 02bd 220A0000 		.4byte	.LASF59
+ 576 02c1 05       		.byte	0x5
+ 577 02c2 61       		.byte	0x61
+ 578 02c3 A2000000 		.4byte	0xa2
+ 579 02c7 51       		.byte	0x51
+ 580 02c8 07       		.uleb128 0x7
+ 581 02c9 710B0000 		.4byte	.LASF60
+ 582 02cd 05       		.byte	0x5
+ 583 02ce 62       		.byte	0x62
+ 584 02cf A2000000 		.4byte	0xa2
+ 585 02d3 52       		.byte	0x52
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 15
+
+
+ 586 02d4 07       		.uleb128 0x7
+ 587 02d5 E6120000 		.4byte	.LASF61
+ 588 02d9 05       		.byte	0x5
+ 589 02da 63       		.byte	0x63
+ 590 02db A2000000 		.4byte	0xa2
+ 591 02df 53       		.byte	0x53
+ 592 02e0 07       		.uleb128 0x7
+ 593 02e1 CB190000 		.4byte	.LASF62
+ 594 02e5 05       		.byte	0x5
+ 595 02e6 64       		.byte	0x64
+ 596 02e7 A2000000 		.4byte	0xa2
+ 597 02eb 54       		.byte	0x54
+ 598 02ec 07       		.uleb128 0x7
+ 599 02ed 5B0A0000 		.4byte	.LASF63
+ 600 02f1 05       		.byte	0x5
+ 601 02f2 65       		.byte	0x65
+ 602 02f3 A2000000 		.4byte	0xa2
+ 603 02f7 55       		.byte	0x55
+ 604 02f8 07       		.uleb128 0x7
+ 605 02f9 00000000 		.4byte	.LASF64
+ 606 02fd 05       		.byte	0x5
+ 607 02fe 66       		.byte	0x66
+ 608 02ff A2000000 		.4byte	0xa2
+ 609 0303 56       		.byte	0x56
+ 610 0304 07       		.uleb128 0x7
+ 611 0305 EC130000 		.4byte	.LASF65
+ 612 0309 05       		.byte	0x5
+ 613 030a 67       		.byte	0x67
+ 614 030b A2000000 		.4byte	0xa2
+ 615 030f 57       		.byte	0x57
+ 616 0310 07       		.uleb128 0x7
+ 617 0311 B3090000 		.4byte	.LASF66
+ 618 0315 05       		.byte	0x5
+ 619 0316 68       		.byte	0x68
+ 620 0317 A2000000 		.4byte	0xa2
+ 621 031b 58       		.byte	0x58
+ 622 031c 07       		.uleb128 0x7
+ 623 031d DD1B0000 		.4byte	.LASF67
+ 624 0321 05       		.byte	0x5
+ 625 0322 69       		.byte	0x69
+ 626 0323 A2000000 		.4byte	0xa2
+ 627 0327 59       		.byte	0x59
+ 628 0328 07       		.uleb128 0x7
+ 629 0329 CB1A0000 		.4byte	.LASF68
+ 630 032d 05       		.byte	0x5
+ 631 032e 6E       		.byte	0x6e
+ 632 032f B8000000 		.4byte	0xb8
+ 633 0333 5A       		.byte	0x5a
+ 634 0334 07       		.uleb128 0x7
+ 635 0335 A0010000 		.4byte	.LASF69
+ 636 0339 05       		.byte	0x5
+ 637 033a 6F       		.byte	0x6f
+ 638 033b B8000000 		.4byte	0xb8
+ 639 033f 5C       		.byte	0x5c
+ 640 0340 07       		.uleb128 0x7
+ 641 0341 980F0000 		.4byte	.LASF70
+ 642 0345 05       		.byte	0x5
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 16
+
+
+ 643 0346 70       		.byte	0x70
+ 644 0347 A2000000 		.4byte	0xa2
+ 645 034b 5E       		.byte	0x5e
+ 646 034c 07       		.uleb128 0x7
+ 647 034d E41A0000 		.4byte	.LASF71
+ 648 0351 05       		.byte	0x5
+ 649 0352 71       		.byte	0x71
+ 650 0353 A2000000 		.4byte	0xa2
+ 651 0357 5F       		.byte	0x5f
+ 652 0358 07       		.uleb128 0x7
+ 653 0359 EA0B0000 		.4byte	.LASF72
+ 654 035d 05       		.byte	0x5
+ 655 035e 72       		.byte	0x72
+ 656 035f A2000000 		.4byte	0xa2
+ 657 0363 60       		.byte	0x60
+ 658 0364 07       		.uleb128 0x7
+ 659 0365 140E0000 		.4byte	.LASF73
+ 660 0369 05       		.byte	0x5
+ 661 036a 73       		.byte	0x73
+ 662 036b CE000000 		.4byte	0xce
+ 663 036f 64       		.byte	0x64
+ 664 0370 07       		.uleb128 0x7
+ 665 0371 00140000 		.4byte	.LASF74
+ 666 0375 05       		.byte	0x5
+ 667 0376 76       		.byte	0x76
+ 668 0377 B8000000 		.4byte	0xb8
+ 669 037b 68       		.byte	0x68
+ 670 037c 07       		.uleb128 0x7
+ 671 037d 8A130000 		.4byte	.LASF75
+ 672 0381 05       		.byte	0x5
+ 673 0382 77       		.byte	0x77
+ 674 0383 B8000000 		.4byte	0xb8
+ 675 0387 6A       		.byte	0x6a
+ 676 0388 07       		.uleb128 0x7
+ 677 0389 99100000 		.4byte	.LASF76
+ 678 038d 05       		.byte	0x5
+ 679 038e 78       		.byte	0x78
+ 680 038f B8000000 		.4byte	0xb8
+ 681 0393 6C       		.byte	0x6c
+ 682 0394 07       		.uleb128 0x7
+ 683 0395 8A030000 		.4byte	.LASF77
+ 684 0399 05       		.byte	0x5
+ 685 039a 79       		.byte	0x79
+ 686 039b B8000000 		.4byte	0xb8
+ 687 039f 6E       		.byte	0x6e
+ 688 03a0 07       		.uleb128 0x7
+ 689 03a1 7F0E0000 		.4byte	.LASF78
+ 690 03a5 05       		.byte	0x5
+ 691 03a6 7B       		.byte	0x7b
+ 692 03a7 A2000000 		.4byte	0xa2
+ 693 03ab 70       		.byte	0x70
+ 694 03ac 07       		.uleb128 0x7
+ 695 03ad C6050000 		.4byte	.LASF79
+ 696 03b1 05       		.byte	0x5
+ 697 03b2 7C       		.byte	0x7c
+ 698 03b3 A2000000 		.4byte	0xa2
+ 699 03b7 71       		.byte	0x71
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 17
+
+
+ 700 03b8 07       		.uleb128 0x7
+ 701 03b9 FB080000 		.4byte	.LASF80
+ 702 03bd 05       		.byte	0x5
+ 703 03be 7D       		.byte	0x7d
+ 704 03bf A2000000 		.4byte	0xa2
+ 705 03c3 72       		.byte	0x72
+ 706 03c4 07       		.uleb128 0x7
+ 707 03c5 9B020000 		.4byte	.LASF81
+ 708 03c9 05       		.byte	0x5
+ 709 03ca 7E       		.byte	0x7e
+ 710 03cb A2000000 		.4byte	0xa2
+ 711 03cf 73       		.byte	0x73
+ 712 03d0 07       		.uleb128 0x7
+ 713 03d1 17150000 		.4byte	.LASF82
+ 714 03d5 05       		.byte	0x5
+ 715 03d6 80       		.byte	0x80
+ 716 03d7 B8000000 		.4byte	0xb8
+ 717 03db 74       		.byte	0x74
+ 718 03dc 07       		.uleb128 0x7
+ 719 03dd F8120000 		.4byte	.LASF83
+ 720 03e1 05       		.byte	0x5
+ 721 03e2 81       		.byte	0x81
+ 722 03e3 B8000000 		.4byte	0xb8
+ 723 03e7 76       		.byte	0x76
+ 724 03e8 07       		.uleb128 0x7
+ 725 03e9 D40E0000 		.4byte	.LASF84
+ 726 03ed 05       		.byte	0x5
+ 727 03ee 82       		.byte	0x82
+ 728 03ef B8000000 		.4byte	0xb8
+ 729 03f3 78       		.byte	0x78
+ 730 03f4 07       		.uleb128 0x7
+ 731 03f5 3B080000 		.4byte	.LASF85
+ 732 03f9 05       		.byte	0x5
+ 733 03fa 83       		.byte	0x83
+ 734 03fb B8000000 		.4byte	0xb8
+ 735 03ff 7A       		.byte	0x7a
+ 736 0400 07       		.uleb128 0x7
+ 737 0401 3F170000 		.4byte	.LASF86
+ 738 0405 05       		.byte	0x5
+ 739 0406 86       		.byte	0x86
+ 740 0407 A2000000 		.4byte	0xa2
+ 741 040b 7C       		.byte	0x7c
+ 742 040c 07       		.uleb128 0x7
+ 743 040d 981A0000 		.4byte	.LASF87
+ 744 0411 05       		.byte	0x5
+ 745 0412 87       		.byte	0x87
+ 746 0413 A2000000 		.4byte	0xa2
+ 747 0417 7D       		.byte	0x7d
+ 748 0418 07       		.uleb128 0x7
+ 749 0419 EC070000 		.4byte	.LASF88
+ 750 041d 05       		.byte	0x5
+ 751 041e 88       		.byte	0x88
+ 752 041f A2000000 		.4byte	0xa2
+ 753 0423 7E       		.byte	0x7e
+ 754 0424 07       		.uleb128 0x7
+ 755 0425 12070000 		.4byte	.LASF89
+ 756 0429 05       		.byte	0x5
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 18
+
+
+ 757 042a 89       		.byte	0x89
+ 758 042b A2000000 		.4byte	0xa2
+ 759 042f 7F       		.byte	0x7f
+ 760 0430 07       		.uleb128 0x7
+ 761 0431 50080000 		.4byte	.LASF90
+ 762 0435 05       		.byte	0x5
+ 763 0436 8A       		.byte	0x8a
+ 764 0437 A2000000 		.4byte	0xa2
+ 765 043b 80       		.byte	0x80
+ 766 043c 07       		.uleb128 0x7
+ 767 043d E4000000 		.4byte	.LASF91
+ 768 0441 05       		.byte	0x5
+ 769 0442 8D       		.byte	0x8d
+ 770 0443 CE000000 		.4byte	0xce
+ 771 0447 84       		.byte	0x84
+ 772 0448 07       		.uleb128 0x7
+ 773 0449 C6170000 		.4byte	.LASF92
+ 774 044d 05       		.byte	0x5
+ 775 044e 8E       		.byte	0x8e
+ 776 044f CE000000 		.4byte	0xce
+ 777 0453 88       		.byte	0x88
+ 778 0454 07       		.uleb128 0x7
+ 779 0455 411B0000 		.4byte	.LASF93
+ 780 0459 05       		.byte	0x5
+ 781 045a 8F       		.byte	0x8f
+ 782 045b CE000000 		.4byte	0xce
+ 783 045f 8C       		.byte	0x8c
+ 784 0460 07       		.uleb128 0x7
+ 785 0461 02150000 		.4byte	.LASF94
+ 786 0465 05       		.byte	0x5
+ 787 0466 90       		.byte	0x90
+ 788 0467 CE000000 		.4byte	0xce
+ 789 046b 90       		.byte	0x90
+ 790 046c 07       		.uleb128 0x7
+ 791 046d 20170000 		.4byte	.LASF95
+ 792 0471 05       		.byte	0x5
+ 793 0472 91       		.byte	0x91
+ 794 0473 CE000000 		.4byte	0xce
+ 795 0477 94       		.byte	0x94
+ 796 0478 07       		.uleb128 0x7
+ 797 0479 DB050000 		.4byte	.LASF96
+ 798 047d 05       		.byte	0x5
+ 799 047e 92       		.byte	0x92
+ 800 047f CE000000 		.4byte	0xce
+ 801 0483 98       		.byte	0x98
+ 802 0484 07       		.uleb128 0x7
+ 803 0485 13180000 		.4byte	.LASF97
+ 804 0489 05       		.byte	0x5
+ 805 048a 93       		.byte	0x93
+ 806 048b CE000000 		.4byte	0xce
+ 807 048f 9C       		.byte	0x9c
+ 808 0490 07       		.uleb128 0x7
+ 809 0491 1D020000 		.4byte	.LASF98
+ 810 0495 05       		.byte	0x5
+ 811 0496 94       		.byte	0x94
+ 812 0497 CE000000 		.4byte	0xce
+ 813 049b A0       		.byte	0xa0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 19
+
+
+ 814 049c 07       		.uleb128 0x7
+ 815 049d 8B010000 		.4byte	.LASF99
+ 816 04a1 05       		.byte	0x5
+ 817 04a2 95       		.byte	0x95
+ 818 04a3 B8000000 		.4byte	0xb8
+ 819 04a7 A4       		.byte	0xa4
+ 820 04a8 07       		.uleb128 0x7
+ 821 04a9 ED140000 		.4byte	.LASF100
+ 822 04ad 05       		.byte	0x5
+ 823 04ae 96       		.byte	0x96
+ 824 04af B8000000 		.4byte	0xb8
+ 825 04b3 A6       		.byte	0xa6
+ 826 04b4 07       		.uleb128 0x7
+ 827 04b5 7F180000 		.4byte	.LASF101
+ 828 04b9 05       		.byte	0x5
+ 829 04ba 97       		.byte	0x97
+ 830 04bb B8000000 		.4byte	0xb8
+ 831 04bf A8       		.byte	0xa8
+ 832 04c0 07       		.uleb128 0x7
+ 833 04c1 740F0000 		.4byte	.LASF102
+ 834 04c5 05       		.byte	0x5
+ 835 04c6 98       		.byte	0x98
+ 836 04c7 B8000000 		.4byte	0xb8
+ 837 04cb AA       		.byte	0xaa
+ 838 04cc 07       		.uleb128 0x7
+ 839 04cd EF030000 		.4byte	.LASF103
+ 840 04d1 05       		.byte	0x5
+ 841 04d2 99       		.byte	0x99
+ 842 04d3 B8000000 		.4byte	0xb8
+ 843 04d7 AC       		.byte	0xac
+ 844 04d8 07       		.uleb128 0x7
+ 845 04d9 F5110000 		.4byte	.LASF104
+ 846 04dd 05       		.byte	0x5
+ 847 04de 9A       		.byte	0x9a
+ 848 04df B8000000 		.4byte	0xb8
+ 849 04e3 AE       		.byte	0xae
+ 850 04e4 07       		.uleb128 0x7
+ 851 04e5 25040000 		.4byte	.LASF105
+ 852 04e9 05       		.byte	0x5
+ 853 04ea 9D       		.byte	0x9d
+ 854 04eb B8000000 		.4byte	0xb8
+ 855 04ef B0       		.byte	0xb0
+ 856 04f0 07       		.uleb128 0x7
+ 857 04f1 30190000 		.4byte	.LASF106
+ 858 04f5 05       		.byte	0x5
+ 859 04f6 9E       		.byte	0x9e
+ 860 04f7 CE000000 		.4byte	0xce
+ 861 04fb B4       		.byte	0xb4
+ 862 04fc 00       		.byte	0
+ 863 04fd 03       		.uleb128 0x3
+ 864 04fe 561B0000 		.4byte	.LASF107
+ 865 0502 05       		.byte	0x5
+ 866 0503 9F       		.byte	0x9f
+ 867 0504 EC000000 		.4byte	0xec
+ 868 0508 02       		.uleb128 0x2
+ 869 0509 01       		.byte	0x1
+ 870 050a 08       		.byte	0x8
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 20
+
+
+ 871 050b BB0C0000 		.4byte	.LASF108
+ 872 050f 02       		.uleb128 0x2
+ 873 0510 04       		.byte	0x4
+ 874 0511 04       		.byte	0x4
+ 875 0512 97180000 		.4byte	.LASF109
+ 876 0516 02       		.uleb128 0x2
+ 877 0517 08       		.byte	0x8
+ 878 0518 04       		.byte	0x4
+ 879 0519 A61B0000 		.4byte	.LASF110
+ 880 051d 08       		.uleb128 0x8
+ 881 051e 04       		.byte	0x4
+ 882 051f 02       		.uleb128 0x2
+ 883 0520 01       		.byte	0x1
+ 884 0521 02       		.byte	0x2
+ 885 0522 460A0000 		.4byte	.LASF111
+ 886 0526 09       		.uleb128 0x9
+ 887 0527 01       		.byte	0x1
+ 888 0528 3E000000 		.4byte	0x3e
+ 889 052c 06       		.byte	0x6
+ 890 052d 2402     		.2byte	0x224
+ 891 052f 40050000 		.4byte	0x540
+ 892 0533 0A       		.uleb128 0xa
+ 893 0534 42030000 		.4byte	.LASF112
+ 894 0538 00       		.byte	0
+ 895 0539 0A       		.uleb128 0xa
+ 896 053a 33040000 		.4byte	.LASF113
+ 897 053e 01       		.byte	0x1
+ 898 053f 00       		.byte	0
+ 899 0540 0B       		.uleb128 0xb
+ 900 0541 72030000 		.4byte	.LASF114
+ 901 0545 06       		.byte	0x6
+ 902 0546 2702     		.2byte	0x227
+ 903 0548 26050000 		.4byte	0x526
+ 904 054c 0B       		.uleb128 0xb
+ 905 054d 33020000 		.4byte	.LASF115
+ 906 0551 06       		.byte	0x6
+ 907 0552 3902     		.2byte	0x239
+ 908 0554 58050000 		.4byte	0x558
+ 909 0558 0C       		.uleb128 0xc
+ 910 0559 04       		.byte	0x4
+ 911 055a 5E050000 		.4byte	0x55e
+ 912 055e 0D       		.uleb128 0xd
+ 913 055f 69050000 		.4byte	0x569
+ 914 0563 0E       		.uleb128 0xe
+ 915 0564 CE000000 		.4byte	0xce
+ 916 0568 00       		.byte	0
+ 917 0569 0B       		.uleb128 0xb
+ 918 056a 88040000 		.4byte	.LASF116
+ 919 056e 06       		.byte	0x6
+ 920 056f 4402     		.2byte	0x244
+ 921 0571 75050000 		.4byte	0x575
+ 922 0575 0C       		.uleb128 0xc
+ 923 0576 04       		.byte	0x4
+ 924 0577 7B050000 		.4byte	0x57b
+ 925 057b 0F       		.uleb128 0xf
+ 926 057c 40050000 		.4byte	0x540
+ 927 0580 8A050000 		.4byte	0x58a
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 21
+
+
+ 928 0584 0E       		.uleb128 0xe
+ 929 0585 CE000000 		.4byte	0xce
+ 930 0589 00       		.byte	0
+ 931 058a 10       		.uleb128 0x10
+ 932 058b 7E050000 		.4byte	.LASF140
+ 933 058f 4C       		.byte	0x4c
+ 934 0590 06       		.byte	0x6
+ 935 0591 C302     		.2byte	0x2c3
+ 936 0593 A9060000 		.4byte	0x6a9
+ 937 0597 11       		.uleb128 0x11
+ 938 0598 910A0000 		.4byte	.LASF117
+ 939 059c 06       		.byte	0x6
+ 940 059d C602     		.2byte	0x2c6
+ 941 059f 1F050000 		.4byte	0x51f
+ 942 05a3 00       		.byte	0
+ 943 05a4 11       		.uleb128 0x11
+ 944 05a5 1B100000 		.4byte	.LASF118
+ 945 05a9 06       		.byte	0x6
+ 946 05aa C702     		.2byte	0x2c7
+ 947 05ac 1F050000 		.4byte	0x51f
+ 948 05b0 01       		.byte	0x1
+ 949 05b1 11       		.uleb128 0x11
+ 950 05b2 DB190000 		.4byte	.LASF119
+ 951 05b6 06       		.byte	0x6
+ 952 05b7 C902     		.2byte	0x2c9
+ 953 05b9 E0000000 		.4byte	0xe0
+ 954 05bd 04       		.byte	0x4
+ 955 05be 11       		.uleb128 0x11
+ 956 05bf 07010000 		.4byte	.LASF120
+ 957 05c3 06       		.byte	0x6
+ 958 05c4 CB02     		.2byte	0x2cb
+ 959 05c6 E0000000 		.4byte	0xe0
+ 960 05ca 08       		.byte	0x8
+ 961 05cb 11       		.uleb128 0x11
+ 962 05cc 03120000 		.4byte	.LASF121
+ 963 05d0 06       		.byte	0x6
+ 964 05d1 CC02     		.2byte	0x2cc
+ 965 05d3 1F050000 		.4byte	0x51f
+ 966 05d7 0C       		.byte	0xc
+ 967 05d8 11       		.uleb128 0x11
+ 968 05d9 8B180000 		.4byte	.LASF122
+ 969 05dd 06       		.byte	0x6
+ 970 05de CD02     		.2byte	0x2cd
+ 971 05e0 1F050000 		.4byte	0x51f
+ 972 05e4 0D       		.byte	0xd
+ 973 05e5 11       		.uleb128 0x11
+ 974 05e6 9C130000 		.4byte	.LASF123
+ 975 05ea 06       		.byte	0x6
+ 976 05eb CF02     		.2byte	0x2cf
+ 977 05ed A9060000 		.4byte	0x6a9
+ 978 05f1 10       		.byte	0x10
+ 979 05f2 11       		.uleb128 0x11
+ 980 05f3 4D0D0000 		.4byte	.LASF124
+ 981 05f7 06       		.byte	0x6
+ 982 05f8 D002     		.2byte	0x2d0
+ 983 05fa CE000000 		.4byte	0xce
+ 984 05fe 14       		.byte	0x14
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 22
+
+
+ 985 05ff 11       		.uleb128 0x11
+ 986 0600 F2090000 		.4byte	.LASF125
+ 987 0604 06       		.byte	0x6
+ 988 0605 D102     		.2byte	0x2d1
+ 989 0607 E0000000 		.4byte	0xe0
+ 990 060b 18       		.byte	0x18
+ 991 060c 11       		.uleb128 0x11
+ 992 060d 460C0000 		.4byte	.LASF126
+ 993 0611 06       		.byte	0x6
+ 994 0612 D202     		.2byte	0x2d2
+ 995 0614 E0000000 		.4byte	0xe0
+ 996 0618 1C       		.byte	0x1c
+ 997 0619 11       		.uleb128 0x11
+ 998 061a A9010000 		.4byte	.LASF127
+ 999 061e 06       		.byte	0x6
+ 1000 061f D402     		.2byte	0x2d4
+ 1001 0621 E0000000 		.4byte	0xe0
+ 1002 0625 20       		.byte	0x20
+ 1003 0626 11       		.uleb128 0x11
+ 1004 0627 B3030000 		.4byte	.LASF128
+ 1005 062b 06       		.byte	0x6
+ 1006 062c D502     		.2byte	0x2d5
+ 1007 062e AF060000 		.4byte	0x6af
+ 1008 0632 24       		.byte	0x24
+ 1009 0633 11       		.uleb128 0x11
+ 1010 0634 51060000 		.4byte	.LASF129
+ 1011 0638 06       		.byte	0x6
+ 1012 0639 D702     		.2byte	0x2d7
+ 1013 063b A9060000 		.4byte	0x6a9
+ 1014 063f 28       		.byte	0x28
+ 1015 0640 11       		.uleb128 0x11
+ 1016 0641 CB080000 		.4byte	.LASF130
+ 1017 0645 06       		.byte	0x6
+ 1018 0646 D802     		.2byte	0x2d8
+ 1019 0648 CE000000 		.4byte	0xce
+ 1020 064c 2C       		.byte	0x2c
+ 1021 064d 11       		.uleb128 0x11
+ 1022 064e 6C060000 		.4byte	.LASF131
+ 1023 0652 06       		.byte	0x6
+ 1024 0653 D902     		.2byte	0x2d9
+ 1025 0655 E0000000 		.4byte	0xe0
+ 1026 0659 30       		.byte	0x30
+ 1027 065a 11       		.uleb128 0x11
+ 1028 065b 6E0E0000 		.4byte	.LASF132
+ 1029 065f 06       		.byte	0x6
+ 1030 0660 DA02     		.2byte	0x2da
+ 1031 0662 E0000000 		.4byte	0xe0
+ 1032 0666 34       		.byte	0x34
+ 1033 0667 11       		.uleb128 0x11
+ 1034 0668 DE020000 		.4byte	.LASF133
+ 1035 066c 06       		.byte	0x6
+ 1036 066d DC02     		.2byte	0x2dc
+ 1037 066f A9060000 		.4byte	0x6a9
+ 1038 0673 38       		.byte	0x38
+ 1039 0674 11       		.uleb128 0x11
+ 1040 0675 0B130000 		.4byte	.LASF134
+ 1041 0679 06       		.byte	0x6
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 23
+
+
+ 1042 067a DD02     		.2byte	0x2dd
+ 1043 067c CE000000 		.4byte	0xce
+ 1044 0680 3C       		.byte	0x3c
+ 1045 0681 11       		.uleb128 0x11
+ 1046 0682 E4110000 		.4byte	.LASF135
+ 1047 0686 06       		.byte	0x6
+ 1048 0687 DE02     		.2byte	0x2de
+ 1049 0689 E0000000 		.4byte	0xe0
+ 1050 068d 40       		.byte	0x40
+ 1051 068e 11       		.uleb128 0x11
+ 1052 068f 340A0000 		.4byte	.LASF136
+ 1053 0693 06       		.byte	0x6
+ 1054 0694 E402     		.2byte	0x2e4
+ 1055 0696 4C050000 		.4byte	0x54c
+ 1056 069a 44       		.byte	0x44
+ 1057 069b 11       		.uleb128 0x11
+ 1058 069c 3B030000 		.4byte	.LASF137
+ 1059 06a0 06       		.byte	0x6
+ 1060 06a1 EB02     		.2byte	0x2eb
+ 1061 06a3 69050000 		.4byte	0x569
+ 1062 06a7 48       		.byte	0x48
+ 1063 06a8 00       		.byte	0
+ 1064 06a9 0C       		.uleb128 0xc
+ 1065 06aa 04       		.byte	0x4
+ 1066 06ab A2000000 		.4byte	0xa2
+ 1067 06af 05       		.uleb128 0x5
+ 1068 06b0 1F050000 		.4byte	0x51f
+ 1069 06b4 0B       		.uleb128 0xb
+ 1070 06b5 C41B0000 		.4byte	.LASF138
+ 1071 06b9 06       		.byte	0x6
+ 1072 06ba EE02     		.2byte	0x2ee
+ 1073 06bc 8A050000 		.4byte	0x58a
+ 1074 06c0 0B       		.uleb128 0xb
+ 1075 06c1 45000000 		.4byte	.LASF139
+ 1076 06c5 07       		.byte	0x7
+ 1077 06c6 F201     		.2byte	0x1f2
+ 1078 06c8 58050000 		.4byte	0x558
+ 1079 06cc 10       		.uleb128 0x10
+ 1080 06cd FC170000 		.4byte	.LASF141
+ 1081 06d1 24       		.byte	0x24
+ 1082 06d2 07       		.byte	0x7
+ 1083 06d3 7402     		.2byte	0x274
+ 1084 06d5 4F070000 		.4byte	0x74f
+ 1085 06d9 11       		.uleb128 0x11
+ 1086 06da 2D0E0000 		.4byte	.LASF142
+ 1087 06de 07       		.byte	0x7
+ 1088 06df 7702     		.2byte	0x277
+ 1089 06e1 E0000000 		.4byte	0xe0
+ 1090 06e5 00       		.byte	0
+ 1091 06e6 11       		.uleb128 0x11
+ 1092 06e7 AD090000 		.4byte	.LASF143
+ 1093 06eb 07       		.byte	0x7
+ 1094 06ec 7902     		.2byte	0x279
+ 1095 06ee 1D050000 		.4byte	0x51d
+ 1096 06f2 04       		.byte	0x4
+ 1097 06f3 11       		.uleb128 0x11
+ 1098 06f4 A91C0000 		.4byte	.LASF144
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 24
+
+
+ 1099 06f8 07       		.byte	0x7
+ 1100 06f9 7A02     		.2byte	0x27a
+ 1101 06fb CE000000 		.4byte	0xce
+ 1102 06ff 08       		.byte	0x8
+ 1103 0700 11       		.uleb128 0x11
+ 1104 0701 D90D0000 		.4byte	.LASF145
+ 1105 0705 07       		.byte	0x7
+ 1106 0706 7B02     		.2byte	0x27b
+ 1107 0708 E0000000 		.4byte	0xe0
+ 1108 070c 0C       		.byte	0xc
+ 1109 070d 11       		.uleb128 0x11
+ 1110 070e E0120000 		.4byte	.LASF146
+ 1111 0712 07       		.byte	0x7
+ 1112 0713 7D02     		.2byte	0x27d
+ 1113 0715 1D050000 		.4byte	0x51d
+ 1114 0719 10       		.byte	0x10
+ 1115 071a 11       		.uleb128 0x11
+ 1116 071b 7F110000 		.4byte	.LASF147
+ 1117 071f 07       		.byte	0x7
+ 1118 0720 7E02     		.2byte	0x27e
+ 1119 0722 CE000000 		.4byte	0xce
+ 1120 0726 14       		.byte	0x14
+ 1121 0727 11       		.uleb128 0x11
+ 1122 0728 B2020000 		.4byte	.LASF148
+ 1123 072c 07       		.byte	0x7
+ 1124 072d 7F02     		.2byte	0x27f
+ 1125 072f E0000000 		.4byte	0xe0
+ 1126 0733 18       		.byte	0x18
+ 1127 0734 11       		.uleb128 0x11
+ 1128 0735 340A0000 		.4byte	.LASF136
+ 1129 0739 07       		.byte	0x7
+ 1130 073a 8502     		.2byte	0x285
+ 1131 073c C0060000 		.4byte	0x6c0
+ 1132 0740 1C       		.byte	0x1c
+ 1133 0741 11       		.uleb128 0x11
+ 1134 0742 0C0E0000 		.4byte	.LASF149
+ 1135 0746 07       		.byte	0x7
+ 1136 0747 8802     		.2byte	0x288
+ 1137 0749 CE000000 		.4byte	0xce
+ 1138 074d 20       		.byte	0x20
+ 1139 074e 00       		.byte	0
+ 1140 074f 0B       		.uleb128 0xb
+ 1141 0750 BD100000 		.4byte	.LASF150
+ 1142 0754 07       		.byte	0x7
+ 1143 0755 8B02     		.2byte	0x28b
+ 1144 0757 CC060000 		.4byte	0x6cc
+ 1145 075b 0B       		.uleb128 0xb
+ 1146 075c F90E0000 		.4byte	.LASF151
+ 1147 0760 08       		.byte	0x8
+ 1148 0761 D901     		.2byte	0x1d9
+ 1149 0763 58050000 		.4byte	0x558
+ 1150 0767 10       		.uleb128 0x10
+ 1151 0768 AA070000 		.4byte	.LASF152
+ 1152 076c 38       		.byte	0x38
+ 1153 076d 08       		.byte	0x8
+ 1154 076e 7502     		.2byte	0x275
+ 1155 0770 2B080000 		.4byte	0x82b
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 25
+
+
+ 1156 0774 11       		.uleb128 0x11
+ 1157 0775 5A010000 		.4byte	.LASF153
+ 1158 0779 08       		.byte	0x8
+ 1159 077a 7802     		.2byte	0x278
+ 1160 077c E0000000 		.4byte	0xe0
+ 1161 0780 00       		.byte	0
+ 1162 0781 11       		.uleb128 0x11
+ 1163 0782 A4090000 		.4byte	.LASF154
+ 1164 0786 08       		.byte	0x8
+ 1165 0787 7902     		.2byte	0x279
+ 1166 0789 E0000000 		.4byte	0xe0
+ 1167 078d 04       		.byte	0x4
+ 1168 078e 11       		.uleb128 0x11
+ 1169 078f 30130000 		.4byte	.LASF155
+ 1170 0793 08       		.byte	0x8
+ 1171 0794 7B02     		.2byte	0x27b
+ 1172 0796 1D050000 		.4byte	0x51d
+ 1173 079a 08       		.byte	0x8
+ 1174 079b 11       		.uleb128 0x11
+ 1175 079c 51030000 		.4byte	.LASF156
+ 1176 07a0 08       		.byte	0x8
+ 1177 07a1 7C02     		.2byte	0x27c
+ 1178 07a3 CE000000 		.4byte	0xce
+ 1179 07a7 0C       		.byte	0xc
+ 1180 07a8 11       		.uleb128 0x11
+ 1181 07a9 F5100000 		.4byte	.LASF157
+ 1182 07ad 08       		.byte	0x8
+ 1183 07ae 7D02     		.2byte	0x27d
+ 1184 07b0 E0000000 		.4byte	0xe0
+ 1185 07b4 10       		.byte	0x10
+ 1186 07b5 11       		.uleb128 0x11
+ 1187 07b6 2E0D0000 		.4byte	.LASF158
+ 1188 07ba 08       		.byte	0x8
+ 1189 07bb 7E02     		.2byte	0x27e
+ 1190 07bd E0000000 		.4byte	0xe0
+ 1191 07c1 14       		.byte	0x14
+ 1192 07c2 11       		.uleb128 0x11
+ 1193 07c3 AD090000 		.4byte	.LASF143
+ 1194 07c7 08       		.byte	0x8
+ 1195 07c8 8002     		.2byte	0x280
+ 1196 07ca 1D050000 		.4byte	0x51d
+ 1197 07ce 18       		.byte	0x18
+ 1198 07cf 11       		.uleb128 0x11
+ 1199 07d0 A91C0000 		.4byte	.LASF144
+ 1200 07d4 08       		.byte	0x8
+ 1201 07d5 8102     		.2byte	0x281
+ 1202 07d7 CE000000 		.4byte	0xce
+ 1203 07db 1C       		.byte	0x1c
+ 1204 07dc 11       		.uleb128 0x11
+ 1205 07dd D90D0000 		.4byte	.LASF145
+ 1206 07e1 08       		.byte	0x8
+ 1207 07e2 8202     		.2byte	0x282
+ 1208 07e4 E0000000 		.4byte	0xe0
+ 1209 07e8 20       		.byte	0x20
+ 1210 07e9 11       		.uleb128 0x11
+ 1211 07ea E0120000 		.4byte	.LASF146
+ 1212 07ee 08       		.byte	0x8
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 26
+
+
+ 1213 07ef 8402     		.2byte	0x284
+ 1214 07f1 1D050000 		.4byte	0x51d
+ 1215 07f5 24       		.byte	0x24
+ 1216 07f6 11       		.uleb128 0x11
+ 1217 07f7 7F110000 		.4byte	.LASF147
+ 1218 07fb 08       		.byte	0x8
+ 1219 07fc 8502     		.2byte	0x285
+ 1220 07fe CE000000 		.4byte	0xce
+ 1221 0802 28       		.byte	0x28
+ 1222 0803 11       		.uleb128 0x11
+ 1223 0804 A6160000 		.4byte	.LASF159
+ 1224 0808 08       		.byte	0x8
+ 1225 0809 8602     		.2byte	0x286
+ 1226 080b E0000000 		.4byte	0xe0
+ 1227 080f 2C       		.byte	0x2c
+ 1228 0810 11       		.uleb128 0x11
+ 1229 0811 340A0000 		.4byte	.LASF136
+ 1230 0815 08       		.byte	0x8
+ 1231 0816 8B02     		.2byte	0x28b
+ 1232 0818 5B070000 		.4byte	0x75b
+ 1233 081c 30       		.byte	0x30
+ 1234 081d 11       		.uleb128 0x11
+ 1235 081e 0C0E0000 		.4byte	.LASF149
+ 1236 0822 08       		.byte	0x8
+ 1237 0823 8E02     		.2byte	0x28e
+ 1238 0825 CE000000 		.4byte	0xce
+ 1239 0829 34       		.byte	0x34
+ 1240 082a 00       		.byte	0
+ 1241 082b 0B       		.uleb128 0xb
+ 1242 082c 74070000 		.4byte	.LASF160
+ 1243 0830 08       		.byte	0x8
+ 1244 0831 9102     		.2byte	0x291
+ 1245 0833 67070000 		.4byte	0x767
+ 1246 0837 09       		.uleb128 0x9
+ 1247 0838 02       		.byte	0x2
+ 1248 0839 5B000000 		.4byte	0x5b
+ 1249 083d 09       		.byte	0x9
+ 1250 083e 5401     		.2byte	0x154
+ 1251 0840 770B0000 		.4byte	0xb77
+ 1252 0844 0A       		.uleb128 0xa
+ 1253 0845 C3030000 		.4byte	.LASF161
+ 1254 0849 00       		.byte	0
+ 1255 084a 12       		.uleb128 0x12
+ 1256 084b D4060000 		.4byte	.LASF162
+ 1257 084f 0010     		.2byte	0x1000
+ 1258 0851 12       		.uleb128 0x12
+ 1259 0852 4D180000 		.4byte	.LASF163
+ 1260 0856 0110     		.2byte	0x1001
+ 1261 0858 12       		.uleb128 0x12
+ 1262 0859 810B0000 		.4byte	.LASF164
+ 1263 085d 0210     		.2byte	0x1002
+ 1264 085f 12       		.uleb128 0x12
+ 1265 0860 060C0000 		.4byte	.LASF165
+ 1266 0864 0310     		.2byte	0x1003
+ 1267 0866 12       		.uleb128 0x12
+ 1268 0867 C5000000 		.4byte	.LASF166
+ 1269 086b 0410     		.2byte	0x1004
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 27
+
+
+ 1270 086d 12       		.uleb128 0x12
+ 1271 086e F11B0000 		.4byte	.LASF167
+ 1272 0872 0510     		.2byte	0x1005
+ 1273 0874 12       		.uleb128 0x12
+ 1274 0875 C8130000 		.4byte	.LASF168
+ 1275 0879 0020     		.2byte	0x2000
+ 1276 087b 12       		.uleb128 0x12
+ 1277 087c D7160000 		.4byte	.LASF169
+ 1278 0880 0120     		.2byte	0x2001
+ 1279 0882 12       		.uleb128 0x12
+ 1280 0883 46130000 		.4byte	.LASF170
+ 1281 0887 0220     		.2byte	0x2002
+ 1282 0889 12       		.uleb128 0x12
+ 1283 088a C60B0000 		.4byte	.LASF171
+ 1284 088e 0320     		.2byte	0x2003
+ 1285 0890 12       		.uleb128 0x12
+ 1286 0891 B30D0000 		.4byte	.LASF172
+ 1287 0895 0420     		.2byte	0x2004
+ 1288 0897 12       		.uleb128 0x12
+ 1289 0898 FB0F0000 		.4byte	.LASF173
+ 1290 089c 0520     		.2byte	0x2005
+ 1291 089e 12       		.uleb128 0x12
+ 1292 089f 0C0B0000 		.4byte	.LASF174
+ 1293 08a3 0620     		.2byte	0x2006
+ 1294 08a5 12       		.uleb128 0x12
+ 1295 08a6 54170000 		.4byte	.LASF175
+ 1296 08aa 0720     		.2byte	0x2007
+ 1297 08ac 12       		.uleb128 0x12
+ 1298 08ad 85190000 		.4byte	.LASF176
+ 1299 08b1 0820     		.2byte	0x2008
+ 1300 08b3 12       		.uleb128 0x12
+ 1301 08b4 0F110000 		.4byte	.LASF177
+ 1302 08b8 0920     		.2byte	0x2009
+ 1303 08ba 12       		.uleb128 0x12
+ 1304 08bb 45070000 		.4byte	.LASF178
+ 1305 08bf 0A20     		.2byte	0x200a
+ 1306 08c1 12       		.uleb128 0x12
+ 1307 08c2 C2070000 		.4byte	.LASF179
+ 1308 08c6 0B20     		.2byte	0x200b
+ 1309 08c8 12       		.uleb128 0x12
+ 1310 08c9 A9130000 		.4byte	.LASF180
+ 1311 08cd 0C20     		.2byte	0x200c
+ 1312 08cf 12       		.uleb128 0x12
+ 1313 08d0 A5060000 		.4byte	.LASF181
+ 1314 08d4 0D20     		.2byte	0x200d
+ 1315 08d6 12       		.uleb128 0x12
+ 1316 08d7 8E0D0000 		.4byte	.LASF182
+ 1317 08db 0E20     		.2byte	0x200e
+ 1318 08dd 12       		.uleb128 0x12
+ 1319 08de 75140000 		.4byte	.LASF183
+ 1320 08e2 0F20     		.2byte	0x200f
+ 1321 08e4 12       		.uleb128 0x12
+ 1322 08e5 CB0F0000 		.4byte	.LASF184
+ 1323 08e9 1020     		.2byte	0x2010
+ 1324 08eb 12       		.uleb128 0x12
+ 1325 08ec 52110000 		.4byte	.LASF185
+ 1326 08f0 1120     		.2byte	0x2011
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 28
+
+
+ 1327 08f2 12       		.uleb128 0x12
+ 1328 08f3 53190000 		.4byte	.LASF186
+ 1329 08f7 1220     		.2byte	0x2012
+ 1330 08f9 12       		.uleb128 0x12
+ 1331 08fa 88090000 		.4byte	.LASF187
+ 1332 08fe 1320     		.2byte	0x2013
+ 1333 0900 12       		.uleb128 0x12
+ 1334 0901 B00E0000 		.4byte	.LASF188
+ 1335 0905 1420     		.2byte	0x2014
+ 1336 0907 12       		.uleb128 0x12
+ 1337 0908 42040000 		.4byte	.LASF189
+ 1338 090c 1520     		.2byte	0x2015
+ 1339 090e 12       		.uleb128 0x12
+ 1340 090f 32060000 		.4byte	.LASF190
+ 1341 0913 1620     		.2byte	0x2016
+ 1342 0915 12       		.uleb128 0x12
+ 1343 0916 16030000 		.4byte	.LASF191
+ 1344 091a 1720     		.2byte	0x2017
+ 1345 091c 12       		.uleb128 0x12
+ 1346 091d E8060000 		.4byte	.LASF192
+ 1347 0921 0030     		.2byte	0x3000
+ 1348 0923 12       		.uleb128 0x12
+ 1349 0924 D6100000 		.4byte	.LASF193
+ 1350 0928 0130     		.2byte	0x3001
+ 1351 092a 12       		.uleb128 0x12
+ 1352 092b 11090000 		.4byte	.LASF194
+ 1353 092f 0230     		.2byte	0x3002
+ 1354 0931 12       		.uleb128 0x12
+ 1355 0932 82170000 		.4byte	.LASF195
+ 1356 0936 0330     		.2byte	0x3003
+ 1357 0938 12       		.uleb128 0x12
+ 1358 0939 7A080000 		.4byte	.LASF196
+ 1359 093d 0430     		.2byte	0x3004
+ 1360 093f 12       		.uleb128 0x12
+ 1361 0940 DD170000 		.4byte	.LASF197
+ 1362 0944 0530     		.2byte	0x3005
+ 1363 0946 12       		.uleb128 0x12
+ 1364 0947 6C010000 		.4byte	.LASF198
+ 1365 094b 0630     		.2byte	0x3006
+ 1366 094d 12       		.uleb128 0x12
+ 1367 094e 191B0000 		.4byte	.LASF199
+ 1368 0952 0730     		.2byte	0x3007
+ 1369 0954 12       		.uleb128 0x12
+ 1370 0955 2F100000 		.4byte	.LASF200
+ 1371 0959 0830     		.2byte	0x3008
+ 1372 095b 12       		.uleb128 0x12
+ 1373 095c 9B0A0000 		.4byte	.LASF201
+ 1374 0960 0930     		.2byte	0x3009
+ 1375 0962 12       		.uleb128 0x12
+ 1376 0963 A6170000 		.4byte	.LASF202
+ 1377 0967 0A30     		.2byte	0x300a
+ 1378 0969 12       		.uleb128 0x12
+ 1379 096a C00C0000 		.4byte	.LASF203
+ 1380 096e 0B30     		.2byte	0x300b
+ 1381 0970 12       		.uleb128 0x12
+ 1382 0971 29180000 		.4byte	.LASF204
+ 1383 0975 0C30     		.2byte	0x300c
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 29
+
+
+ 1384 0977 12       		.uleb128 0x12
+ 1385 0978 340E0000 		.4byte	.LASF205
+ 1386 097c 1130     		.2byte	0x3011
+ 1387 097e 12       		.uleb128 0x12
+ 1388 097f C4140000 		.4byte	.LASF206
+ 1389 0983 1230     		.2byte	0x3012
+ 1390 0985 12       		.uleb128 0x12
+ 1391 0986 A5180000 		.4byte	.LASF207
+ 1392 098a 1330     		.2byte	0x3013
+ 1393 098c 12       		.uleb128 0x12
+ 1394 098d 01170000 		.4byte	.LASF208
+ 1395 0991 1430     		.2byte	0x3014
+ 1396 0993 12       		.uleb128 0x12
+ 1397 0994 F2150000 		.4byte	.LASF209
+ 1398 0998 1530     		.2byte	0x3015
+ 1399 099a 12       		.uleb128 0x12
+ 1400 099b 510F0000 		.4byte	.LASF210
+ 1401 099f 1630     		.2byte	0x3016
+ 1402 09a1 12       		.uleb128 0x12
+ 1403 09a2 2F0F0000 		.4byte	.LASF211
+ 1404 09a6 1730     		.2byte	0x3017
+ 1405 09a8 12       		.uleb128 0x12
+ 1406 09a9 200C0000 		.4byte	.LASF212
+ 1407 09ad 1830     		.2byte	0x3018
+ 1408 09af 12       		.uleb128 0x12
+ 1409 09b0 88150000 		.4byte	.LASF213
+ 1410 09b4 1930     		.2byte	0x3019
+ 1411 09b6 12       		.uleb128 0x12
+ 1412 09b7 0F120000 		.4byte	.LASF214
+ 1413 09bb 0040     		.2byte	0x4000
+ 1414 09bd 12       		.uleb128 0x12
+ 1415 09be 70090000 		.4byte	.LASF215
+ 1416 09c2 0140     		.2byte	0x4001
+ 1417 09c4 12       		.uleb128 0x12
+ 1418 09c5 731A0000 		.4byte	.LASF216
+ 1419 09c9 0240     		.2byte	0x4002
+ 1420 09cb 12       		.uleb128 0x12
+ 1421 09cc CB180000 		.4byte	.LASF217
+ 1422 09d0 0340     		.2byte	0x4003
+ 1423 09d2 12       		.uleb128 0x12
+ 1424 09d3 930E0000 		.4byte	.LASF218
+ 1425 09d7 0440     		.2byte	0x4004
+ 1426 09d9 12       		.uleb128 0x12
+ 1427 09da 3A1C0000 		.4byte	.LASF219
+ 1428 09de 0540     		.2byte	0x4005
+ 1429 09e0 12       		.uleb128 0x12
+ 1430 09e1 63000000 		.4byte	.LASF220
+ 1431 09e5 0640     		.2byte	0x4006
+ 1432 09e7 12       		.uleb128 0x12
+ 1433 09e8 C7090000 		.4byte	.LASF221
+ 1434 09ec 0740     		.2byte	0x4007
+ 1435 09ee 12       		.uleb128 0x12
+ 1436 09ef A0150000 		.4byte	.LASF222
+ 1437 09f3 0840     		.2byte	0x4008
+ 1438 09f5 12       		.uleb128 0x12
+ 1439 09f6 DD080000 		.4byte	.LASF223
+ 1440 09fa 0940     		.2byte	0x4009
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 30
+
+
+ 1441 09fc 12       		.uleb128 0x12
+ 1442 09fd CC1C0000 		.4byte	.LASF224
+ 1443 0a01 0A40     		.2byte	0x400a
+ 1444 0a03 12       		.uleb128 0x12
+ 1445 0a04 E40C0000 		.4byte	.LASF225
+ 1446 0a08 0B40     		.2byte	0x400b
+ 1447 0a0a 12       		.uleb128 0x12
+ 1448 0a0b 2D110000 		.4byte	.LASF226
+ 1449 0a0f 0C40     		.2byte	0x400c
+ 1450 0a11 12       		.uleb128 0x12
+ 1451 0a12 E20D0000 		.4byte	.LASF227
+ 1452 0a16 0D40     		.2byte	0x400d
+ 1453 0a18 12       		.uleb128 0x12
+ 1454 0a19 74120000 		.4byte	.LASF228
+ 1455 0a1d 0E40     		.2byte	0x400e
+ 1456 0a1f 12       		.uleb128 0x12
+ 1457 0a20 040D0000 		.4byte	.LASF229
+ 1458 0a24 0F40     		.2byte	0x400f
+ 1459 0a26 12       		.uleb128 0x12
+ 1460 0a27 FF070000 		.4byte	.LASF230
+ 1461 0a2b 1040     		.2byte	0x4010
+ 1462 0a2d 12       		.uleb128 0x12
+ 1463 0a2e A9190000 		.4byte	.LASF231
+ 1464 0a32 1140     		.2byte	0x4011
+ 1465 0a34 12       		.uleb128 0x12
+ 1466 0a35 E40A0000 		.4byte	.LASF232
+ 1467 0a39 1240     		.2byte	0x4012
+ 1468 0a3b 12       		.uleb128 0x12
+ 1469 0a3c 5C160000 		.4byte	.LASF233
+ 1470 0a40 1340     		.2byte	0x4013
+ 1471 0a42 12       		.uleb128 0x12
+ 1472 0a43 53120000 		.4byte	.LASF234
+ 1473 0a47 1440     		.2byte	0x4014
+ 1474 0a49 12       		.uleb128 0x12
+ 1475 0a4a 57050000 		.4byte	.LASF235
+ 1476 0a4e 1540     		.2byte	0x4015
+ 1477 0a50 12       		.uleb128 0x12
+ 1478 0a51 0A1C0000 		.4byte	.LASF236
+ 1479 0a55 1640     		.2byte	0x4016
+ 1480 0a57 12       		.uleb128 0x12
+ 1481 0a58 63020000 		.4byte	.LASF237
+ 1482 0a5c 1740     		.2byte	0x4017
+ 1483 0a5e 12       		.uleb128 0x12
+ 1484 0a5f B20F0000 		.4byte	.LASF238
+ 1485 0a63 1840     		.2byte	0x4018
+ 1486 0a65 12       		.uleb128 0x12
+ 1487 0a66 29150000 		.4byte	.LASF239
+ 1488 0a6a 1940     		.2byte	0x4019
+ 1489 0a6c 12       		.uleb128 0x12
+ 1490 0a6d 94110000 		.4byte	.LASF240
+ 1491 0a71 1A40     		.2byte	0x401a
+ 1492 0a73 12       		.uleb128 0x12
+ 1493 0a74 32140000 		.4byte	.LASF241
+ 1494 0a78 0050     		.2byte	0x5000
+ 1495 0a7a 12       		.uleb128 0x12
+ 1496 0a7b 97030000 		.4byte	.LASF242
+ 1497 0a7f 0150     		.2byte	0x5001
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 31
+
+
+ 1498 0a81 12       		.uleb128 0x12
+ 1499 0a82 E1190000 		.4byte	.LASF243
+ 1500 0a86 0250     		.2byte	0x5002
+ 1501 0a88 12       		.uleb128 0x12
+ 1502 0a89 201A0000 		.4byte	.LASF244
+ 1503 0a8d 0350     		.2byte	0x5003
+ 1504 0a8f 12       		.uleb128 0x12
+ 1505 0a90 F1050000 		.4byte	.LASF245
+ 1506 0a94 0450     		.2byte	0x5004
+ 1507 0a96 12       		.uleb128 0x12
+ 1508 0a97 4D140000 		.4byte	.LASF246
+ 1509 0a9b 0550     		.2byte	0x5005
+ 1510 0a9d 12       		.uleb128 0x12
+ 1511 0a9e 6C0D0000 		.4byte	.LASF247
+ 1512 0aa2 0650     		.2byte	0x5006
+ 1513 0aa4 12       		.uleb128 0x12
+ 1514 0aa5 EC020000 		.4byte	.LASF248
+ 1515 0aa9 0750     		.2byte	0x5007
+ 1516 0aab 12       		.uleb128 0x12
+ 1517 0aac FD030000 		.4byte	.LASF249
+ 1518 0ab0 0850     		.2byte	0x5008
+ 1519 0ab2 12       		.uleb128 0x12
+ 1520 0ab3 300B0000 		.4byte	.LASF250
+ 1521 0ab7 0950     		.2byte	0x5009
+ 1522 0ab9 12       		.uleb128 0x12
+ 1523 0aba 7D060000 		.4byte	.LASF251
+ 1524 0abe 0A50     		.2byte	0x500a
+ 1525 0ac0 12       		.uleb128 0x12
+ 1526 0ac1 3C160000 		.4byte	.LASF252
+ 1527 0ac5 0B50     		.2byte	0x500b
+ 1528 0ac7 12       		.uleb128 0x12
+ 1529 0ac8 A0140000 		.4byte	.LASF253
+ 1530 0acc 0C50     		.2byte	0x500c
+ 1531 0ace 12       		.uleb128 0x12
+ 1532 0acf 4A0B0000 		.4byte	.LASF254
+ 1533 0ad3 0D50     		.2byte	0x500d
+ 1534 0ad5 12       		.uleb128 0x12
+ 1535 0ad6 FA1A0000 		.4byte	.LASF255
+ 1536 0ada 0E50     		.2byte	0x500e
+ 1537 0adc 12       		.uleb128 0x12
+ 1538 0add 020A0000 		.4byte	.LASF256
+ 1539 0ae1 0F50     		.2byte	0x500f
+ 1540 0ae3 12       		.uleb128 0x12
+ 1541 0ae4 B7160000 		.4byte	.LASF257
+ 1542 0ae8 1050     		.2byte	0x5010
+ 1543 0aea 12       		.uleb128 0x12
+ 1544 0aeb 001A0000 		.4byte	.LASF258
+ 1545 0aef 1150     		.2byte	0x5011
+ 1546 0af1 12       		.uleb128 0x12
+ 1547 0af2 14010000 		.4byte	.LASF259
+ 1548 0af6 1250     		.2byte	0x5012
+ 1549 0af8 12       		.uleb128 0x12
+ 1550 0af9 10140000 		.4byte	.LASF260
+ 1551 0afd 1350     		.2byte	0x5013
+ 1552 0aff 12       		.uleb128 0x12
+ 1553 0b00 10060000 		.4byte	.LASF261
+ 1554 0b04 1450     		.2byte	0x5014
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 32
+
+
+ 1555 0b06 12       		.uleb128 0x12
+ 1556 0b07 00190000 		.4byte	.LASF262
+ 1557 0b0b 1550     		.2byte	0x5015
+ 1558 0b0d 12       		.uleb128 0x12
+ 1559 0b0e 3F1A0000 		.4byte	.LASF263
+ 1560 0b12 1650     		.2byte	0x5016
+ 1561 0b14 12       		.uleb128 0x12
+ 1562 0b15 5E040000 		.4byte	.LASF264
+ 1563 0b19 1750     		.2byte	0x5017
+ 1564 0b1b 12       		.uleb128 0x12
+ 1565 0b1c 5C100000 		.4byte	.LASF265
+ 1566 0b20 1850     		.2byte	0x5018
+ 1567 0b22 12       		.uleb128 0x12
+ 1568 0b23 7F1B0000 		.4byte	.LASF266
+ 1569 0b27 0060     		.2byte	0x6000
+ 1570 0b29 12       		.uleb128 0x12
+ 1571 0b2a 57150000 		.4byte	.LASF267
+ 1572 0b2e 0160     		.2byte	0x6001
+ 1573 0b30 12       		.uleb128 0x12
+ 1574 0b31 A90B0000 		.4byte	.LASF268
+ 1575 0b35 0260     		.2byte	0x6002
+ 1576 0b37 12       		.uleb128 0x12
+ 1577 0b38 34120000 		.4byte	.LASF269
+ 1578 0b3c 0360     		.2byte	0x6003
+ 1579 0b3e 12       		.uleb128 0x12
+ 1580 0b3f 26070000 		.4byte	.LASF270
+ 1581 0b43 0460     		.2byte	0x6004
+ 1582 0b45 12       		.uleb128 0x12
+ 1583 0b46 84160000 		.4byte	.LASF271
+ 1584 0b4a 0560     		.2byte	0x6005
+ 1585 0b4c 12       		.uleb128 0x12
+ 1586 0b4d 6F0A0000 		.4byte	.LASF272
+ 1587 0b51 0660     		.2byte	0x6006
+ 1588 0b53 12       		.uleb128 0x12
+ 1589 0b54 25000000 		.4byte	.LASF273
+ 1590 0b58 0760     		.2byte	0x6007
+ 1591 0b5a 12       		.uleb128 0x12
+ 1592 0b5b B5010000 		.4byte	.LASF274
+ 1593 0b5f 0860     		.2byte	0x6008
+ 1594 0b61 12       		.uleb128 0x12
+ 1595 0b62 A1000000 		.4byte	.LASF275
+ 1596 0b66 0960     		.2byte	0x6009
+ 1597 0b68 12       		.uleb128 0x12
+ 1598 0b69 AA110000 		.4byte	.LASF276
+ 1599 0b6d 0A60     		.2byte	0x600a
+ 1600 0b6f 12       		.uleb128 0x12
+ 1601 0b70 4C0A0000 		.4byte	.LASF277
+ 1602 0b74 FFFF     		.2byte	0xffff
+ 1603 0b76 00       		.byte	0
+ 1604 0b77 13       		.uleb128 0x13
+ 1605 0b78 02       		.byte	0x2
+ 1606 0b79 0A       		.byte	0xa
+ 1607 0b7a 6401     		.2byte	0x164
+ 1608 0b7c 9B0B0000 		.4byte	0xb9b
+ 1609 0b80 11       		.uleb128 0x11
+ 1610 0b81 A91A0000 		.4byte	.LASF278
+ 1611 0b85 0A       		.byte	0xa
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 33
+
+
+ 1612 0b86 6E01     		.2byte	0x16e
+ 1613 0b88 A2000000 		.4byte	0xa2
+ 1614 0b8c 00       		.byte	0
+ 1615 0b8d 11       		.uleb128 0x11
+ 1616 0b8e 35090000 		.4byte	.LASF279
+ 1617 0b92 0A       		.byte	0xa
+ 1618 0b93 7201     		.2byte	0x172
+ 1619 0b95 A2000000 		.4byte	0xa2
+ 1620 0b99 01       		.byte	0x1
+ 1621 0b9a 00       		.byte	0
+ 1622 0b9b 0B       		.uleb128 0xb
+ 1623 0b9c 80100000 		.4byte	.LASF280
+ 1624 0ba0 0A       		.byte	0xa
+ 1625 0ba1 7401     		.2byte	0x174
+ 1626 0ba3 770B0000 		.4byte	0xb77
+ 1627 0ba7 14       		.uleb128 0x14
+ 1628 0ba8 01       		.byte	0x1
+ 1629 0ba9 3E000000 		.4byte	0x3e
+ 1630 0bad 0B       		.byte	0xb
+ 1631 0bae 7E       		.byte	0x7e
+ 1632 0baf CC0B0000 		.4byte	0xbcc
+ 1633 0bb3 0A       		.uleb128 0xa
+ 1634 0bb4 D6030000 		.4byte	.LASF281
+ 1635 0bb8 00       		.byte	0
+ 1636 0bb9 0A       		.uleb128 0xa
+ 1637 0bba A4080000 		.4byte	.LASF282
+ 1638 0bbe 01       		.byte	0x1
+ 1639 0bbf 0A       		.uleb128 0xa
+ 1640 0bc0 C70A0000 		.4byte	.LASF283
+ 1641 0bc4 02       		.byte	0x2
+ 1642 0bc5 0A       		.uleb128 0xa
+ 1643 0bc6 550C0000 		.4byte	.LASF284
+ 1644 0bca 03       		.byte	0x3
+ 1645 0bcb 00       		.byte	0
+ 1646 0bcc 03       		.uleb128 0x3
+ 1647 0bcd 64080000 		.4byte	.LASF285
+ 1648 0bd1 0B       		.byte	0xb
+ 1649 0bd2 83       		.byte	0x83
+ 1650 0bd3 A70B0000 		.4byte	0xba7
+ 1651 0bd7 14       		.uleb128 0x14
+ 1652 0bd8 01       		.byte	0x1
+ 1653 0bd9 3E000000 		.4byte	0x3e
+ 1654 0bdd 0B       		.byte	0xb
+ 1655 0bde 87       		.byte	0x87
+ 1656 0bdf 140C0000 		.4byte	0xc14
+ 1657 0be3 0A       		.uleb128 0xa
+ 1658 0be4 551C0000 		.4byte	.LASF286
+ 1659 0be8 00       		.byte	0
+ 1660 0be9 0A       		.uleb128 0xa
+ 1661 0bea 95050000 		.4byte	.LASF287
+ 1662 0bee 01       		.byte	0x1
+ 1663 0bef 0A       		.uleb128 0xa
+ 1664 0bf0 C4120000 		.4byte	.LASF288
+ 1665 0bf4 02       		.byte	0x2
+ 1666 0bf5 0A       		.uleb128 0xa
+ 1667 0bf6 7F1C0000 		.4byte	.LASF289
+ 1668 0bfa 03       		.byte	0x3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 34
+
+
+ 1669 0bfb 0A       		.uleb128 0xa
+ 1670 0bfc 46090000 		.4byte	.LASF290
+ 1671 0c00 04       		.byte	0x4
+ 1672 0c01 0A       		.uleb128 0xa
+ 1673 0c02 860C0000 		.4byte	.LASF291
+ 1674 0c06 05       		.byte	0x5
+ 1675 0c07 0A       		.uleb128 0xa
+ 1676 0c08 99120000 		.4byte	.LASF292
+ 1677 0c0c 06       		.byte	0x6
+ 1678 0c0d 0A       		.uleb128 0xa
+ 1679 0c0e 36010000 		.4byte	.LASF293
+ 1680 0c12 07       		.byte	0x7
+ 1681 0c13 00       		.byte	0
+ 1682 0c14 03       		.uleb128 0x3
+ 1683 0c15 180F0000 		.4byte	.LASF294
+ 1684 0c19 0B       		.byte	0xb
+ 1685 0c1a 90       		.byte	0x90
+ 1686 0c1b D70B0000 		.4byte	0xbd7
+ 1687 0c1f 15       		.uleb128 0x15
+ 1688 0c20 6D030000 		.4byte	.LASF295
+ 1689 0c24 18       		.byte	0x18
+ 1690 0c25 0C       		.byte	0xc
+ 1691 0c26 14       		.byte	0x14
+ 1692 0c27 4A0C0000 		.4byte	0xc4a
+ 1693 0c2b 16       		.uleb128 0x16
+ 1694 0c2c 7800     		.ascii	"x\000"
+ 1695 0c2e 0C       		.byte	0xc
+ 1696 0c2f 15       		.byte	0x15
+ 1697 0c30 16050000 		.4byte	0x516
+ 1698 0c34 00       		.byte	0
+ 1699 0c35 16       		.uleb128 0x16
+ 1700 0c36 7900     		.ascii	"y\000"
+ 1701 0c38 0C       		.byte	0xc
+ 1702 0c39 16       		.byte	0x16
+ 1703 0c3a 16050000 		.4byte	0x516
+ 1704 0c3e 08       		.byte	0x8
+ 1705 0c3f 16       		.uleb128 0x16
+ 1706 0c40 7A00     		.ascii	"z\000"
+ 1707 0c42 0C       		.byte	0xc
+ 1708 0c43 17       		.byte	0x17
+ 1709 0c44 16050000 		.4byte	0x516
+ 1710 0c48 10       		.byte	0x10
+ 1711 0c49 00       		.byte	0
+ 1712 0c4a 03       		.uleb128 0x3
+ 1713 0c4b 6D030000 		.4byte	.LASF295
+ 1714 0c4f 0C       		.byte	0xc
+ 1715 0c50 18       		.byte	0x18
+ 1716 0c51 1F0C0000 		.4byte	0xc1f
+ 1717 0c55 15       		.uleb128 0x15
+ 1718 0c56 5F060000 		.4byte	.LASF296
+ 1719 0c5a 30       		.byte	0x30
+ 1720 0c5b 0C       		.byte	0xc
+ 1721 0c5c 1B       		.byte	0x1b
+ 1722 0c5d 770C0000 		.4byte	0xc77
+ 1723 0c61 16       		.uleb128 0x16
+ 1724 0c62 6700     		.ascii	"g\000"
+ 1725 0c64 0C       		.byte	0xc
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 35
+
+
+ 1726 0c65 1C       		.byte	0x1c
+ 1727 0c66 4A0C0000 		.4byte	0xc4a
+ 1728 0c6a 00       		.byte	0
+ 1729 0c6b 16       		.uleb128 0x16
+ 1730 0c6c 736900   		.ascii	"si\000"
+ 1731 0c6f 0C       		.byte	0xc
+ 1732 0c70 1D       		.byte	0x1d
+ 1733 0c71 4A0C0000 		.4byte	0xc4a
+ 1734 0c75 18       		.byte	0x18
+ 1735 0c76 00       		.byte	0
+ 1736 0c77 03       		.uleb128 0x3
+ 1737 0c78 5F060000 		.4byte	.LASF296
+ 1738 0c7c 0C       		.byte	0xc
+ 1739 0c7d 1E       		.byte	0x1e
+ 1740 0c7e 550C0000 		.4byte	0xc55
+ 1741 0c82 17       		.uleb128 0x17
+ 1742 0c83 494D5500 		.ascii	"IMU\000"
+ 1743 0c87 48       		.byte	0x48
+ 1744 0c88 0C       		.byte	0xc
+ 1745 0c89 21       		.byte	0x21
+ 1746 0c8a A70C0000 		.4byte	0xca7
+ 1747 0c8e 16       		.uleb128 0x16
+ 1748 0c8f 61636300 		.ascii	"acc\000"
+ 1749 0c93 0C       		.byte	0xc
+ 1750 0c94 22       		.byte	0x22
+ 1751 0c95 770C0000 		.4byte	0xc77
+ 1752 0c99 00       		.byte	0
+ 1753 0c9a 07       		.uleb128 0x7
+ 1754 0c9b CF110000 		.4byte	.LASF297
+ 1755 0c9f 0C       		.byte	0xc
+ 1756 0ca0 23       		.byte	0x23
+ 1757 0ca1 4A0C0000 		.4byte	0xc4a
+ 1758 0ca5 30       		.byte	0x30
+ 1759 0ca6 00       		.byte	0
+ 1760 0ca7 18       		.uleb128 0x18
+ 1761 0ca8 494D5500 		.ascii	"IMU\000"
+ 1762 0cac 0C       		.byte	0xc
+ 1763 0cad 24       		.byte	0x24
+ 1764 0cae 820C0000 		.4byte	0xc82
+ 1765 0cb2 17       		.uleb128 0x17
+ 1766 0cb3 50504700 		.ascii	"PPG\000"
+ 1767 0cb7 08       		.byte	0x8
+ 1768 0cb8 0D       		.byte	0xd
+ 1769 0cb9 42       		.byte	0x42
+ 1770 0cba D60C0000 		.4byte	0xcd6
+ 1771 0cbe 16       		.uleb128 0x16
+ 1772 0cbf 697200   		.ascii	"ir\000"
+ 1773 0cc2 0D       		.byte	0xd
+ 1774 0cc3 44       		.byte	0x44
+ 1775 0cc4 CE000000 		.4byte	0xce
+ 1776 0cc8 00       		.byte	0
+ 1777 0cc9 16       		.uleb128 0x16
+ 1778 0cca 72656400 		.ascii	"red\000"
+ 1779 0cce 0D       		.byte	0xd
+ 1780 0ccf 45       		.byte	0x45
+ 1781 0cd0 CE000000 		.4byte	0xce
+ 1782 0cd4 04       		.byte	0x4
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 36
+
+
+ 1783 0cd5 00       		.byte	0
+ 1784 0cd6 18       		.uleb128 0x18
+ 1785 0cd7 50504700 		.ascii	"PPG\000"
+ 1786 0cdb 0D       		.byte	0xd
+ 1787 0cdc 46       		.byte	0x46
+ 1788 0cdd B20C0000 		.4byte	0xcb2
+ 1789 0ce1 19       		.uleb128 0x19
+ 1790 0ce2 661B0000 		.4byte	.LASF319
+ 1791 0ce6 02       		.byte	0x2
+ 1792 0ce7 81       		.byte	0x81
+ 1793 0ce8 03       		.byte	0x3
+ 1794 0ce9 1A       		.uleb128 0x1a
+ 1795 0cea 3C1B0000 		.4byte	.LASF320
+ 1796 0cee 01       		.byte	0x1
+ 1797 0cef 15       		.byte	0x15
+ 1798 0cf0 94000000 		.4byte	0x94
+ 1799 0cf4 00000000 		.4byte	.LFB555
+ 1800 0cf8 DC000000 		.4byte	.LFE555-.LFB555
+ 1801 0cfc 01       		.uleb128 0x1
+ 1802 0cfd 9C       		.byte	0x9c
+ 1803 0cfe 950E0000 		.4byte	0xe95
+ 1804 0d02 1B       		.uleb128 0x1b
+ 1805 0d03 73747200 		.ascii	"str\000"
+ 1806 0d07 01       		.byte	0x1
+ 1807 0d08 1A       		.byte	0x1a
+ 1808 0d09 950E0000 		.4byte	0xe95
+ 1809 0d0d 03       		.uleb128 0x3
+ 1810 0d0e 91       		.byte	0x91
+ 1811 0d0f 947F     		.sleb128 -108
+ 1812 0d11 1C       		.uleb128 0x1c
+ 1813 0d12 E10C0000 		.4byte	0xce1
+ 1814 0d16 04000000 		.4byte	.LBB4
+ 1815 0d1a 02000000 		.4byte	.LBE4-.LBB4
+ 1816 0d1e 01       		.byte	0x1
+ 1817 0d1f 17       		.byte	0x17
+ 1818 0d20 1D       		.uleb128 0x1d
+ 1819 0d21 0A000000 		.4byte	.LVL0
+ 1820 0d25 5F0F0000 		.4byte	0xf5f
+ 1821 0d29 1E       		.uleb128 0x1e
+ 1822 0d2a 10000000 		.4byte	.LVL1
+ 1823 0d2e 6A0F0000 		.4byte	0xf6a
+ 1824 0d32 400D0000 		.4byte	0xd40
+ 1825 0d36 1F       		.uleb128 0x1f
+ 1826 0d37 01       		.uleb128 0x1
+ 1827 0d38 50       		.byte	0x50
+ 1828 0d39 05       		.uleb128 0x5
+ 1829 0d3a 03       		.byte	0x3
+ 1830 0d3b 00000000 		.4byte	.LC0
+ 1831 0d3f 00       		.byte	0
+ 1832 0d40 1D       		.uleb128 0x1d
+ 1833 0d41 14000000 		.4byte	.LVL2
+ 1834 0d45 750F0000 		.4byte	0xf75
+ 1835 0d49 1E       		.uleb128 0x1e
+ 1836 0d4a 1C000000 		.4byte	.LVL3
+ 1837 0d4e 6A0F0000 		.4byte	0xf6a
+ 1838 0d52 600D0000 		.4byte	0xd60
+ 1839 0d56 1F       		.uleb128 0x1f
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 37
+
+
+ 1840 0d57 01       		.uleb128 0x1
+ 1841 0d58 50       		.byte	0x50
+ 1842 0d59 05       		.uleb128 0x5
+ 1843 0d5a 03       		.byte	0x3
+ 1844 0d5b 18000000 		.4byte	.LC1
+ 1845 0d5f 00       		.byte	0
+ 1846 0d60 1D       		.uleb128 0x1d
+ 1847 0d61 22000000 		.4byte	.LVL4
+ 1848 0d65 800F0000 		.4byte	0xf80
+ 1849 0d69 1E       		.uleb128 0x1e
+ 1850 0d6a 2A000000 		.4byte	.LVL5
+ 1851 0d6e 6A0F0000 		.4byte	0xf6a
+ 1852 0d72 800D0000 		.4byte	0xd80
+ 1853 0d76 1F       		.uleb128 0x1f
+ 1854 0d77 01       		.uleb128 0x1
+ 1855 0d78 50       		.byte	0x50
+ 1856 0d79 05       		.uleb128 0x5
+ 1857 0d7a 03       		.byte	0x3
+ 1858 0d7b 30000000 		.4byte	.LC2
+ 1859 0d7f 00       		.byte	0
+ 1860 0d80 1D       		.uleb128 0x1d
+ 1861 0d81 30000000 		.4byte	.LVL6
+ 1862 0d85 8B0F0000 		.4byte	0xf8b
+ 1863 0d89 1D       		.uleb128 0x1d
+ 1864 0d8a 34000000 		.4byte	.LVL7
+ 1865 0d8e 960F0000 		.4byte	0xf96
+ 1866 0d92 1E       		.uleb128 0x1e
+ 1867 0d93 3A000000 		.4byte	.LVL8
+ 1868 0d97 6A0F0000 		.4byte	0xf6a
+ 1869 0d9b A90D0000 		.4byte	0xda9
+ 1870 0d9f 1F       		.uleb128 0x1f
+ 1871 0da0 01       		.uleb128 0x1
+ 1872 0da1 50       		.byte	0x50
+ 1873 0da2 05       		.uleb128 0x5
+ 1874 0da3 03       		.byte	0x3
+ 1875 0da4 48000000 		.4byte	.LC3
+ 1876 0da8 00       		.byte	0
+ 1877 0da9 1D       		.uleb128 0x1d
+ 1878 0daa 44000000 		.4byte	.LVL9
+ 1879 0dae A10F0000 		.4byte	0xfa1
+ 1880 0db2 1E       		.uleb128 0x1e
+ 1881 0db3 4A000000 		.4byte	.LVL10
+ 1882 0db7 6A0F0000 		.4byte	0xf6a
+ 1883 0dbb C90D0000 		.4byte	0xdc9
+ 1884 0dbf 1F       		.uleb128 0x1f
+ 1885 0dc0 01       		.uleb128 0x1
+ 1886 0dc1 50       		.byte	0x50
+ 1887 0dc2 05       		.uleb128 0x5
+ 1888 0dc3 03       		.byte	0x3
+ 1889 0dc4 50000000 		.4byte	.LC4
+ 1890 0dc8 00       		.byte	0
+ 1891 0dc9 1D       		.uleb128 0x1d
+ 1892 0dca 52000000 		.4byte	.LVL11
+ 1893 0dce A10F0000 		.4byte	0xfa1
+ 1894 0dd2 1E       		.uleb128 0x1e
+ 1895 0dd3 58000000 		.4byte	.LVL12
+ 1896 0dd7 6A0F0000 		.4byte	0xf6a
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 38
+
+
+ 1897 0ddb E90D0000 		.4byte	0xde9
+ 1898 0ddf 1F       		.uleb128 0x1f
+ 1899 0de0 01       		.uleb128 0x1
+ 1900 0de1 50       		.byte	0x50
+ 1901 0de2 05       		.uleb128 0x5
+ 1902 0de3 03       		.byte	0x3
+ 1903 0de4 58000000 		.4byte	.LC5
+ 1904 0de8 00       		.byte	0
+ 1905 0de9 1D       		.uleb128 0x1d
+ 1906 0dea 60000000 		.4byte	.LVL13
+ 1907 0dee A10F0000 		.4byte	0xfa1
+ 1908 0df2 1E       		.uleb128 0x1e
+ 1909 0df3 66000000 		.4byte	.LVL14
+ 1910 0df7 6A0F0000 		.4byte	0xf6a
+ 1911 0dfb 090E0000 		.4byte	0xe09
+ 1912 0dff 1F       		.uleb128 0x1f
+ 1913 0e00 01       		.uleb128 0x1
+ 1914 0e01 50       		.byte	0x50
+ 1915 0e02 05       		.uleb128 0x5
+ 1916 0e03 03       		.byte	0x3
+ 1917 0e04 60000000 		.4byte	.LC6
+ 1918 0e08 00       		.byte	0
+ 1919 0e09 1D       		.uleb128 0x1d
+ 1920 0e0a 6E000000 		.4byte	.LVL15
+ 1921 0e0e A10F0000 		.4byte	0xfa1
+ 1922 0e12 1E       		.uleb128 0x1e
+ 1923 0e13 74000000 		.4byte	.LVL16
+ 1924 0e17 6A0F0000 		.4byte	0xf6a
+ 1925 0e1b 290E0000 		.4byte	0xe29
+ 1926 0e1f 1F       		.uleb128 0x1f
+ 1927 0e20 01       		.uleb128 0x1
+ 1928 0e21 50       		.byte	0x50
+ 1929 0e22 05       		.uleb128 0x5
+ 1930 0e23 03       		.byte	0x3
+ 1931 0e24 68000000 		.4byte	.LC7
+ 1932 0e28 00       		.byte	0
+ 1933 0e29 1D       		.uleb128 0x1d
+ 1934 0e2a 7C000000 		.4byte	.LVL17
+ 1935 0e2e A10F0000 		.4byte	0xfa1
+ 1936 0e32 1E       		.uleb128 0x1e
+ 1937 0e33 82000000 		.4byte	.LVL18
+ 1938 0e37 6A0F0000 		.4byte	0xf6a
+ 1939 0e3b 490E0000 		.4byte	0xe49
+ 1940 0e3f 1F       		.uleb128 0x1f
+ 1941 0e40 01       		.uleb128 0x1
+ 1942 0e41 50       		.byte	0x50
+ 1943 0e42 05       		.uleb128 0x5
+ 1944 0e43 03       		.byte	0x3
+ 1945 0e44 70000000 		.4byte	.LC8
+ 1946 0e48 00       		.byte	0
+ 1947 0e49 1D       		.uleb128 0x1d
+ 1948 0e4a 8A000000 		.4byte	.LVL19
+ 1949 0e4e A10F0000 		.4byte	0xfa1
+ 1950 0e52 1E       		.uleb128 0x1e
+ 1951 0e53 98000000 		.4byte	.LVL20
+ 1952 0e57 AC0F0000 		.4byte	0xfac
+ 1953 0e5b 700E0000 		.4byte	0xe70
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 39
+
+
+ 1954 0e5f 1F       		.uleb128 0x1f
+ 1955 0e60 01       		.uleb128 0x1
+ 1956 0e61 50       		.byte	0x50
+ 1957 0e62 03       		.uleb128 0x3
+ 1958 0e63 91       		.byte	0x91
+ 1959 0e64 947F     		.sleb128 -108
+ 1960 0e66 1F       		.uleb128 0x1f
+ 1961 0e67 01       		.uleb128 0x1
+ 1962 0e68 51       		.byte	0x51
+ 1963 0e69 05       		.uleb128 0x5
+ 1964 0e6a 03       		.byte	0x3
+ 1965 0e6b 78000000 		.4byte	.LC9
+ 1966 0e6f 00       		.byte	0
+ 1967 0e70 1E       		.uleb128 0x1e
+ 1968 0e71 9E000000 		.4byte	.LVL21
+ 1969 0e75 6A0F0000 		.4byte	0xf6a
+ 1970 0e79 850E0000 		.4byte	0xe85
+ 1971 0e7d 1F       		.uleb128 0x1f
+ 1972 0e7e 01       		.uleb128 0x1
+ 1973 0e7f 50       		.byte	0x50
+ 1974 0e80 03       		.uleb128 0x3
+ 1975 0e81 91       		.byte	0x91
+ 1976 0e82 947F     		.sleb128 -108
+ 1977 0e84 00       		.byte	0
+ 1978 0e85 20       		.uleb128 0x20
+ 1979 0e86 A4000000 		.4byte	.LVL22
+ 1980 0e8a B70F0000 		.4byte	0xfb7
+ 1981 0e8e 1F       		.uleb128 0x1f
+ 1982 0e8f 01       		.uleb128 0x1
+ 1983 0e90 50       		.byte	0x50
+ 1984 0e91 01       		.uleb128 0x1
+ 1985 0e92 31       		.byte	0x31
+ 1986 0e93 00       		.byte	0
+ 1987 0e94 00       		.byte	0
+ 1988 0e95 21       		.uleb128 0x21
+ 1989 0e96 08050000 		.4byte	0x508
+ 1990 0e9a A50E0000 		.4byte	0xea5
+ 1991 0e9e 22       		.uleb128 0x22
+ 1992 0e9f D9000000 		.4byte	0xd9
+ 1993 0ea3 63       		.byte	0x63
+ 1994 0ea4 00       		.byte	0
+ 1995 0ea5 23       		.uleb128 0x23
+ 1996 0ea6 D9150000 		.4byte	.LASF298
+ 1997 0eaa 0E       		.byte	0xe
+ 1998 0eab F907     		.2byte	0x7f9
+ 1999 0ead B10E0000 		.4byte	0xeb1
+ 2000 0eb1 05       		.uleb128 0x5
+ 2001 0eb2 C3000000 		.4byte	0xc3
+ 2002 0eb6 24       		.uleb128 0x24
+ 2003 0eb7 97000000 		.4byte	.LASF299
+ 2004 0ebb 05       		.byte	0x5
+ 2005 0ebc A7       		.byte	0xa7
+ 2006 0ebd C10E0000 		.4byte	0xec1
+ 2007 0ec1 0C       		.uleb128 0xc
+ 2008 0ec2 04       		.byte	0x4
+ 2009 0ec3 C70E0000 		.4byte	0xec7
+ 2010 0ec7 25       		.uleb128 0x25
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 40
+
+
+ 2011 0ec8 FD040000 		.4byte	0x4fd
+ 2012 0ecc 23       		.uleb128 0x23
+ 2013 0ecd E90E0000 		.4byte	.LASF300
+ 2014 0ed1 0B       		.byte	0xb
+ 2015 0ed2 2202     		.2byte	0x222
+ 2016 0ed4 CC0B0000 		.4byte	0xbcc
+ 2017 0ed8 21       		.uleb128 0x21
+ 2018 0ed9 9B0B0000 		.4byte	0xb9b
+ 2019 0edd E80E0000 		.4byte	0xee8
+ 2020 0ee1 22       		.uleb128 0x22
+ 2021 0ee2 D9000000 		.4byte	0xd9
+ 2022 0ee6 00       		.byte	0
+ 2023 0ee7 00       		.byte	0
+ 2024 0ee8 23       		.uleb128 0x23
+ 2025 0ee9 51020000 		.4byte	.LASF301
+ 2026 0eed 0B       		.byte	0xb
+ 2027 0eee 2C02     		.2byte	0x22c
+ 2028 0ef0 D80E0000 		.4byte	0xed8
+ 2029 0ef4 21       		.uleb128 0x21
+ 2030 0ef5 140C0000 		.4byte	0xc14
+ 2031 0ef9 040F0000 		.4byte	0xf04
+ 2032 0efd 22       		.uleb128 0x22
+ 2033 0efe D9000000 		.4byte	0xd9
+ 2034 0f02 00       		.byte	0
+ 2035 0f03 00       		.byte	0
+ 2036 0f04 23       		.uleb128 0x23
+ 2037 0f05 14000000 		.4byte	.LASF302
+ 2038 0f09 0B       		.byte	0xb
+ 2039 0f0a 2D02     		.2byte	0x22d
+ 2040 0f0c F40E0000 		.4byte	0xef4
+ 2041 0f10 23       		.uleb128 0x23
+ 2042 0f11 B31C0000 		.4byte	.LASF303
+ 2043 0f15 0B       		.byte	0xb
+ 2044 0f16 5202     		.2byte	0x252
+ 2045 0f18 A2000000 		.4byte	0xa2
+ 2046 0f1c 24       		.uleb128 0x24
+ 2047 0f1d B21A0000 		.4byte	.LASF304
+ 2048 0f21 0F       		.byte	0xf
+ 2049 0f22 87       		.byte	0x87
+ 2050 0f23 2B080000 		.4byte	0x82b
+ 2051 0f27 24       		.uleb128 0x24
+ 2052 0f28 44190000 		.4byte	.LASF305
+ 2053 0f2c 10       		.byte	0x10
+ 2054 0f2d 7F       		.byte	0x7f
+ 2055 0f2e B4060000 		.4byte	0x6b4
+ 2056 0f32 24       		.uleb128 0x24
+ 2057 0f33 5F0E0000 		.4byte	.LASF306
+ 2058 0f37 11       		.byte	0x11
+ 2059 0f38 5E       		.byte	0x5e
+ 2060 0f39 4F070000 		.4byte	0x74f
+ 2061 0f3d 26       		.uleb128 0x26
+ 2062 0f3e 696D7500 		.ascii	"imu\000"
+ 2063 0f42 0C       		.byte	0xc
+ 2064 0f43 26       		.byte	0x26
+ 2065 0f44 A70C0000 		.4byte	0xca7
+ 2066 0f48 05       		.uleb128 0x5
+ 2067 0f49 03       		.byte	0x3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 41
+
+
+ 2068 0f4a 00000000 		.4byte	imu
+ 2069 0f4e 26       		.uleb128 0x26
+ 2070 0f4f 70706700 		.ascii	"ppg\000"
+ 2071 0f53 0D       		.byte	0xd
+ 2072 0f54 48       		.byte	0x48
+ 2073 0f55 D60C0000 		.4byte	0xcd6
+ 2074 0f59 05       		.uleb128 0x5
+ 2075 0f5a 03       		.byte	0x3
+ 2076 0f5b 00000000 		.4byte	ppg
+ 2077 0f5f 27       		.uleb128 0x27
+ 2078 0f60 C2180000 		.4byte	.LASF307
+ 2079 0f64 C2180000 		.4byte	.LASF307
+ 2080 0f68 12       		.byte	0x12
+ 2081 0f69 15       		.byte	0x15
+ 2082 0f6a 27       		.uleb128 0x27
+ 2083 0f6b E7140000 		.4byte	.LASF308
+ 2084 0f6f E7140000 		.4byte	.LASF308
+ 2085 0f73 12       		.byte	0x12
+ 2086 0f74 13       		.byte	0x13
+ 2087 0f75 27       		.uleb128 0x27
+ 2088 0f76 5F030000 		.4byte	.LASF309
+ 2089 0f7a 5F030000 		.4byte	.LASF309
+ 2090 0f7e 0C       		.byte	0xc
+ 2091 0f7f 4B       		.byte	0x4b
+ 2092 0f80 27       		.uleb128 0x27
+ 2093 0f81 3D0A0000 		.4byte	.LASF310
+ 2094 0f85 3D0A0000 		.4byte	.LASF310
+ 2095 0f89 0D       		.byte	0xd
+ 2096 0f8a 4F       		.byte	0x4f
+ 2097 0f8b 27       		.uleb128 0x27
+ 2098 0f8c 80130000 		.4byte	.LASF311
+ 2099 0f90 80130000 		.4byte	.LASF311
+ 2100 0f94 0C       		.byte	0xc
+ 2101 0f95 4D       		.byte	0x4d
+ 2102 0f96 27       		.uleb128 0x27
+ 2103 0f97 3B090000 		.4byte	.LASF312
+ 2104 0f9b 3B090000 		.4byte	.LASF312
+ 2105 0f9f 0D       		.byte	0xd
+ 2106 0fa0 51       		.byte	0x51
+ 2107 0fa1 27       		.uleb128 0x27
+ 2108 0fa2 C8060000 		.4byte	.LASF313
+ 2109 0fa6 C8060000 		.4byte	.LASF313
+ 2110 0faa 12       		.byte	0x12
+ 2111 0fab 14       		.byte	0x14
+ 2112 0fac 27       		.uleb128 0x27
+ 2113 0fad 6F130000 		.4byte	.LASF314
+ 2114 0fb1 6F130000 		.4byte	.LASF314
+ 2115 0fb5 13       		.byte	0x13
+ 2116 0fb6 E7       		.byte	0xe7
+ 2117 0fb7 28       		.uleb128 0x28
+ 2118 0fb8 9A070000 		.4byte	.LASF315
+ 2119 0fbc 9A070000 		.4byte	.LASF315
+ 2120 0fc0 14       		.byte	0x14
+ 2121 0fc1 8903     		.2byte	0x389
+ 2122 0fc3 00       		.byte	0
+ 2123              		.section	.debug_abbrev,"",%progbits
+ 2124              	.Ldebug_abbrev0:
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 42
+
+
+ 2125 0000 01       		.uleb128 0x1
+ 2126 0001 11       		.uleb128 0x11
+ 2127 0002 01       		.byte	0x1
+ 2128 0003 25       		.uleb128 0x25
+ 2129 0004 0E       		.uleb128 0xe
+ 2130 0005 13       		.uleb128 0x13
+ 2131 0006 0B       		.uleb128 0xb
+ 2132 0007 03       		.uleb128 0x3
+ 2133 0008 0E       		.uleb128 0xe
+ 2134 0009 1B       		.uleb128 0x1b
+ 2135 000a 0E       		.uleb128 0xe
+ 2136 000b 55       		.uleb128 0x55
+ 2137 000c 17       		.uleb128 0x17
+ 2138 000d 11       		.uleb128 0x11
+ 2139 000e 01       		.uleb128 0x1
+ 2140 000f 10       		.uleb128 0x10
+ 2141 0010 17       		.uleb128 0x17
+ 2142 0011 00       		.byte	0
+ 2143 0012 00       		.byte	0
+ 2144 0013 02       		.uleb128 0x2
+ 2145 0014 24       		.uleb128 0x24
+ 2146 0015 00       		.byte	0
+ 2147 0016 0B       		.uleb128 0xb
+ 2148 0017 0B       		.uleb128 0xb
+ 2149 0018 3E       		.uleb128 0x3e
+ 2150 0019 0B       		.uleb128 0xb
+ 2151 001a 03       		.uleb128 0x3
+ 2152 001b 0E       		.uleb128 0xe
+ 2153 001c 00       		.byte	0
+ 2154 001d 00       		.byte	0
+ 2155 001e 03       		.uleb128 0x3
+ 2156 001f 16       		.uleb128 0x16
+ 2157 0020 00       		.byte	0
+ 2158 0021 03       		.uleb128 0x3
+ 2159 0022 0E       		.uleb128 0xe
+ 2160 0023 3A       		.uleb128 0x3a
+ 2161 0024 0B       		.uleb128 0xb
+ 2162 0025 3B       		.uleb128 0x3b
+ 2163 0026 0B       		.uleb128 0xb
+ 2164 0027 49       		.uleb128 0x49
+ 2165 0028 13       		.uleb128 0x13
+ 2166 0029 00       		.byte	0
+ 2167 002a 00       		.byte	0
+ 2168 002b 04       		.uleb128 0x4
+ 2169 002c 24       		.uleb128 0x24
+ 2170 002d 00       		.byte	0
+ 2171 002e 0B       		.uleb128 0xb
+ 2172 002f 0B       		.uleb128 0xb
+ 2173 0030 3E       		.uleb128 0x3e
+ 2174 0031 0B       		.uleb128 0xb
+ 2175 0032 03       		.uleb128 0x3
+ 2176 0033 08       		.uleb128 0x8
+ 2177 0034 00       		.byte	0
+ 2178 0035 00       		.byte	0
+ 2179 0036 05       		.uleb128 0x5
+ 2180 0037 35       		.uleb128 0x35
+ 2181 0038 00       		.byte	0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 43
+
+
+ 2182 0039 49       		.uleb128 0x49
+ 2183 003a 13       		.uleb128 0x13
+ 2184 003b 00       		.byte	0
+ 2185 003c 00       		.byte	0
+ 2186 003d 06       		.uleb128 0x6
+ 2187 003e 13       		.uleb128 0x13
+ 2188 003f 01       		.byte	0x1
+ 2189 0040 0B       		.uleb128 0xb
+ 2190 0041 0B       		.uleb128 0xb
+ 2191 0042 3A       		.uleb128 0x3a
+ 2192 0043 0B       		.uleb128 0xb
+ 2193 0044 3B       		.uleb128 0x3b
+ 2194 0045 0B       		.uleb128 0xb
+ 2195 0046 01       		.uleb128 0x1
+ 2196 0047 13       		.uleb128 0x13
+ 2197 0048 00       		.byte	0
+ 2198 0049 00       		.byte	0
+ 2199 004a 07       		.uleb128 0x7
+ 2200 004b 0D       		.uleb128 0xd
+ 2201 004c 00       		.byte	0
+ 2202 004d 03       		.uleb128 0x3
+ 2203 004e 0E       		.uleb128 0xe
+ 2204 004f 3A       		.uleb128 0x3a
+ 2205 0050 0B       		.uleb128 0xb
+ 2206 0051 3B       		.uleb128 0x3b
+ 2207 0052 0B       		.uleb128 0xb
+ 2208 0053 49       		.uleb128 0x49
+ 2209 0054 13       		.uleb128 0x13
+ 2210 0055 38       		.uleb128 0x38
+ 2211 0056 0B       		.uleb128 0xb
+ 2212 0057 00       		.byte	0
+ 2213 0058 00       		.byte	0
+ 2214 0059 08       		.uleb128 0x8
+ 2215 005a 0F       		.uleb128 0xf
+ 2216 005b 00       		.byte	0
+ 2217 005c 0B       		.uleb128 0xb
+ 2218 005d 0B       		.uleb128 0xb
+ 2219 005e 00       		.byte	0
+ 2220 005f 00       		.byte	0
+ 2221 0060 09       		.uleb128 0x9
+ 2222 0061 04       		.uleb128 0x4
+ 2223 0062 01       		.byte	0x1
+ 2224 0063 0B       		.uleb128 0xb
+ 2225 0064 0B       		.uleb128 0xb
+ 2226 0065 49       		.uleb128 0x49
+ 2227 0066 13       		.uleb128 0x13
+ 2228 0067 3A       		.uleb128 0x3a
+ 2229 0068 0B       		.uleb128 0xb
+ 2230 0069 3B       		.uleb128 0x3b
+ 2231 006a 05       		.uleb128 0x5
+ 2232 006b 01       		.uleb128 0x1
+ 2233 006c 13       		.uleb128 0x13
+ 2234 006d 00       		.byte	0
+ 2235 006e 00       		.byte	0
+ 2236 006f 0A       		.uleb128 0xa
+ 2237 0070 28       		.uleb128 0x28
+ 2238 0071 00       		.byte	0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 44
+
+
+ 2239 0072 03       		.uleb128 0x3
+ 2240 0073 0E       		.uleb128 0xe
+ 2241 0074 1C       		.uleb128 0x1c
+ 2242 0075 0B       		.uleb128 0xb
+ 2243 0076 00       		.byte	0
+ 2244 0077 00       		.byte	0
+ 2245 0078 0B       		.uleb128 0xb
+ 2246 0079 16       		.uleb128 0x16
+ 2247 007a 00       		.byte	0
+ 2248 007b 03       		.uleb128 0x3
+ 2249 007c 0E       		.uleb128 0xe
+ 2250 007d 3A       		.uleb128 0x3a
+ 2251 007e 0B       		.uleb128 0xb
+ 2252 007f 3B       		.uleb128 0x3b
+ 2253 0080 05       		.uleb128 0x5
+ 2254 0081 49       		.uleb128 0x49
+ 2255 0082 13       		.uleb128 0x13
+ 2256 0083 00       		.byte	0
+ 2257 0084 00       		.byte	0
+ 2258 0085 0C       		.uleb128 0xc
+ 2259 0086 0F       		.uleb128 0xf
+ 2260 0087 00       		.byte	0
+ 2261 0088 0B       		.uleb128 0xb
+ 2262 0089 0B       		.uleb128 0xb
+ 2263 008a 49       		.uleb128 0x49
+ 2264 008b 13       		.uleb128 0x13
+ 2265 008c 00       		.byte	0
+ 2266 008d 00       		.byte	0
+ 2267 008e 0D       		.uleb128 0xd
+ 2268 008f 15       		.uleb128 0x15
+ 2269 0090 01       		.byte	0x1
+ 2270 0091 27       		.uleb128 0x27
+ 2271 0092 19       		.uleb128 0x19
+ 2272 0093 01       		.uleb128 0x1
+ 2273 0094 13       		.uleb128 0x13
+ 2274 0095 00       		.byte	0
+ 2275 0096 00       		.byte	0
+ 2276 0097 0E       		.uleb128 0xe
+ 2277 0098 05       		.uleb128 0x5
+ 2278 0099 00       		.byte	0
+ 2279 009a 49       		.uleb128 0x49
+ 2280 009b 13       		.uleb128 0x13
+ 2281 009c 00       		.byte	0
+ 2282 009d 00       		.byte	0
+ 2283 009e 0F       		.uleb128 0xf
+ 2284 009f 15       		.uleb128 0x15
+ 2285 00a0 01       		.byte	0x1
+ 2286 00a1 27       		.uleb128 0x27
+ 2287 00a2 19       		.uleb128 0x19
+ 2288 00a3 49       		.uleb128 0x49
+ 2289 00a4 13       		.uleb128 0x13
+ 2290 00a5 01       		.uleb128 0x1
+ 2291 00a6 13       		.uleb128 0x13
+ 2292 00a7 00       		.byte	0
+ 2293 00a8 00       		.byte	0
+ 2294 00a9 10       		.uleb128 0x10
+ 2295 00aa 13       		.uleb128 0x13
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 45
+
+
+ 2296 00ab 01       		.byte	0x1
+ 2297 00ac 03       		.uleb128 0x3
+ 2298 00ad 0E       		.uleb128 0xe
+ 2299 00ae 0B       		.uleb128 0xb
+ 2300 00af 0B       		.uleb128 0xb
+ 2301 00b0 3A       		.uleb128 0x3a
+ 2302 00b1 0B       		.uleb128 0xb
+ 2303 00b2 3B       		.uleb128 0x3b
+ 2304 00b3 05       		.uleb128 0x5
+ 2305 00b4 01       		.uleb128 0x1
+ 2306 00b5 13       		.uleb128 0x13
+ 2307 00b6 00       		.byte	0
+ 2308 00b7 00       		.byte	0
+ 2309 00b8 11       		.uleb128 0x11
+ 2310 00b9 0D       		.uleb128 0xd
+ 2311 00ba 00       		.byte	0
+ 2312 00bb 03       		.uleb128 0x3
+ 2313 00bc 0E       		.uleb128 0xe
+ 2314 00bd 3A       		.uleb128 0x3a
+ 2315 00be 0B       		.uleb128 0xb
+ 2316 00bf 3B       		.uleb128 0x3b
+ 2317 00c0 05       		.uleb128 0x5
+ 2318 00c1 49       		.uleb128 0x49
+ 2319 00c2 13       		.uleb128 0x13
+ 2320 00c3 38       		.uleb128 0x38
+ 2321 00c4 0B       		.uleb128 0xb
+ 2322 00c5 00       		.byte	0
+ 2323 00c6 00       		.byte	0
+ 2324 00c7 12       		.uleb128 0x12
+ 2325 00c8 28       		.uleb128 0x28
+ 2326 00c9 00       		.byte	0
+ 2327 00ca 03       		.uleb128 0x3
+ 2328 00cb 0E       		.uleb128 0xe
+ 2329 00cc 1C       		.uleb128 0x1c
+ 2330 00cd 05       		.uleb128 0x5
+ 2331 00ce 00       		.byte	0
+ 2332 00cf 00       		.byte	0
+ 2333 00d0 13       		.uleb128 0x13
+ 2334 00d1 13       		.uleb128 0x13
+ 2335 00d2 01       		.byte	0x1
+ 2336 00d3 0B       		.uleb128 0xb
+ 2337 00d4 0B       		.uleb128 0xb
+ 2338 00d5 3A       		.uleb128 0x3a
+ 2339 00d6 0B       		.uleb128 0xb
+ 2340 00d7 3B       		.uleb128 0x3b
+ 2341 00d8 05       		.uleb128 0x5
+ 2342 00d9 01       		.uleb128 0x1
+ 2343 00da 13       		.uleb128 0x13
+ 2344 00db 00       		.byte	0
+ 2345 00dc 00       		.byte	0
+ 2346 00dd 14       		.uleb128 0x14
+ 2347 00de 04       		.uleb128 0x4
+ 2348 00df 01       		.byte	0x1
+ 2349 00e0 0B       		.uleb128 0xb
+ 2350 00e1 0B       		.uleb128 0xb
+ 2351 00e2 49       		.uleb128 0x49
+ 2352 00e3 13       		.uleb128 0x13
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 46
+
+
+ 2353 00e4 3A       		.uleb128 0x3a
+ 2354 00e5 0B       		.uleb128 0xb
+ 2355 00e6 3B       		.uleb128 0x3b
+ 2356 00e7 0B       		.uleb128 0xb
+ 2357 00e8 01       		.uleb128 0x1
+ 2358 00e9 13       		.uleb128 0x13
+ 2359 00ea 00       		.byte	0
+ 2360 00eb 00       		.byte	0
+ 2361 00ec 15       		.uleb128 0x15
+ 2362 00ed 13       		.uleb128 0x13
+ 2363 00ee 01       		.byte	0x1
+ 2364 00ef 03       		.uleb128 0x3
+ 2365 00f0 0E       		.uleb128 0xe
+ 2366 00f1 0B       		.uleb128 0xb
+ 2367 00f2 0B       		.uleb128 0xb
+ 2368 00f3 3A       		.uleb128 0x3a
+ 2369 00f4 0B       		.uleb128 0xb
+ 2370 00f5 3B       		.uleb128 0x3b
+ 2371 00f6 0B       		.uleb128 0xb
+ 2372 00f7 01       		.uleb128 0x1
+ 2373 00f8 13       		.uleb128 0x13
+ 2374 00f9 00       		.byte	0
+ 2375 00fa 00       		.byte	0
+ 2376 00fb 16       		.uleb128 0x16
+ 2377 00fc 0D       		.uleb128 0xd
+ 2378 00fd 00       		.byte	0
+ 2379 00fe 03       		.uleb128 0x3
+ 2380 00ff 08       		.uleb128 0x8
+ 2381 0100 3A       		.uleb128 0x3a
+ 2382 0101 0B       		.uleb128 0xb
+ 2383 0102 3B       		.uleb128 0x3b
+ 2384 0103 0B       		.uleb128 0xb
+ 2385 0104 49       		.uleb128 0x49
+ 2386 0105 13       		.uleb128 0x13
+ 2387 0106 38       		.uleb128 0x38
+ 2388 0107 0B       		.uleb128 0xb
+ 2389 0108 00       		.byte	0
+ 2390 0109 00       		.byte	0
+ 2391 010a 17       		.uleb128 0x17
+ 2392 010b 13       		.uleb128 0x13
+ 2393 010c 01       		.byte	0x1
+ 2394 010d 03       		.uleb128 0x3
+ 2395 010e 08       		.uleb128 0x8
+ 2396 010f 0B       		.uleb128 0xb
+ 2397 0110 0B       		.uleb128 0xb
+ 2398 0111 3A       		.uleb128 0x3a
+ 2399 0112 0B       		.uleb128 0xb
+ 2400 0113 3B       		.uleb128 0x3b
+ 2401 0114 0B       		.uleb128 0xb
+ 2402 0115 01       		.uleb128 0x1
+ 2403 0116 13       		.uleb128 0x13
+ 2404 0117 00       		.byte	0
+ 2405 0118 00       		.byte	0
+ 2406 0119 18       		.uleb128 0x18
+ 2407 011a 16       		.uleb128 0x16
+ 2408 011b 00       		.byte	0
+ 2409 011c 03       		.uleb128 0x3
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 47
+
+
+ 2410 011d 08       		.uleb128 0x8
+ 2411 011e 3A       		.uleb128 0x3a
+ 2412 011f 0B       		.uleb128 0xb
+ 2413 0120 3B       		.uleb128 0x3b
+ 2414 0121 0B       		.uleb128 0xb
+ 2415 0122 49       		.uleb128 0x49
+ 2416 0123 13       		.uleb128 0x13
+ 2417 0124 00       		.byte	0
+ 2418 0125 00       		.byte	0
+ 2419 0126 19       		.uleb128 0x19
+ 2420 0127 2E       		.uleb128 0x2e
+ 2421 0128 00       		.byte	0
+ 2422 0129 03       		.uleb128 0x3
+ 2423 012a 0E       		.uleb128 0xe
+ 2424 012b 3A       		.uleb128 0x3a
+ 2425 012c 0B       		.uleb128 0xb
+ 2426 012d 3B       		.uleb128 0x3b
+ 2427 012e 0B       		.uleb128 0xb
+ 2428 012f 27       		.uleb128 0x27
+ 2429 0130 19       		.uleb128 0x19
+ 2430 0131 20       		.uleb128 0x20
+ 2431 0132 0B       		.uleb128 0xb
+ 2432 0133 00       		.byte	0
+ 2433 0134 00       		.byte	0
+ 2434 0135 1A       		.uleb128 0x1a
+ 2435 0136 2E       		.uleb128 0x2e
+ 2436 0137 01       		.byte	0x1
+ 2437 0138 3F       		.uleb128 0x3f
+ 2438 0139 19       		.uleb128 0x19
+ 2439 013a 03       		.uleb128 0x3
+ 2440 013b 0E       		.uleb128 0xe
+ 2441 013c 3A       		.uleb128 0x3a
+ 2442 013d 0B       		.uleb128 0xb
+ 2443 013e 3B       		.uleb128 0x3b
+ 2444 013f 0B       		.uleb128 0xb
+ 2445 0140 27       		.uleb128 0x27
+ 2446 0141 19       		.uleb128 0x19
+ 2447 0142 49       		.uleb128 0x49
+ 2448 0143 13       		.uleb128 0x13
+ 2449 0144 11       		.uleb128 0x11
+ 2450 0145 01       		.uleb128 0x1
+ 2451 0146 12       		.uleb128 0x12
+ 2452 0147 06       		.uleb128 0x6
+ 2453 0148 40       		.uleb128 0x40
+ 2454 0149 18       		.uleb128 0x18
+ 2455 014a 9742     		.uleb128 0x2117
+ 2456 014c 19       		.uleb128 0x19
+ 2457 014d 01       		.uleb128 0x1
+ 2458 014e 13       		.uleb128 0x13
+ 2459 014f 00       		.byte	0
+ 2460 0150 00       		.byte	0
+ 2461 0151 1B       		.uleb128 0x1b
+ 2462 0152 34       		.uleb128 0x34
+ 2463 0153 00       		.byte	0
+ 2464 0154 03       		.uleb128 0x3
+ 2465 0155 08       		.uleb128 0x8
+ 2466 0156 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 48
+
+
+ 2467 0157 0B       		.uleb128 0xb
+ 2468 0158 3B       		.uleb128 0x3b
+ 2469 0159 0B       		.uleb128 0xb
+ 2470 015a 49       		.uleb128 0x49
+ 2471 015b 13       		.uleb128 0x13
+ 2472 015c 02       		.uleb128 0x2
+ 2473 015d 18       		.uleb128 0x18
+ 2474 015e 00       		.byte	0
+ 2475 015f 00       		.byte	0
+ 2476 0160 1C       		.uleb128 0x1c
+ 2477 0161 1D       		.uleb128 0x1d
+ 2478 0162 00       		.byte	0
+ 2479 0163 31       		.uleb128 0x31
+ 2480 0164 13       		.uleb128 0x13
+ 2481 0165 11       		.uleb128 0x11
+ 2482 0166 01       		.uleb128 0x1
+ 2483 0167 12       		.uleb128 0x12
+ 2484 0168 06       		.uleb128 0x6
+ 2485 0169 58       		.uleb128 0x58
+ 2486 016a 0B       		.uleb128 0xb
+ 2487 016b 59       		.uleb128 0x59
+ 2488 016c 0B       		.uleb128 0xb
+ 2489 016d 00       		.byte	0
+ 2490 016e 00       		.byte	0
+ 2491 016f 1D       		.uleb128 0x1d
+ 2492 0170 898201   		.uleb128 0x4109
+ 2493 0173 00       		.byte	0
+ 2494 0174 11       		.uleb128 0x11
+ 2495 0175 01       		.uleb128 0x1
+ 2496 0176 31       		.uleb128 0x31
+ 2497 0177 13       		.uleb128 0x13
+ 2498 0178 00       		.byte	0
+ 2499 0179 00       		.byte	0
+ 2500 017a 1E       		.uleb128 0x1e
+ 2501 017b 898201   		.uleb128 0x4109
+ 2502 017e 01       		.byte	0x1
+ 2503 017f 11       		.uleb128 0x11
+ 2504 0180 01       		.uleb128 0x1
+ 2505 0181 31       		.uleb128 0x31
+ 2506 0182 13       		.uleb128 0x13
+ 2507 0183 01       		.uleb128 0x1
+ 2508 0184 13       		.uleb128 0x13
+ 2509 0185 00       		.byte	0
+ 2510 0186 00       		.byte	0
+ 2511 0187 1F       		.uleb128 0x1f
+ 2512 0188 8A8201   		.uleb128 0x410a
+ 2513 018b 00       		.byte	0
+ 2514 018c 02       		.uleb128 0x2
+ 2515 018d 18       		.uleb128 0x18
+ 2516 018e 9142     		.uleb128 0x2111
+ 2517 0190 18       		.uleb128 0x18
+ 2518 0191 00       		.byte	0
+ 2519 0192 00       		.byte	0
+ 2520 0193 20       		.uleb128 0x20
+ 2521 0194 898201   		.uleb128 0x4109
+ 2522 0197 01       		.byte	0x1
+ 2523 0198 11       		.uleb128 0x11
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 49
+
+
+ 2524 0199 01       		.uleb128 0x1
+ 2525 019a 31       		.uleb128 0x31
+ 2526 019b 13       		.uleb128 0x13
+ 2527 019c 00       		.byte	0
+ 2528 019d 00       		.byte	0
+ 2529 019e 21       		.uleb128 0x21
+ 2530 019f 01       		.uleb128 0x1
+ 2531 01a0 01       		.byte	0x1
+ 2532 01a1 49       		.uleb128 0x49
+ 2533 01a2 13       		.uleb128 0x13
+ 2534 01a3 01       		.uleb128 0x1
+ 2535 01a4 13       		.uleb128 0x13
+ 2536 01a5 00       		.byte	0
+ 2537 01a6 00       		.byte	0
+ 2538 01a7 22       		.uleb128 0x22
+ 2539 01a8 21       		.uleb128 0x21
+ 2540 01a9 00       		.byte	0
+ 2541 01aa 49       		.uleb128 0x49
+ 2542 01ab 13       		.uleb128 0x13
+ 2543 01ac 2F       		.uleb128 0x2f
+ 2544 01ad 0B       		.uleb128 0xb
+ 2545 01ae 00       		.byte	0
+ 2546 01af 00       		.byte	0
+ 2547 01b0 23       		.uleb128 0x23
+ 2548 01b1 34       		.uleb128 0x34
+ 2549 01b2 00       		.byte	0
+ 2550 01b3 03       		.uleb128 0x3
+ 2551 01b4 0E       		.uleb128 0xe
+ 2552 01b5 3A       		.uleb128 0x3a
+ 2553 01b6 0B       		.uleb128 0xb
+ 2554 01b7 3B       		.uleb128 0x3b
+ 2555 01b8 05       		.uleb128 0x5
+ 2556 01b9 49       		.uleb128 0x49
+ 2557 01ba 13       		.uleb128 0x13
+ 2558 01bb 3F       		.uleb128 0x3f
+ 2559 01bc 19       		.uleb128 0x19
+ 2560 01bd 3C       		.uleb128 0x3c
+ 2561 01be 19       		.uleb128 0x19
+ 2562 01bf 00       		.byte	0
+ 2563 01c0 00       		.byte	0
+ 2564 01c1 24       		.uleb128 0x24
+ 2565 01c2 34       		.uleb128 0x34
+ 2566 01c3 00       		.byte	0
+ 2567 01c4 03       		.uleb128 0x3
+ 2568 01c5 0E       		.uleb128 0xe
+ 2569 01c6 3A       		.uleb128 0x3a
+ 2570 01c7 0B       		.uleb128 0xb
+ 2571 01c8 3B       		.uleb128 0x3b
+ 2572 01c9 0B       		.uleb128 0xb
+ 2573 01ca 49       		.uleb128 0x49
+ 2574 01cb 13       		.uleb128 0x13
+ 2575 01cc 3F       		.uleb128 0x3f
+ 2576 01cd 19       		.uleb128 0x19
+ 2577 01ce 3C       		.uleb128 0x3c
+ 2578 01cf 19       		.uleb128 0x19
+ 2579 01d0 00       		.byte	0
+ 2580 01d1 00       		.byte	0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 50
+
+
+ 2581 01d2 25       		.uleb128 0x25
+ 2582 01d3 26       		.uleb128 0x26
+ 2583 01d4 00       		.byte	0
+ 2584 01d5 49       		.uleb128 0x49
+ 2585 01d6 13       		.uleb128 0x13
+ 2586 01d7 00       		.byte	0
+ 2587 01d8 00       		.byte	0
+ 2588 01d9 26       		.uleb128 0x26
+ 2589 01da 34       		.uleb128 0x34
+ 2590 01db 00       		.byte	0
+ 2591 01dc 03       		.uleb128 0x3
+ 2592 01dd 08       		.uleb128 0x8
+ 2593 01de 3A       		.uleb128 0x3a
+ 2594 01df 0B       		.uleb128 0xb
+ 2595 01e0 3B       		.uleb128 0x3b
+ 2596 01e1 0B       		.uleb128 0xb
+ 2597 01e2 49       		.uleb128 0x49
+ 2598 01e3 13       		.uleb128 0x13
+ 2599 01e4 3F       		.uleb128 0x3f
+ 2600 01e5 19       		.uleb128 0x19
+ 2601 01e6 02       		.uleb128 0x2
+ 2602 01e7 18       		.uleb128 0x18
+ 2603 01e8 00       		.byte	0
+ 2604 01e9 00       		.byte	0
+ 2605 01ea 27       		.uleb128 0x27
+ 2606 01eb 2E       		.uleb128 0x2e
+ 2607 01ec 00       		.byte	0
+ 2608 01ed 3F       		.uleb128 0x3f
+ 2609 01ee 19       		.uleb128 0x19
+ 2610 01ef 3C       		.uleb128 0x3c
+ 2611 01f0 19       		.uleb128 0x19
+ 2612 01f1 6E       		.uleb128 0x6e
+ 2613 01f2 0E       		.uleb128 0xe
+ 2614 01f3 03       		.uleb128 0x3
+ 2615 01f4 0E       		.uleb128 0xe
+ 2616 01f5 3A       		.uleb128 0x3a
+ 2617 01f6 0B       		.uleb128 0xb
+ 2618 01f7 3B       		.uleb128 0x3b
+ 2619 01f8 0B       		.uleb128 0xb
+ 2620 01f9 00       		.byte	0
+ 2621 01fa 00       		.byte	0
+ 2622 01fb 28       		.uleb128 0x28
+ 2623 01fc 2E       		.uleb128 0x2e
+ 2624 01fd 00       		.byte	0
+ 2625 01fe 3F       		.uleb128 0x3f
+ 2626 01ff 19       		.uleb128 0x19
+ 2627 0200 3C       		.uleb128 0x3c
+ 2628 0201 19       		.uleb128 0x19
+ 2629 0202 6E       		.uleb128 0x6e
+ 2630 0203 0E       		.uleb128 0xe
+ 2631 0204 03       		.uleb128 0x3
+ 2632 0205 0E       		.uleb128 0xe
+ 2633 0206 3A       		.uleb128 0x3a
+ 2634 0207 0B       		.uleb128 0xb
+ 2635 0208 3B       		.uleb128 0x3b
+ 2636 0209 05       		.uleb128 0x5
+ 2637 020a 00       		.byte	0
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 51
+
+
+ 2638 020b 00       		.byte	0
+ 2639 020c 00       		.byte	0
+ 2640              		.section	.debug_aranges,"",%progbits
+ 2641 0000 1C000000 		.4byte	0x1c
+ 2642 0004 0200     		.2byte	0x2
+ 2643 0006 00000000 		.4byte	.Ldebug_info0
+ 2644 000a 04       		.byte	0x4
+ 2645 000b 00       		.byte	0
+ 2646 000c 0000     		.2byte	0
+ 2647 000e 0000     		.2byte	0
+ 2648 0010 00000000 		.4byte	.LFB555
+ 2649 0014 DC000000 		.4byte	.LFE555-.LFB555
+ 2650 0018 00000000 		.4byte	0
+ 2651 001c 00000000 		.4byte	0
+ 2652              		.section	.debug_ranges,"",%progbits
+ 2653              	.Ldebug_ranges0:
+ 2654 0000 00000000 		.4byte	.LFB555
+ 2655 0004 DC000000 		.4byte	.LFE555
+ 2656 0008 00000000 		.4byte	0
+ 2657 000c 00000000 		.4byte	0
+ 2658              		.section	.debug_line,"",%progbits
+ 2659              	.Ldebug_line0:
+ 2660 0000 FF030000 		.section	.debug_str,"MS",%progbits,1
+ 2660      02008103 
+ 2660      00000201 
+ 2660      FB0E0D00 
+ 2660      01010101 
+ 2661              	.LASF64:
+ 2662 0000 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 2662      6843746C 
+ 2662      4D61696E 
+ 2662      57733146 
+ 2662      72657100 
+ 2663              	.LASF302:
+ 2664 0014 63795F62 		.ascii	"cy_ble_connState\000"
+ 2664      6C655F63 
+ 2664      6F6E6E53 
+ 2664      74617465 
+ 2664      00
+ 2665              	.LASF273:
+ 2666 0025 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DATA_READ\000"
+ 2666      4C455F45 
+ 2666      56545F4C 
+ 2666      32434150 
+ 2666      5F434246 
+ 2667              	.LASF139:
+ 2668 0045 63795F63 		.ascii	"cy_cb_scb_spi_handle_events_t\000"
+ 2668      625F7363 
+ 2668      625F7370 
+ 2668      695F6861 
+ 2668      6E646C65 
+ 2669              	.LASF220:
+ 2670 0063 43595F42 		.ascii	"CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP\000"
+ 2670      4C455F45 
+ 2670      56545F47 
+ 2670      4150505F 
+ 2670      41445645 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 52
+
+
+ 2671              	.LASF317:
+ 2672 008c 6D61696E 		.ascii	"main_cm4.c\000"
+ 2672      5F636D34 
+ 2672      2E6300
+ 2673              	.LASF299:
+ 2674 0097 63795F64 		.ascii	"cy_device\000"
+ 2674      65766963 
+ 2674      6500
+ 2675              	.LASF275:
+ 2676 00a1 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_TX_CREDIT_IND\000"
+ 2676      4C455F45 
+ 2676      56545F4C 
+ 2676      32434150 
+ 2676      5F434246 
+ 2677              	.LASF166:
+ 2678 00c5 43595F42 		.ascii	"CY_BLE_EVT_PENDING_FLASH_WRITE\000"
+ 2678      4C455F45 
+ 2678      56545F50 
+ 2678      454E4449 
+ 2678      4E475F46 
+ 2679              	.LASF91:
+ 2680 00e4 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 2680      73436D30 
+ 2680      436C6F63 
+ 2680      6B43746C 
+ 2680      4F666673 
+ 2681              	.LASF50:
+ 2682 00fb 70657269 		.ascii	"periClockNr\000"
+ 2682      436C6F63 
+ 2682      6B4E7200 
+ 2683              	.LASF120:
+ 2684 0107 6D617374 		.ascii	"masterStatus\000"
+ 2684      65725374 
+ 2684      61747573 
+ 2684      00
+ 2685              	.LASF259:
+ 2686 0114 43595F42 		.ascii	"CY_BLE_EVT_GATTC_HANDLE_VALUE_NTF\000"
+ 2686      4C455F45 
+ 2686      56545F47 
+ 2686      41545443 
+ 2686      5F48414E 
+ 2687              	.LASF293:
+ 2688 0136 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
+ 2688      4C455F43 
+ 2688      4F4E4E5F 
+ 2688      53544154 
+ 2688      455F434C 
+ 2689              	.LASF153:
+ 2690 015a 74785374 		.ascii	"txStatus\000"
+ 2690      61747573 
+ 2690      00
+ 2691              	.LASF23:
+ 2692 0163 70657269 		.ascii	"periBase\000"
+ 2692      42617365 
+ 2692      00
+ 2693              	.LASF198:
+ 2694 016c 43595F42 		.ascii	"CY_BLE_EVT_SET_TX_PWR_COMPLETE\000"
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 53
+
+
+ 2694      4C455F45 
+ 2694      56545F53 
+ 2694      45545F54 
+ 2694      585F5057 
+ 2695              	.LASF99:
+ 2696 018b 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
+ 2696      73436D30 
+ 2696      4E6D6943 
+ 2696      746C4F66 
+ 2696      66736574 
+ 2697              	.LASF69:
+ 2698 01a0 64774368 		.ascii	"dwChSize\000"
+ 2698      53697A65 
+ 2698      00
+ 2699              	.LASF127:
+ 2700 01a9 736C6176 		.ascii	"slaveStatus\000"
+ 2700      65537461 
+ 2700      74757300 
+ 2701              	.LASF274:
+ 2702 01b5 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_RX_CREDIT_IND\000"
+ 2702      4C455F45 
+ 2702      56545F4C 
+ 2702      32434150 
+ 2702      5F434246 
+ 2703              	.LASF318:
+ 2704 01d9 433A5C55 		.ascii	"C:\\Users\\Nusair Islam\\Desktop\\PSOC\\Master\\Mas"
+ 2704      73657273 
+ 2704      5C4E7573 
+ 2704      61697220 
+ 2704      49736C61 
+ 2705 0206 7465722E 		.ascii	"ter.cydsn\000"
+ 2705      63796473 
+ 2705      6E00
+ 2706              	.LASF13:
+ 2707 0210 756E7369 		.ascii	"unsigned int\000"
+ 2707      676E6564 
+ 2707      20696E74 
+ 2707      00
+ 2708              	.LASF98:
+ 2709 021d 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ 2709      73537973 
+ 2709      5469636B 
+ 2709      43746C4F 
+ 2709      66667365 
+ 2710              	.LASF115:
+ 2711 0233 63795F63 		.ascii	"cy_cb_scb_i2c_handle_events_t\000"
+ 2711      625F7363 
+ 2711      625F6932 
+ 2711      635F6861 
+ 2711      6E646C65 
+ 2712              	.LASF301:
+ 2713 0251 63795F62 		.ascii	"cy_ble_connHandle\000"
+ 2713      6C655F63 
+ 2713      6F6E6E48 
+ 2713      616E646C 
+ 2713      6500
+ 2714              	.LASF237:
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 54
+
+
+ 2715 0263 43595F42 		.ascii	"CY_BLE_EVT_GAP_CREATE_CONN_CANCEL_COMPLETE\000"
+ 2715      4C455F45 
+ 2715      56545F47 
+ 2715      41505F43 
+ 2715      52454154 
+ 2716              	.LASF51:
+ 2717 028e 736D6966 		.ascii	"smifDeviceNr\000"
+ 2717      44657669 
+ 2717      63654E72 
+ 2717      00
+ 2718              	.LASF81:
+ 2719 029b 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 2719      44697643 
+ 2719      6D645061 
+ 2719      54797065 
+ 2719      53656C50 
+ 2720              	.LASF148:
+ 2721 02b2 74784275 		.ascii	"txBufIdx\000"
+ 2721      66496478 
+ 2721      00
+ 2722              	.LASF7:
+ 2723 02bb 5F5F696E 		.ascii	"__int32_t\000"
+ 2723      7433325F 
+ 2723      7400
+ 2724              	.LASF47:
+ 2725 02c5 73727373 		.ascii	"srssNumClkpath\000"
+ 2725      4E756D43 
+ 2725      6C6B7061 
+ 2725      746800
+ 2726              	.LASF21:
+ 2727 02d4 63707573 		.ascii	"cpussBase\000"
+ 2727      73426173 
+ 2727      6500
+ 2728              	.LASF133:
+ 2729 02de 736C6176 		.ascii	"slaveRxBuffer\000"
+ 2729      65527842 
+ 2729      75666665 
+ 2729      7200
+ 2730              	.LASF248:
+ 2731 02ec 43595F42 		.ascii	"CY_BLE_EVT_GATTC_FIND_INFO_RSP\000"
+ 2731      4C455F45 
+ 2731      56545F47 
+ 2731      41545443 
+ 2731      5F46494E 
+ 2732              	.LASF45:
+ 2733 030b 63707573 		.ascii	"cpussFmIrq\000"
+ 2733      73466D49 
+ 2733      727100
+ 2734              	.LASF191:
+ 2735 0316 43595F42 		.ascii	"CY_BLE_EVT_SET_PRIVACY_MODE_COMPLETE\000"
+ 2735      4C455F45 
+ 2735      56545F53 
+ 2735      45545F50 
+ 2735      52495641 
+ 2736              	.LASF137:
+ 2737 033b 63624164 		.ascii	"cbAddr\000"
+ 2737      647200
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 55
+
+
+ 2738              	.LASF112:
+ 2739 0342 43595F53 		.ascii	"CY_SCB_I2C_ACK\000"
+ 2739      43425F49 
+ 2739      32435F41 
+ 2739      434B00
+ 2740              	.LASF156:
+ 2741 0351 72785269 		.ascii	"rxRingBufSize\000"
+ 2741      6E674275 
+ 2741      6653697A 
+ 2741      6500
+ 2742              	.LASF309:
+ 2743 035f 696E6974 		.ascii	"init_ICM20649\000"
+ 2743      5F49434D 
+ 2743      32303634 
+ 2743      3900
+ 2744              	.LASF295:
+ 2745 036d 61786973 		.ascii	"axis\000"
+ 2745      00
+ 2746              	.LASF114:
+ 2747 0372 63795F65 		.ascii	"cy_en_scb_i2c_command_t\000"
+ 2747      6E5F7363 
+ 2747      625F6932 
+ 2747      635F636F 
+ 2747      6D6D616E 
+ 2748              	.LASF77:
+ 2749 038a 70657269 		.ascii	"periTrGrSize\000"
+ 2749      54724772 
+ 2749      53697A65 
+ 2749      00
+ 2750              	.LASF242:
+ 2751 0397 43595F42 		.ascii	"CY_BLE_EVT_GATT_CONNECT_IND\000"
+ 2751      4C455F45 
+ 2751      56545F47 
+ 2751      4154545F 
+ 2751      434F4E4E 
+ 2752              	.LASF128:
+ 2753 03b3 736C6176 		.ascii	"slaveRdBufEmpty\000"
+ 2753      65526442 
+ 2753      7566456D 
+ 2753      70747900 
+ 2754              	.LASF161:
+ 2755 03c3 43595F42 		.ascii	"CY_BLE_EVT_INVALID\000"
+ 2755      4C455F45 
+ 2755      56545F49 
+ 2755      4E56414C 
+ 2755      494400
+ 2756              	.LASF281:
+ 2757 03d6 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOPPED\000"
+ 2757      4C455F41 
+ 2757      44565F53 
+ 2757      54415445 
+ 2757      5F53544F 
+ 2758              	.LASF103:
+ 2759 03ef 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 2759      7352616D 
+ 2759      3143746C 
+ 2759      3000
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 56
+
+
+ 2760              	.LASF249:
+ 2761 03fd 43595F42 		.ascii	"CY_BLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP\000"
+ 2761      4C455F45 
+ 2761      56545F47 
+ 2761      41545443 
+ 2761      5F46494E 
+ 2762              	.LASF105:
+ 2763 0425 69706353 		.ascii	"ipcStructSize\000"
+ 2763      74727563 
+ 2763      7453697A 
+ 2763      6500
+ 2764              	.LASF113:
+ 2765 0433 43595F53 		.ascii	"CY_SCB_I2C_NAK\000"
+ 2765      43425F49 
+ 2765      32435F4E 
+ 2765      414B00
+ 2766              	.LASF189:
+ 2767 0442 43595F42 		.ascii	"CY_BLE_EVT_SET_PHY_COMPLETE\000"
+ 2767      4C455F45 
+ 2767      56545F53 
+ 2767      45545F50 
+ 2767      48595F43 
+ 2768              	.LASF264:
+ 2769 045e 43595F42 		.ascii	"CY_BLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ\000"
+ 2769      4C455F45 
+ 2769      56545F47 
+ 2769      41545453 
+ 2769      5F524541 
+ 2770              	.LASF116:
+ 2771 0488 63795F63 		.ascii	"cy_cb_scb_i2c_handle_addr_t\000"
+ 2771      625F7363 
+ 2771      625F6932 
+ 2771      635F6861 
+ 2771      6E646C65 
+ 2772              	.LASF316:
+ 2773 04a4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2773      43313120 
+ 2773      352E342E 
+ 2773      31203230 
+ 2773      31363036 
+ 2774 04d7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
+ 2774      20726576 
+ 2774      6973696F 
+ 2774      6E203233 
+ 2774      37373135 
+ 2775 050a 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
+ 2775      70202D6D 
+ 2775      6670753D 
+ 2775      66707634 
+ 2775      2D73702D 
+ 2776 053d 65637469 		.ascii	"ections -ffat-lto-objects\000"
+ 2776      6F6E7320 
+ 2776      2D666661 
+ 2776      742D6C74 
+ 2776      6F2D6F62 
+ 2777              	.LASF235:
+ 2778 0557 43595F42 		.ascii	"CY_BLE_EVT_GAP_RESOLVE_DEVICE_COMPLETE\000"
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 57
+
+
+ 2778      4C455F45 
+ 2778      56545F47 
+ 2778      41505F52 
+ 2778      45534F4C 
+ 2779              	.LASF140:
+ 2780 057e 63795F73 		.ascii	"cy_stc_scb_i2c_context\000"
+ 2780      74635F73 
+ 2780      63625F69 
+ 2780      32635F63 
+ 2780      6F6E7465 
+ 2781              	.LASF287:
+ 2782 0595 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
+ 2782      4C455F43 
+ 2782      4F4E4E5F 
+ 2782      53544154 
+ 2782      455F434C 
+ 2783              	.LASF79:
+ 2784 05c6 70657269 		.ascii	"periDivCmdTypeSelPos\000"
+ 2784      44697643 
+ 2784      6D645479 
+ 2784      70655365 
+ 2784      6C506F73 
+ 2785              	.LASF96:
+ 2786 05db 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 2786      73547269 
+ 2786      6D52616D 
+ 2786      43746C4F 
+ 2786      66667365 
+ 2787              	.LASF245:
+ 2788 05f1 43595F42 		.ascii	"CY_BLE_EVT_GATTC_XCHNG_MTU_RSP\000"
+ 2788      4C455F45 
+ 2788      56545F47 
+ 2788      41545443 
+ 2788      5F584348 
+ 2789              	.LASF261:
+ 2790 0610 43595F42 		.ascii	"CY_BLE_EVT_GATTS_HANDLE_VALUE_CNF\000"
+ 2790      4C455F45 
+ 2790      56545F47 
+ 2790      41545453 
+ 2790      5F48414E 
+ 2791              	.LASF190:
+ 2792 0632 43595F42 		.ascii	"CY_BLE_EVT_PHY_UPDATE_COMPLETE\000"
+ 2792      4C455F45 
+ 2792      56545F50 
+ 2792      48595F55 
+ 2792      50444154 
+ 2793              	.LASF129:
+ 2794 0651 736C6176 		.ascii	"slaveTxBuffer\000"
+ 2794      65547842 
+ 2794      75666665 
+ 2794      7200
+ 2795              	.LASF296:
+ 2796 065f 61636365 		.ascii	"acceleration\000"
+ 2796      6C657261 
+ 2796      74696F6E 
+ 2796      00
+ 2797              	.LASF131:
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 58
+
+
+ 2798 066c 736C6176 		.ascii	"slaveTxBufferIdx\000"
+ 2798      65547842 
+ 2798      75666665 
+ 2798      72496478 
+ 2798      00
+ 2799              	.LASF251:
+ 2800 067d 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BLOB_RSP\000"
+ 2800      4C455F45 
+ 2800      56545F47 
+ 2800      41545443 
+ 2800      5F524541 
+ 2801              	.LASF18:
+ 2802 069c 75696E74 		.ascii	"uint32_t\000"
+ 2802      33325F74 
+ 2802      00
+ 2803              	.LASF181:
+ 2804 06a5 43595F42 		.ascii	"CY_BLE_EVT_SET_RPA_ENABLE_COMPLETE\000"
+ 2804      4C455F45 
+ 2804      56545F53 
+ 2804      45545F52 
+ 2804      50415F45 
+ 2805              	.LASF313:
+ 2806 06c8 7072696E 		.ascii	"printDouble\000"
+ 2806      74446F75 
+ 2806      626C6500 
+ 2807              	.LASF162:
+ 2808 06d4 43595F42 		.ascii	"CY_BLE_EVT_STACK_ON\000"
+ 2808      4C455F45 
+ 2808      56545F53 
+ 2808      5441434B 
+ 2808      5F4F4E00 
+ 2809              	.LASF192:
+ 2810 06e8 43595F42 		.ascii	"CY_BLE_EVT_LL_CNTRL_PROC_PENDING_COMPLETE\000"
+ 2810      4C455F45 
+ 2810      56545F4C 
+ 2810      4C5F434E 
+ 2810      54524C5F 
+ 2811              	.LASF89:
+ 2812 0712 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 2812      50727443 
+ 2812      66674F75 
+ 2812      744F6666 
+ 2812      73657400 
+ 2813              	.LASF270:
+ 2814 0726 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_CONN_CNF\000"
+ 2814      4C455F45 
+ 2814      56545F4C 
+ 2814      32434150 
+ 2814      5F434246 
+ 2815              	.LASF178:
+ 2816 0745 43595F42 		.ascii	"CY_BLE_EVT_GET_PEER_RPA_COMPLETE\000"
+ 2816      4C455F45 
+ 2816      56545F47 
+ 2816      45545F50 
+ 2816      4545525F 
+ 2817              	.LASF32:
+ 2818 0766 63727970 		.ascii	"cryptoVersion\000"
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 59
+
+
+ 2818      746F5665 
+ 2818      7273696F 
+ 2818      6E00
+ 2819              	.LASF160:
+ 2820 0774 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
+ 2820      74635F73 
+ 2820      63625F75 
+ 2820      6172745F 
+ 2820      636F6E74 
+ 2821              	.LASF53:
+ 2822 078e 65704D6F 		.ascii	"epMonitorNr\000"
+ 2822      6E69746F 
+ 2822      724E7200 
+ 2823              	.LASF315:
+ 2824 079a 43795F53 		.ascii	"Cy_SysLib_Delay\000"
+ 2824      79734C69 
+ 2824      625F4465 
+ 2824      6C617900 
+ 2825              	.LASF152:
+ 2826 07aa 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
+ 2826      74635F73 
+ 2826      63625F75 
+ 2826      6172745F 
+ 2826      636F6E74 
+ 2827              	.LASF179:
+ 2828 07c2 43595F42 		.ascii	"CY_BLE_EVT_GET_LOCAL_RPA_COMPLETE\000"
+ 2828      4C455F45 
+ 2828      56545F47 
+ 2828      45545F4C 
+ 2828      4F43414C 
+ 2829              	.LASF15:
+ 2830 07e4 696E7431 		.ascii	"int16_t\000"
+ 2830      365F7400 
+ 2831              	.LASF88:
+ 2832 07ec 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
+ 2832      50727443 
+ 2832      6667496E 
+ 2832      4F666673 
+ 2832      657400
+ 2833              	.LASF230:
+ 2834 07ff 43595F42 		.ascii	"CY_BLE_EVT_GAP_ENHANCE_CONN_COMPLETE\000"
+ 2834      4C455F45 
+ 2834      56545F47 
+ 2834      41505F45 
+ 2834      4E48414E 
+ 2835              	.LASF12:
+ 2836 0824 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2836      206C6F6E 
+ 2836      6720756E 
+ 2836      7369676E 
+ 2836      65642069 
+ 2837              	.LASF85:
+ 2838 083b 70657269 		.ascii	"periDiv24_5CtlOffset\000"
+ 2838      44697632 
+ 2838      345F3543 
+ 2838      746C4F66 
+ 2838      66736574 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 60
+
+
+ 2839              	.LASF90:
+ 2840 0850 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ 2840      50727443 
+ 2840      66675369 
+ 2840      6F4F6666 
+ 2840      73657400 
+ 2841              	.LASF285:
+ 2842 0864 63795F65 		.ascii	"cy_en_ble_adv_state_t\000"
+ 2842      6E5F626C 
+ 2842      655F6164 
+ 2842      765F7374 
+ 2842      6174655F 
+ 2843              	.LASF196:
+ 2844 087a 43595F42 		.ascii	"CY_BLE_EVT_GET_RSSI_COMPLETE\000"
+ 2844      4C455F45 
+ 2844      56545F47 
+ 2844      45545F52 
+ 2844      5353495F 
+ 2845              	.LASF44:
+ 2846 0897 63707573 		.ascii	"cpussIpc0Irq\000"
+ 2846      73497063 
+ 2846      30497271 
+ 2846      00
+ 2847              	.LASF282:
+ 2848 08a4 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
+ 2848      4C455F41 
+ 2848      44565F53 
+ 2848      54415445 
+ 2848      5F414456 
+ 2849              	.LASF24:
+ 2850 08c3 75646242 		.ascii	"udbBase\000"
+ 2850      61736500 
+ 2851              	.LASF130:
+ 2852 08cb 736C6176 		.ascii	"slaveTxBufferSize\000"
+ 2852      65547842 
+ 2852      75666665 
+ 2852      7253697A 
+ 2852      6500
+ 2853              	.LASF223:
+ 2854 08dd 43595F42 		.ascii	"CY_BLE_EVT_GAP_ENCRYPT_CHANGE\000"
+ 2854      4C455F45 
+ 2854      56545F47 
+ 2854      41505F45 
+ 2854      4E435259 
+ 2855              	.LASF80:
+ 2856 08fb 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 2856      44697643 
+ 2856      6D645061 
+ 2856      44697653 
+ 2856      656C506F 
+ 2857              	.LASF194:
+ 2858 0911 43595F42 		.ascii	"CY_BLE_EVT_SET_DEVICE_ADDR_COMPLETE\000"
+ 2858      4C455F45 
+ 2858      56545F53 
+ 2858      45545F44 
+ 2858      45564943 
+ 2859              	.LASF279:
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 61
+
+
+ 2860 0935 61747449 		.ascii	"attId\000"
+ 2860      6400
+ 2861              	.LASF312:
+ 2862 093b 75706461 		.ascii	"updateLEDs\000"
+ 2862      74654C45 
+ 2862      447300
+ 2863              	.LASF290:
+ 2864 0946 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
+ 2864      4C455F43 
+ 2864      4F4E4E5F 
+ 2864      53544154 
+ 2864      455F434C 
+ 2865              	.LASF215:
+ 2866 0970 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_REQ\000"
+ 2866      4C455F45 
+ 2866      56545F47 
+ 2866      41505F41 
+ 2866      5554485F 
+ 2867              	.LASF187:
+ 2868 0988 43595F42 		.ascii	"CY_BLE_EVT_GET_PHY_COMPLETE\000"
+ 2868      4C455F45 
+ 2868      56545F47 
+ 2868      45545F50 
+ 2868      48595F43 
+ 2869              	.LASF154:
+ 2870 09a4 72785374 		.ascii	"rxStatus\000"
+ 2870      61747573 
+ 2870      00
+ 2871              	.LASF143:
+ 2872 09ad 72784275 		.ascii	"rxBuf\000"
+ 2872      6600
+ 2873              	.LASF66:
+ 2874 09b3 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
+ 2874      6843746C 
+ 2874      4D61696E 
+ 2874      57733346 
+ 2874      72657100 
+ 2875              	.LASF221:
+ 2876 09c7 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_CONNECTED\000"
+ 2876      4C455F45 
+ 2876      56545F47 
+ 2876      41505F44 
+ 2876      45564943 
+ 2877              	.LASF48:
+ 2878 09e7 73727373 		.ascii	"srssNumPll\000"
+ 2878      4E756D50 
+ 2878      6C6C00
+ 2879              	.LASF125:
+ 2880 09f2 6D617374 		.ascii	"masterBufferIdx\000"
+ 2880      65724275 
+ 2880      66666572 
+ 2880      49647800 
+ 2881              	.LASF256:
+ 2882 0a02 43595F42 		.ascii	"CY_BLE_EVT_GATTS_PREP_WRITE_REQ\000"
+ 2882      4C455F45 
+ 2882      56545F47 
+ 2882      41545453 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 62
+
+
+ 2882      5F505245 
+ 2883              	.LASF59:
+ 2884 0a22 666C6173 		.ascii	"flashPipeRequired\000"
+ 2884      68506970 
+ 2884      65526571 
+ 2884      75697265 
+ 2884      6400
+ 2885              	.LASF136:
+ 2886 0a34 63624576 		.ascii	"cbEvents\000"
+ 2886      656E7473 
+ 2886      00
+ 2887              	.LASF310:
+ 2888 0a3d 73657475 		.ascii	"setupPPG\000"
+ 2888      70505047 
+ 2888      00
+ 2889              	.LASF111:
+ 2890 0a46 5F426F6F 		.ascii	"_Bool\000"
+ 2890      6C00
+ 2891              	.LASF277:
+ 2892 0a4c 43595F42 		.ascii	"CY_BLE_EVT_MAX\000"
+ 2892      4C455F45 
+ 2892      56545F4D 
+ 2892      415800
+ 2893              	.LASF63:
+ 2894 0a5b 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
+ 2894      6843746C 
+ 2894      4D61696E 
+ 2894      57733046 
+ 2894      72657100 
+ 2895              	.LASF272:
+ 2896 0a6f 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
+ 2896      4C455F45 
+ 2896      56545F4C 
+ 2896      32434150 
+ 2896      5F434246 
+ 2897              	.LASF117:
+ 2898 0a91 75736552 		.ascii	"useRxFifo\000"
+ 2898      78466966 
+ 2898      6F00
+ 2899              	.LASF201:
+ 2900 0a9b 43595F42 		.ascii	"CY_BLE_EVT_RANDOM_NUM_GEN_COMPLETE\000"
+ 2900      4C455F45 
+ 2900      56545F52 
+ 2900      414E444F 
+ 2900      4D5F4E55 
+ 2901              	.LASF27:
+ 2902 0abe 6770696F 		.ascii	"gpioBase\000"
+ 2902      42617365 
+ 2902      00
+ 2903              	.LASF283:
+ 2904 0ac7 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
+ 2904      4C455F41 
+ 2904      44565F53 
+ 2904      54415445 
+ 2904      5F414456 
+ 2905              	.LASF232:
+ 2906 0ae4 43595F42 		.ascii	"CY_BLE_EVT_GAP_SMP_NEGOTIATED_AUTH_INFO\000"
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 63
+
+
+ 2906      4C455F45 
+ 2906      56545F47 
+ 2906      41505F53 
+ 2906      4D505F4E 
+ 2907              	.LASF174:
+ 2908 0b0c 43595F42 		.ascii	"CY_BLE_EVT_SET_DATA_LENGTH_COMPLETE\000"
+ 2908      4C455F45 
+ 2908      56545F53 
+ 2908      45545F44 
+ 2908      4154415F 
+ 2909              	.LASF250:
+ 2910 0b30 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_RSP\000"
+ 2910      4C455F45 
+ 2910      56545F47 
+ 2910      41545443 
+ 2910      5F524541 
+ 2911              	.LASF254:
+ 2912 0b4a 43595F42 		.ascii	"CY_BLE_EVT_GATTC_WRITE_RSP\000"
+ 2912      4C455F45 
+ 2912      56545F47 
+ 2912      41545443 
+ 2912      5F575249 
+ 2913              	.LASF39:
+ 2914 0b65 70726F74 		.ascii	"protVersion\000"
+ 2914      56657273 
+ 2914      696F6E00 
+ 2915              	.LASF60:
+ 2916 0b71 666C6173 		.ascii	"flashWriteDelay\000"
+ 2916      68577269 
+ 2916      74654465 
+ 2916      6C617900 
+ 2917              	.LASF164:
+ 2918 0b81 43595F42 		.ascii	"CY_BLE_EVT_STACK_BUSY_STATUS\000"
+ 2918      4C455F45 
+ 2918      56545F53 
+ 2918      5441434B 
+ 2918      5F425553 
+ 2919              	.LASF54:
+ 2920 0b9e 75646250 		.ascii	"udbPresent\000"
+ 2920      72657365 
+ 2920      6E7400
+ 2921              	.LASF268:
+ 2922 0ba9 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_COMMAND_REJ\000"
+ 2922      4C455F45 
+ 2922      56545F4C 
+ 2922      32434150 
+ 2922      5F434F4D 
+ 2923              	.LASF171:
+ 2924 0bc6 43595F42 		.ascii	"CY_BLE_EVT_GET_CHANNEL_MAP_COMPLETE\000"
+ 2924      4C455F45 
+ 2924      56545F47 
+ 2924      45545F43 
+ 2924      48414E4E 
+ 2925              	.LASF72:
+ 2926 0bea 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 2926      61747573 
+ 2926      43684964 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 64
+
+
+ 2926      78506F73 
+ 2926      00
+ 2927              	.LASF5:
+ 2928 0bfb 5F5F7569 		.ascii	"__uint16_t\000"
+ 2928      6E743136 
+ 2928      5F7400
+ 2929              	.LASF165:
+ 2930 0c06 43595F42 		.ascii	"CY_BLE_EVT_MEMORY_REQUEST\000"
+ 2930      4C455F45 
+ 2930      56545F4D 
+ 2930      454D4F52 
+ 2930      595F5245 
+ 2931              	.LASF212:
+ 2932 0c20 43595F42 		.ascii	"CY_BLE_EVT_SET_CONN_PRIORITY_COMPLETE\000"
+ 2932      4C455F45 
+ 2932      56545F53 
+ 2932      45545F43 
+ 2932      4F4E4E5F 
+ 2933              	.LASF126:
+ 2934 0c46 6D617374 		.ascii	"masterNumBytes\000"
+ 2934      65724E75 
+ 2934      6D427974 
+ 2934      657300
+ 2935              	.LASF284:
+ 2936 0c55 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
+ 2936      4C455F41 
+ 2936      44565F53 
+ 2936      54415445 
+ 2936      5F53544F 
+ 2937              	.LASF43:
+ 2938 0c75 63707573 		.ascii	"cpussFlashPaSize\000"
+ 2938      73466C61 
+ 2938      73685061 
+ 2938      53697A65 
+ 2938      00
+ 2939              	.LASF291:
+ 2940 0c86 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
+ 2940      4C455F43 
+ 2940      4F4E4E5F 
+ 2940      53544154 
+ 2940      455F434C 
+ 2941              	.LASF22:
+ 2942 0cb0 666C6173 		.ascii	"flashcBase\000"
+ 2942      68634261 
+ 2942      736500
+ 2943              	.LASF108:
+ 2944 0cbb 63686172 		.ascii	"char\000"
+ 2944      00
+ 2945              	.LASF203:
+ 2946 0cc0 43595F42 		.ascii	"CY_BLE_EVT_AES_CCM_ENCRYPT_COMPLETE\000"
+ 2946      4C455F45 
+ 2946      56545F41 
+ 2946      45535F43 
+ 2946      434D5F45 
+ 2947              	.LASF225:
+ 2948 0ce4 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_START_STOP\000"
+ 2948      4C455F45 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 65
+
+
+ 2948      56545F47 
+ 2948      4150435F 
+ 2948      5343414E 
+ 2949              	.LASF229:
+ 2950 0d04 43595F42 		.ascii	"CY_BLE_EVT_GAP_OOB_GENERATED_NOTIFICATION\000"
+ 2950      4C455F45 
+ 2950      56545F47 
+ 2950      41505F4F 
+ 2950      4F425F47 
+ 2951              	.LASF158:
+ 2952 0d2e 72785269 		.ascii	"rxRingBufTail\000"
+ 2952      6E674275 
+ 2952      66546169 
+ 2952      6C00
+ 2953              	.LASF55:
+ 2954 0d3c 73797350 		.ascii	"sysPmSimoPresent\000"
+ 2954      6D53696D 
+ 2954      6F507265 
+ 2954      73656E74 
+ 2954      00
+ 2955              	.LASF124:
+ 2956 0d4d 6D617374 		.ascii	"masterBufferSize\000"
+ 2956      65724275 
+ 2956      66666572 
+ 2956      53697A65 
+ 2956      00
+ 2957              	.LASF57:
+ 2958 0d5e 63727970 		.ascii	"cryptoMemSize\000"
+ 2958      746F4D65 
+ 2958      6D53697A 
+ 2958      6500
+ 2959              	.LASF247:
+ 2960 0d6c 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
+ 2960      4C455F45 
+ 2960      56545F47 
+ 2960      41545443 
+ 2960      5F524541 
+ 2961              	.LASF182:
+ 2962 0d8e 43595F42 		.ascii	"CY_BLE_EVT_SET_HOST_CHANNEL_COMPLETE\000"
+ 2962      4C455F45 
+ 2962      56545F53 
+ 2962      45545F48 
+ 2962      4F53545F 
+ 2963              	.LASF172:
+ 2964 0db3 43595F42 		.ascii	"CY_BLE_EVT_LE_SET_EVENT_MASK_COMPLETE\000"
+ 2964      4C455F45 
+ 2964      56545F4C 
+ 2964      455F5345 
+ 2964      545F4556 
+ 2965              	.LASF145:
+ 2966 0dd9 72784275 		.ascii	"rxBufIdx\000"
+ 2966      66496478 
+ 2966      00
+ 2967              	.LASF227:
+ 2968 0de2 43595F42 		.ascii	"CY_BLE_EVT_GAP_NUMERIC_COMPARISON_REQUEST\000"
+ 2968      4C455F45 
+ 2968      56545F47 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 66
+
+
+ 2968      41505F4E 
+ 2968      554D4552 
+ 2969              	.LASF149:
+ 2970 0e0c 696E6974 		.ascii	"initKey\000"
+ 2970      4B657900 
+ 2971              	.LASF73:
+ 2972 0e14 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 2972      61747573 
+ 2972      43684964 
+ 2972      784D736B 
+ 2972      00
+ 2973              	.LASF14:
+ 2974 0e25 75696E74 		.ascii	"uint8_t\000"
+ 2974      385F7400 
+ 2975              	.LASF142:
+ 2976 0e2d 73746174 		.ascii	"status\000"
+ 2976      757300
+ 2977              	.LASF205:
+ 2978 0e34 43595F42 		.ascii	"CY_BLE_EVT_SET_SLAVE_LATENCY_MODE_COMPLETE\000"
+ 2978      4C455F45 
+ 2978      56545F53 
+ 2978      45545F53 
+ 2978      4C415645 
+ 2979              	.LASF306:
+ 2980 0e5f 696D7553 		.ascii	"imuSPI_context\000"
+ 2980      50495F63 
+ 2980      6F6E7465 
+ 2980      787400
+ 2981              	.LASF132:
+ 2982 0e6e 736C6176 		.ascii	"slaveTxBufferCnt\000"
+ 2982      65547842 
+ 2982      75666665 
+ 2982      72436E74 
+ 2982      00
+ 2983              	.LASF78:
+ 2984 0e7f 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 2984      44697643 
+ 2984      6D644469 
+ 2984      7653656C 
+ 2984      4D736B00 
+ 2985              	.LASF218:
+ 2986 0e93 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_COMPLETE\000"
+ 2986      4C455F45 
+ 2986      56545F47 
+ 2986      41505F41 
+ 2986      5554485F 
+ 2987              	.LASF188:
+ 2988 0eb0 43595F42 		.ascii	"CY_BLE_EVT_SET_DEFAULT_PHY_COMPLETE\000"
+ 2988      4C455F45 
+ 2988      56545F53 
+ 2988      45545F44 
+ 2988      45464155 
+ 2989              	.LASF84:
+ 2990 0ed4 70657269 		.ascii	"periDiv16_5CtlOffset\000"
+ 2990      44697631 
+ 2990      365F3543 
+ 2990      746C4F66 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 67
+
+
+ 2990      66736574 
+ 2991              	.LASF300:
+ 2992 0ee9 63795F62 		.ascii	"cy_ble_advState\000"
+ 2992      6C655F61 
+ 2992      64765374 
+ 2992      61746500 
+ 2993              	.LASF151:
+ 2994 0ef9 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
+ 2994      625F7363 
+ 2994      625F7561 
+ 2994      72745F68 
+ 2994      616E646C 
+ 2995              	.LASF294:
+ 2996 0f18 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
+ 2996      6E5F626C 
+ 2996      655F636F 
+ 2996      6E6E5F73 
+ 2996      74617465 
+ 2997              	.LASF211:
+ 2998 0f2f 43595F42 		.ascii	"CY_BLE_EVT_SET_CE_LENGTH_COMPLETE\000"
+ 2998      4C455F45 
+ 2998      56545F53 
+ 2998      45545F43 
+ 2998      455F4C45 
+ 2999              	.LASF210:
+ 3000 0f51 43595F42 		.ascii	"CY_BLE_EVT_SET_EVENT_MASK_COMPLETE\000"
+ 3000      4C455F45 
+ 3000      56545F53 
+ 3000      45545F45 
+ 3000      56454E54 
+ 3001              	.LASF102:
+ 3002 0f74 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 3002      7352616D 
+ 3002      3043746C 
+ 3002      3000
+ 3003              	.LASF11:
+ 3004 0f82 6C6F6E67 		.ascii	"long long int\000"
+ 3004      206C6F6E 
+ 3004      6720696E 
+ 3004      7400
+ 3005              	.LASF29:
+ 3006 0f90 69706342 		.ascii	"ipcBase\000"
+ 3006      61736500 
+ 3007              	.LASF70:
+ 3008 0f98 64774368 		.ascii	"dwChCtlPrioPos\000"
+ 3008      43746C50 
+ 3008      72696F50 
+ 3008      6F7300
+ 3009              	.LASF30:
+ 3010 0fa7 63727970 		.ascii	"cryptoBase\000"
+ 3010      746F4261 
+ 3010      736500
+ 3011              	.LASF238:
+ 3012 0fb2 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONN_ESTB\000"
+ 3012      4C455F45 
+ 3012      56545F47 
+ 3012      41505F43 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 68
+
+
+ 3012      4F4E4E5F 
+ 3013              	.LASF184:
+ 3014 0fcb 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_RPA_LIST_COMPLETE\000"
+ 3014      4C455F45 
+ 3014      56545F52 
+ 3014      454D4F56 
+ 3014      455F4445 
+ 3015              	.LASF173:
+ 3016 0ffb 43595F42 		.ascii	"CY_BLE_EVT_LE_PING_AUTH_TIMEOUT\000"
+ 3016      4C455F45 
+ 3016      56545F4C 
+ 3016      455F5049 
+ 3016      4E475F41 
+ 3017              	.LASF118:
+ 3018 101b 75736554 		.ascii	"useTxFifo\000"
+ 3018      78466966 
+ 3018      6F00
+ 3019              	.LASF4:
+ 3020 1025 5F5F696E 		.ascii	"__int16_t\000"
+ 3020      7431365F 
+ 3020      7400
+ 3021              	.LASF200:
+ 3022 102f 43595F42 		.ascii	"CY_BLE_EVT_SET_CLK_CONFIG_COMPLETE\000"
+ 3022      4C455F45 
+ 3022      56545F53 
+ 3022      45545F43 
+ 3022      4C4B5F43 
+ 3023              	.LASF26:
+ 3024 1052 6873696F 		.ascii	"hsiomBase\000"
+ 3024      6D426173 
+ 3024      6500
+ 3025              	.LASF265:
+ 3026 105c 43595F42 		.ascii	"CY_BLE_EVT_GATTC_LONG_PROCEDURE_END\000"
+ 3026      4C455F45 
+ 3026      56545F47 
+ 3026      41545443 
+ 3026      5F4C4F4E 
+ 3027              	.LASF280:
+ 3028 1080 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
+ 3028      74635F62 
+ 3028      6C655F63 
+ 3028      6F6E6E5F 
+ 3028      68616E64 
+ 3029              	.LASF76:
+ 3030 1099 70657269 		.ascii	"periTrGrOffset\000"
+ 3030      54724772 
+ 3030      4F666673 
+ 3030      657400
+ 3031              	.LASF46:
+ 3032 10a8 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 3032      734E6F74 
+ 3032      436F6E6E 
+ 3032      65637465 
+ 3032      64497271 
+ 3033              	.LASF150:
+ 3034 10bd 63795F73 		.ascii	"cy_stc_scb_spi_context_t\000"
+ 3034      74635F73 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 69
+
+
+ 3034      63625F73 
+ 3034      70695F63 
+ 3034      6F6E7465 
+ 3035              	.LASF193:
+ 3036 10d6 43595F42 		.ascii	"CY_BLE_EVT_SOFT_RESET_COMPLETE\000"
+ 3036      4C455F45 
+ 3036      56545F53 
+ 3036      4F46545F 
+ 3036      52455345 
+ 3037              	.LASF157:
+ 3038 10f5 72785269 		.ascii	"rxRingBufHead\000"
+ 3038      6E674275 
+ 3038      66486561 
+ 3038      6400
+ 3039              	.LASF42:
+ 3040 1103 63707573 		.ascii	"cpussDwChNr\000"
+ 3040      73447743 
+ 3040      684E7200 
+ 3041              	.LASF177:
+ 3042 110f 43595F42 		.ascii	"CY_BLE_EVT_DATA_LENGTH_CHANGE\000"
+ 3042      4C455F45 
+ 3042      56545F44 
+ 3042      4154415F 
+ 3042      4C454E47 
+ 3043              	.LASF226:
+ 3044 112d 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
+ 3044      4C455F45 
+ 3044      56545F47 
+ 3044      41505F4B 
+ 3044      4559494E 
+ 3045              	.LASF185:
+ 3046 1152 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_WHITE_LIST_COMPLETE\000"
+ 3046      4C455F45 
+ 3046      56545F41 
+ 3046      44445F44 
+ 3046      45564943 
+ 3047              	.LASF147:
+ 3048 117f 74784275 		.ascii	"txBufSize\000"
+ 3048      6653697A 
+ 3048      6500
+ 3049              	.LASF40:
+ 3050 1189 63707573 		.ascii	"cpussIpcNr\000"
+ 3050      73497063 
+ 3050      4E7200
+ 3051              	.LASF240:
+ 3052 1194 43595F42 		.ascii	"CY_BLE_EVT_GAP_ADV_TX\000"
+ 3052      4C455F45 
+ 3052      56545F47 
+ 3052      41505F41 
+ 3052      44565F54 
+ 3053              	.LASF276:
+ 3054 11aa 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
+ 3054      4C455F45 
+ 3054      56545F4C 
+ 3054      32434150 
+ 3054      5F434246 
+ 3055              	.LASF297:
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 70
+
+
+ 3056 11cf 6779726F 		.ascii	"gyro\000"
+ 3056      00
+ 3057              	.LASF52:
+ 3058 11d4 70617373 		.ascii	"passSarChannels\000"
+ 3058      53617243 
+ 3058      68616E6E 
+ 3058      656C7300 
+ 3059              	.LASF135:
+ 3060 11e4 736C6176 		.ascii	"slaveRxBufferIdx\000"
+ 3060      65527842 
+ 3060      75666665 
+ 3060      72496478 
+ 3060      00
+ 3061              	.LASF104:
+ 3062 11f5 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 3062      7352616D 
+ 3062      3243746C 
+ 3062      3000
+ 3063              	.LASF121:
+ 3064 1203 6D617374 		.ascii	"masterPause\000"
+ 3064      65725061 
+ 3064      75736500 
+ 3065              	.LASF214:
+ 3066 120f 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
+ 3066      4C455F45 
+ 3066      56545F47 
+ 3066      4150435F 
+ 3066      5343414E 
+ 3067              	.LASF269:
+ 3068 1234 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_CONN_IND\000"
+ 3068      4C455F45 
+ 3068      56545F4C 
+ 3068      32434150 
+ 3068      5F434246 
+ 3069              	.LASF234:
+ 3070 1253 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYS_GEN_COMPLETE\000"
+ 3070      4C455F45 
+ 3070      56545F47 
+ 3070      41505F4B 
+ 3070      4559535F 
+ 3071              	.LASF228:
+ 3072 1274 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYPRESS_NOTIFICATION\000"
+ 3072      4C455F45 
+ 3072      56545F47 
+ 3072      41505F4B 
+ 3072      45595052 
+ 3073              	.LASF292:
+ 3074 1299 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
+ 3074      4C455F43 
+ 3074      4F4E4E5F 
+ 3074      53544154 
+ 3074      455F434C 
+ 3075              	.LASF288:
+ 3076 12c4 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
+ 3076      4C455F43 
+ 3076      4F4E4E5F 
+ 3076      53544154 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 71
+
+
+ 3076      455F434F 
+ 3077              	.LASF146:
+ 3078 12e0 74784275 		.ascii	"txBuf\000"
+ 3078      6600
+ 3079              	.LASF61:
+ 3080 12e6 666C6173 		.ascii	"flashProgramDelay\000"
+ 3080      6850726F 
+ 3080      6772616D 
+ 3080      44656C61 
+ 3080      7900
+ 3081              	.LASF83:
+ 3082 12f8 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 3082      44697631 
+ 3082      3643746C 
+ 3082      4F666673 
+ 3082      657400
+ 3083              	.LASF134:
+ 3084 130b 736C6176 		.ascii	"slaveRxBufferSize\000"
+ 3084      65527842 
+ 3084      75666665 
+ 3084      7253697A 
+ 3084      6500
+ 3085              	.LASF6:
+ 3086 131d 73686F72 		.ascii	"short unsigned int\000"
+ 3086      7420756E 
+ 3086      7369676E 
+ 3086      65642069 
+ 3086      6E7400
+ 3087              	.LASF155:
+ 3088 1330 72785269 		.ascii	"rxRingBuf\000"
+ 3088      6E674275 
+ 3088      6600
+ 3089              	.LASF20:
+ 3090 133a 6C6F6E67 		.ascii	"long double\000"
+ 3090      20646F75 
+ 3090      626C6500 
+ 3091              	.LASF170:
+ 3092 1346 43595F42 		.ascii	"CY_BLE_EVT_READ_AUTH_PAYLOAD_TO_COMPLETE\000"
+ 3092      4C455F45 
+ 3092      56545F52 
+ 3092      4541445F 
+ 3092      41555448 
+ 3093              	.LASF314:
+ 3094 136f 73707269 		.ascii	"sprintf\000"
+ 3094      6E746600 
+ 3095              	.LASF16:
+ 3096 1377 75696E74 		.ascii	"uint16_t\000"
+ 3096      31365F74 
+ 3096      00
+ 3097              	.LASF311:
+ 3098 1380 75706461 		.ascii	"updateIMU\000"
+ 3098      7465494D 
+ 3098      5500
+ 3099              	.LASF75:
+ 3100 138a 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 3100      5472436D 
+ 3100      64477253 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 72
+
+
+ 3100      656C4D73 
+ 3100      6B00
+ 3101              	.LASF123:
+ 3102 139c 6D617374 		.ascii	"masterBuffer\000"
+ 3102      65724275 
+ 3102      66666572 
+ 3102      00
+ 3103              	.LASF180:
+ 3104 13a9 43595F42 		.ascii	"CY_BLE_EVT_SET_RPA_TO_COMPLETE\000"
+ 3104      4C455F45 
+ 3104      56545F53 
+ 3104      45545F52 
+ 3104      50415F54 
+ 3105              	.LASF168:
+ 3106 13c8 43595F42 		.ascii	"CY_BLE_EVT_HARDWARE_ERROR\000"
+ 3106      4C455F45 
+ 3106      56545F48 
+ 3106      41524457 
+ 3106      4152455F 
+ 3107              	.LASF33:
+ 3108 13e2 64775665 		.ascii	"dwVersion\000"
+ 3108      7273696F 
+ 3108      6E00
+ 3109              	.LASF65:
+ 3110 13ec 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 3110      6843746C 
+ 3110      4D61696E 
+ 3110      57733246 
+ 3110      72657100 
+ 3111              	.LASF74:
+ 3112 1400 70657269 		.ascii	"periTrCmdOffset\000"
+ 3112      5472436D 
+ 3112      644F6666 
+ 3112      73657400 
+ 3113              	.LASF260:
+ 3114 1410 43595F42 		.ascii	"CY_BLE_EVT_GATTC_HANDLE_VALUE_IND\000"
+ 3114      4C455F45 
+ 3114      56545F47 
+ 3114      41545443 
+ 3114      5F48414E 
+ 3115              	.LASF241:
+ 3116 1432 43595F42 		.ascii	"CY_BLE_EVT_GATTC_ERROR_RSP\000"
+ 3116      4C455F45 
+ 3116      56545F47 
+ 3116      41545443 
+ 3116      5F455252 
+ 3117              	.LASF246:
+ 3118 144d 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 3118      4C455F45 
+ 3118      56545F47 
+ 3118      41545443 
+ 3118      5F524541 
+ 3119              	.LASF183:
+ 3120 1475 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_RPA_LIST_COMPLETE\000"
+ 3120      4C455F45 
+ 3120      56545F41 
+ 3120      44445F44 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 73
+
+
+ 3120      45564943 
+ 3121              	.LASF253:
+ 3122 14a0 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_REQ\000"
+ 3122      4C455F45 
+ 3122      56545F47 
+ 3122      41545453 
+ 3122      5F575249 
+ 3123              	.LASF19:
+ 3124 14bb 73697A65 		.ascii	"sizetype\000"
+ 3124      74797065 
+ 3124      00
+ 3125              	.LASF206:
+ 3126 14c4 43595F42 		.ascii	"CY_BLE_EVT_STACK_SHUTDOWN_COMPLETE\000"
+ 3126      4C455F45 
+ 3126      56545F53 
+ 3126      5441434B 
+ 3126      5F534855 
+ 3127              	.LASF308:
+ 3128 14e7 7072696E 		.ascii	"print\000"
+ 3128      7400
+ 3129              	.LASF100:
+ 3130 14ed 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 3130      73436D34 
+ 3130      4E6D6943 
+ 3130      746C4F66 
+ 3130      66736574 
+ 3131              	.LASF94:
+ 3132 1502 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 3132      73436D30 
+ 3132      53746174 
+ 3132      75734F66 
+ 3132      66736574 
+ 3133              	.LASF82:
+ 3134 1517 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 3134      44697638 
+ 3134      43746C4F 
+ 3134      66667365 
+ 3134      7400
+ 3135              	.LASF239:
+ 3136 1529 43595F42 		.ascii	"CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE\000"
+ 3136      4C455F45 
+ 3136      56545F47 
+ 3136      4150505F 
+ 3136      55504441 
+ 3137              	.LASF267:
+ 3138 1557 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
+ 3138      4C455F45 
+ 3138      56545F4C 
+ 3138      32434150 
+ 3138      5F434F4E 
+ 3139              	.LASF0:
+ 3140 157e 73686F72 		.ascii	"short int\000"
+ 3140      7420696E 
+ 3140      7400
+ 3141              	.LASF213:
+ 3142 1588 43595F42 		.ascii	"CY_BLE_EVT_HCI_PKT_RCVD\000"
+ 3142      4C455F45 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 74
+
+
+ 3142      56545F48 
+ 3142      43495F50 
+ 3142      4B545F52 
+ 3143              	.LASF222:
+ 3144 15a0 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_DISCONNECTED\000"
+ 3144      4C455F45 
+ 3144      56545F47 
+ 3144      41505F44 
+ 3144      45564943 
+ 3145              	.LASF8:
+ 3146 15c3 6C6F6E67 		.ascii	"long int\000"
+ 3146      20696E74 
+ 3146      00
+ 3147              	.LASF31:
+ 3148 15cc 63707573 		.ascii	"cpussVersion\000"
+ 3148      73566572 
+ 3148      73696F6E 
+ 3148      00
+ 3149              	.LASF298:
+ 3150 15d9 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3150      52784275 
+ 3150      66666572 
+ 3150      00
+ 3151              	.LASF35:
+ 3152 15e6 6770696F 		.ascii	"gpioVersion\000"
+ 3152      56657273 
+ 3152      696F6E00 
+ 3153              	.LASF209:
+ 3154 15f2 43595F42 		.ascii	"CY_BLE_EVT_AES_CMAC_GEN_COMPLETE\000"
+ 3154      4C455F45 
+ 3154      56545F41 
+ 3154      45535F43 
+ 3154      4D41435F 
+ 3155              	.LASF34:
+ 3156 1613 666C6173 		.ascii	"flashcVersion\000"
+ 3156      68635665 
+ 3156      7273696F 
+ 3156      6E00
+ 3157              	.LASF56:
+ 3158 1621 70726F74 		.ascii	"protBusMasterMask\000"
+ 3158      4275734D 
+ 3158      61737465 
+ 3158      724D6173 
+ 3158      6B00
+ 3159              	.LASF25:
+ 3160 1633 70726F74 		.ascii	"protBase\000"
+ 3160      42617365 
+ 3160      00
+ 3161              	.LASF252:
+ 3162 163c 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_MULTI_RSP\000"
+ 3162      4C455F45 
+ 3162      56545F47 
+ 3162      41545443 
+ 3162      5F524541 
+ 3163              	.LASF233:
+ 3164 165c 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_ADDR_GEN_COMPLETE\000"
+ 3164      4C455F45 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 75
+
+
+ 3164      56545F47 
+ 3164      41505F44 
+ 3164      45564943 
+ 3165              	.LASF271:
+ 3166 1684 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
+ 3166      4C455F45 
+ 3166      56545F4C 
+ 3166      32434150 
+ 3166      5F434246 
+ 3167              	.LASF159:
+ 3168 16a6 74784C65 		.ascii	"txLeftToTransmit\000"
+ 3168      6674546F 
+ 3168      5472616E 
+ 3168      736D6974 
+ 3168      00
+ 3169              	.LASF257:
+ 3170 16b7 43595F42 		.ascii	"CY_BLE_EVT_GATTS_EXEC_WRITE_REQ\000"
+ 3170      4C455F45 
+ 3170      56545F47 
+ 3170      41545453 
+ 3170      5F455845 
+ 3171              	.LASF169:
+ 3172 16d7 43595F42 		.ascii	"CY_BLE_EVT_WRITE_AUTH_PAYLOAD_TO_COMPLETE\000"
+ 3172      4C455F45 
+ 3172      56545F57 
+ 3172      52495445 
+ 3172      5F415554 
+ 3173              	.LASF208:
+ 3174 1701 43595F42 		.ascii	"CY_BLE_EVT_RADIO_VOLTAGE_LEVEL\000"
+ 3174      4C455F45 
+ 3174      56545F52 
+ 3174      4144494F 
+ 3174      5F564F4C 
+ 3175              	.LASF95:
+ 3176 1720 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 3176      73436D34 
+ 3176      50777243 
+ 3176      746C4F66 
+ 3176      66736574 
+ 3177              	.LASF3:
+ 3178 1735 5F5F7569 		.ascii	"__uint8_t\000"
+ 3178      6E74385F 
+ 3178      7400
+ 3179              	.LASF86:
+ 3180 173f 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 3180      50727449 
+ 3180      6E747243 
+ 3180      66674F66 
+ 3180      66736574 
+ 3181              	.LASF175:
+ 3182 1754 43595F42 		.ascii	"CY_BLE_EVT_SET_SUGGESTED_DATA_LENGTH_COMPLETE\000"
+ 3182      4C455F45 
+ 3182      56545F53 
+ 3182      45545F53 
+ 3182      55474745 
+ 3183              	.LASF195:
+ 3184 1782 43595F42 		.ascii	"CY_BLE_EVT_GET_DEVICE_ADDR_COMPLETE\000"
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 76
+
+
+ 3184      4C455F45 
+ 3184      56545F47 
+ 3184      45545F44 
+ 3184      45564943 
+ 3185              	.LASF202:
+ 3186 17a6 43595F42 		.ascii	"CY_BLE_EVT_AES_ENCRYPT_COMPLETE\000"
+ 3186      4C455F45 
+ 3186      56545F41 
+ 3186      45535F45 
+ 3186      4E435259 
+ 3187              	.LASF92:
+ 3188 17c6 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 3188      73436D34 
+ 3188      436C6F63 
+ 3188      6B43746C 
+ 3188      4F666673 
+ 3189              	.LASF197:
+ 3190 17dd 43595F42 		.ascii	"CY_BLE_EVT_GET_TX_PWR_COMPLETE\000"
+ 3190      4C455F45 
+ 3190      56545F47 
+ 3190      45545F54 
+ 3190      585F5057 
+ 3191              	.LASF141:
+ 3192 17fc 63795F73 		.ascii	"cy_stc_scb_spi_context\000"
+ 3192      74635F73 
+ 3192      63625F73 
+ 3192      70695F63 
+ 3192      6F6E7465 
+ 3193              	.LASF97:
+ 3194 1813 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 3194      73547269 
+ 3194      6D526F6D 
+ 3194      43746C4F 
+ 3194      66667365 
+ 3195              	.LASF204:
+ 3196 1829 43595F42 		.ascii	"CY_BLE_EVT_AES_CCM_DECRYPT_COMPLETE\000"
+ 3196      4C455F45 
+ 3196      56545F41 
+ 3196      45535F43 
+ 3196      434D5F44 
+ 3197              	.LASF163:
+ 3198 184d 43595F42 		.ascii	"CY_BLE_EVT_TIMEOUT\000"
+ 3198      4C455F45 
+ 3198      56545F54 
+ 3198      494D454F 
+ 3198      555400
+ 3199              	.LASF36:
+ 3200 1860 6873696F 		.ascii	"hsiomVersion\000"
+ 3200      6D566572 
+ 3200      73696F6E 
+ 3200      00
+ 3201              	.LASF10:
+ 3202 186d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3202      20756E73 
+ 3202      69676E65 
+ 3202      6420696E 
+ 3202      7400
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 77
+
+
+ 3203              	.LASF101:
+ 3204 187f 63707573 		.ascii	"cpussRomCtl\000"
+ 3204      73526F6D 
+ 3204      43746C00 
+ 3205              	.LASF122:
+ 3206 188b 6D617374 		.ascii	"masterRdDir\000"
+ 3206      65725264 
+ 3206      44697200 
+ 3207              	.LASF109:
+ 3208 1897 666C6F61 		.ascii	"float\000"
+ 3208      7400
+ 3209              	.LASF17:
+ 3210 189d 696E7433 		.ascii	"int32_t\000"
+ 3210      325F7400 
+ 3211              	.LASF207:
+ 3212 18a5 43595F42 		.ascii	"CY_BLE_EVT_RADIO_TEMPERATURE\000"
+ 3212      4C455F45 
+ 3212      56545F52 
+ 3212      4144494F 
+ 3212      5F54454D 
+ 3213              	.LASF307:
+ 3214 18c2 55617274 		.ascii	"UartInit\000"
+ 3214      496E6974 
+ 3214      00
+ 3215              	.LASF217:
+ 3216 18cb 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
+ 3216      4C455F45 
+ 3216      56545F47 
+ 3216      41505F50 
+ 3216      4153534B 
+ 3217              	.LASF2:
+ 3218 18f2 756E7369 		.ascii	"unsigned char\000"
+ 3218      676E6564 
+ 3218      20636861 
+ 3218      7200
+ 3219              	.LASF262:
+ 3220 1900 43595F42 		.ascii	"CY_BLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
+ 3220      4C455F45 
+ 3220      56545F47 
+ 3220      41545453 
+ 3220      5F444154 
+ 3221              	.LASF9:
+ 3222 1925 5F5F7569 		.ascii	"__uint32_t\000"
+ 3222      6E743332 
+ 3222      5F7400
+ 3223              	.LASF106:
+ 3224 1930 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 3224      6F636B53 
+ 3224      74617475 
+ 3224      734F6666 
+ 3224      73657400 
+ 3225              	.LASF305:
+ 3226 1944 70706749 		.ascii	"ppgI2C_context\000"
+ 3226      32435F63 
+ 3226      6F6E7465 
+ 3226      787400
+ 3227              	.LASF186:
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 78
+
+
+ 3228 1953 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_WHITE_LIST_COMPLETE\000"
+ 3228      4C455F45 
+ 3228      56545F52 
+ 3228      454D4F56 
+ 3228      455F4445 
+ 3229              	.LASF176:
+ 3230 1985 43595F42 		.ascii	"CY_BLE_EVT_GET_DATA_LENGTH_COMPLETE\000"
+ 3230      4C455F45 
+ 3230      56545F47 
+ 3230      45545F44 
+ 3230      4154415F 
+ 3231              	.LASF231:
+ 3232 19a9 43595F42 		.ascii	"CY_BLE_EVT_GAPC_DIRECT_ADV_REPORT\000"
+ 3232      4C455F45 
+ 3232      56545F47 
+ 3232      4150435F 
+ 3232      44495245 
+ 3233              	.LASF62:
+ 3234 19cb 666C6173 		.ascii	"flashEraseDelay\000"
+ 3234      68457261 
+ 3234      73654465 
+ 3234      6C617900 
+ 3235              	.LASF119:
+ 3236 19db 73746174 		.ascii	"state\000"
+ 3236      6500
+ 3237              	.LASF243:
+ 3238 19e1 43595F42 		.ascii	"CY_BLE_EVT_GATT_DISCONNECT_IND\000"
+ 3238      4C455F45 
+ 3238      56545F47 
+ 3238      4154545F 
+ 3238      44495343 
+ 3239              	.LASF258:
+ 3240 1a00 43595F42 		.ascii	"CY_BLE_EVT_GATTC_EXEC_WRITE_RSP\000"
+ 3240      4C455F45 
+ 3240      56545F47 
+ 3240      41545443 
+ 3240      5F455845 
+ 3241              	.LASF244:
+ 3242 1a20 43595F42 		.ascii	"CY_BLE_EVT_GATTS_XCNHG_MTU_REQ\000"
+ 3242      4C455F45 
+ 3242      56545F47 
+ 3242      41545453 
+ 3242      5F58434E 
+ 3243              	.LASF263:
+ 3244 1a3f 43595F42 		.ascii	"CY_BLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
+ 3244      4C455F45 
+ 3244      56545F47 
+ 3244      41545443 
+ 3244      5F53544F 
+ 3245              	.LASF58:
+ 3246 1a62 666C6173 		.ascii	"flashRwwRequired\000"
+ 3246      68527777 
+ 3246      52657175 
+ 3246      69726564 
+ 3246      00
+ 3247              	.LASF216:
+ 3248 1a73 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 79
+
+
+ 3248      4C455F45 
+ 3248      56545F47 
+ 3248      41505F50 
+ 3248      4153534B 
+ 3249              	.LASF87:
+ 3250 1a98 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 3250      50727443 
+ 3250      66674F66 
+ 3250      66736574 
+ 3250      00
+ 3251              	.LASF278:
+ 3252 1aa9 62644861 		.ascii	"bdHandle\000"
+ 3252      6E646C65 
+ 3252      00
+ 3253              	.LASF304:
+ 3254 1ab2 55415254 		.ascii	"UART_context\000"
+ 3254      5F636F6E 
+ 3254      74657874 
+ 3254      00
+ 3255              	.LASF1:
+ 3256 1abf 7369676E 		.ascii	"signed char\000"
+ 3256      65642063 
+ 3256      68617200 
+ 3257              	.LASF68:
+ 3258 1acb 64774368 		.ascii	"dwChOffset\000"
+ 3258      4F666673 
+ 3258      657400
+ 3259              	.LASF41:
+ 3260 1ad6 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 3260      73497063 
+ 3260      4972714E 
+ 3260      7200
+ 3261              	.LASF71:
+ 3262 1ae4 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 3262      43746C50 
+ 3262      7265656D 
+ 3262      70746162 
+ 3262      6C65506F 
+ 3263              	.LASF255:
+ 3264 1afa 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_CMD_REQ\000"
+ 3264      4C455F45 
+ 3264      56545F47 
+ 3264      41545453 
+ 3264      5F575249 
+ 3265              	.LASF199:
+ 3266 1b19 43595F42 		.ascii	"CY_BLE_EVT_GET_CLK_CONFIG_COMPLETE\000"
+ 3266      4C455F45 
+ 3266      56545F47 
+ 3266      45545F43 
+ 3266      4C4B5F43 
+ 3267              	.LASF320:
+ 3268 1b3c 6D61696E 		.ascii	"main\000"
+ 3268      00
+ 3269              	.LASF93:
+ 3270 1b41 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 3270      73436D34 
+ 3270      53746174 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 80
+
+
+ 3270      75734F66 
+ 3270      66736574 
+ 3271              	.LASF107:
+ 3272 1b56 63795F73 		.ascii	"cy_stc_device_t\000"
+ 3272      74635F64 
+ 3272      65766963 
+ 3272      655F7400 
+ 3273              	.LASF319:
+ 3274 1b66 5F5F656E 		.ascii	"__enable_irq\000"
+ 3274      61626C65 
+ 3274      5F697271 
+ 3274      00
+ 3275              	.LASF38:
+ 3276 1b73 70657269 		.ascii	"periVersion\000"
+ 3276      56657273 
+ 3276      696F6E00 
+ 3277              	.LASF266:
+ 3278 1b7f 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
+ 3278      4C455F45 
+ 3278      56545F4C 
+ 3278      32434150 
+ 3278      5F434F4E 
+ 3279              	.LASF110:
+ 3280 1ba6 646F7562 		.ascii	"double\000"
+ 3280      6C6500
+ 3281              	.LASF28:
+ 3282 1bad 70617373 		.ascii	"passBase\000"
+ 3282      42617365 
+ 3282      00
+ 3283              	.LASF49:
+ 3284 1bb6 73727373 		.ascii	"srssNumHfroot\000"
+ 3284      4E756D48 
+ 3284      66726F6F 
+ 3284      7400
+ 3285              	.LASF138:
+ 3286 1bc4 63795F73 		.ascii	"cy_stc_scb_i2c_context_t\000"
+ 3286      74635F73 
+ 3286      63625F69 
+ 3286      32635F63 
+ 3286      6F6E7465 
+ 3287              	.LASF67:
+ 3288 1bdd 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 3288      6843746C 
+ 3288      4D61696E 
+ 3288      57733446 
+ 3288      72657100 
+ 3289              	.LASF167:
+ 3290 1bf1 43595F42 		.ascii	"CY_BLE_EVT_FLASH_CORRUPT\000"
+ 3290      4C455F45 
+ 3290      56545F46 
+ 3290      4C415348 
+ 3290      5F434F52 
+ 3291              	.LASF236:
+ 3292 1c0a 43595F42 		.ascii	"CY_BLE_EVT_GAP_GEN_SET_LOCAL_P256_KEYS_COMPLETE\000"
+ 3292      4C455F45 
+ 3292      56545F47 
+ 3292      41505F47 
+ARM GAS  C:\Users\NUSAIR~1\AppData\Local\Temp\cc57YB6U.s 			page 81
+
+
+ 3292      454E5F53 
+ 3293              	.LASF219:
+ 3294 1c3a 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_FAILED\000"
+ 3294      4C455F45 
+ 3294      56545F47 
+ 3294      41505F41 
+ 3294      5554485F 
+ 3295              	.LASF286:
+ 3296 1c55 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
+ 3296      4C455F43 
+ 3296      4F4E4E5F 
+ 3296      53544154 
+ 3296      455F4449 
+ 3297              	.LASF37:
+ 3298 1c74 69706356 		.ascii	"ipcVersion\000"
+ 3298      65727369 
+ 3298      6F6E00
+ 3299              	.LASF289:
+ 3300 1c7f 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
+ 3300      4C455F43 
+ 3300      4F4E4E5F 
+ 3300      53544154 
+ 3300      455F434C 
+ 3301              	.LASF144:
+ 3302 1ca9 72784275 		.ascii	"rxBufSize\000"
+ 3302      6653697A 
+ 3302      6500
+ 3303              	.LASF303:
+ 3304 1cb3 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
+ 3304      6C655F70 
+ 3304      656E6469 
+ 3304      6E67466C 
+ 3304      61736857 
+ 3305              	.LASF224:
+ 3306 1ccc 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
+ 3306      4C455F45 
+ 3306      56545F47 
+ 3306      41505F43 
+ 3306      4F4E4E45 
+ 3307              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
